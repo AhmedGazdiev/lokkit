@@ -1,0 +1,6 @@
+<div class="users_container">
+  <h2>Users</h2>
+  <ng-container *ngFor="let user of userService.users; let i = index">
+    <app-user [user]="user" (update)="updateUser($event)" />
+  </ng-container>
+</div>

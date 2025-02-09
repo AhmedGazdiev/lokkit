@@ -1,0 +1,13 @@
+.users_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 22px;
+  padding: 28px;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+}

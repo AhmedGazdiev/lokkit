@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import "assets/styles/reset.css";
+@import "assets/styles/variables.scss";
+
+* {
+  font-family: "Open Sans", serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+body {
+  background-color: var(--background);
+}
+
+.hover {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.box-shadow {
+  &:hover {
+    -webkit-box-shadow: 0 0 25px -12px rgba(34, 60, 80, 0.5);
+    -moz-box-shadow: 0 0 25px -12px rgba(34, 60, 80, 0.5);
+    box-shadow: 0 0 25px -12px rgba(34, 60, 80, 0.5);
+  }
+}

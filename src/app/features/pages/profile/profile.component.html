@@ -1,0 +1,11 @@
+<h2>User Profile</h2>
+<div class="profile_container">
+  <img [src]="userService.activeUser?.avatar" alt="" />
+  <div class="profile_info">
+    <h2 class="profile_info-name">{{ userService.activeUser?.name }}</h2>
+    <h3 class="profile_info-usernames">
+      {{ userService.activeUser?.username }}
+    </h3>
+    <h3 class="profile_info-mail">{{ userService.activeUser?.email }}</h3>
+  </div>
+</div>

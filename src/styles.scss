@@ -18,9 +18,20 @@ body {
 }
 
 .box-shadow {
+  transition: all 0.5s ease;
   &:hover {
     -webkit-box-shadow: 0 0 25px -12px rgba(34, 60, 80, 0.5);
     -moz-box-shadow: 0 0 25px -12px rgba(34, 60, 80, 0.5);
     box-shadow: 0 0 25px -12px rgba(34, 60, 80, 0.5);
   }
+}
+
+.link {
+  color: var(--purple);
+  font-weight: 500;
+  line-height: 21px;
+}
+
+.span {
+  color: var(--color2);
 }

@@ -1,0 +1,46 @@
+<div class="login_cantainer">
+  <div class="login box-shadow">
+    <div class="login_logo">
+      <app-icon [icon]="'bigLogo'" />
+      <span>login</span>
+    </div>
+    <div class="form">
+      <label for="email">
+        <app-icon [icon]="'email'" />
+        <input class="input" type="email" id="email" placeholder="Email" />
+      </label>
+      <label for="password">
+        <app-icon [icon]="'unlock'" />
+        <input
+          class="input"
+          type="password"
+          id="password"
+          placeholder="Password"
+        />
+      </label>
+      <div class="forgot">
+        <label for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <span class="span">Remember me</span>
+        </label>
+        <a class="link" [routerLink]="['/forgot']"> Forgot Password? </a>
+      </div>
+      <button class="auth_btn">Login</button>
+      <div class="account">
+        <span class="span">Don't have an account?</span>
+        <a class="link" [routerLink]="['/register']">Register</a>
+      </div>
+      <div class="link_btns">
+        <button>
+          <app-icon [icon]="'google'" />
+        </button>
+        <button>
+          <app-icon [icon]="'vk'" />
+        </button>
+        <button>
+          <app-icon [icon]="'youtube'" />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,45 +10,45 @@
         <span class="post_top-info-block-desc">USER DESCRIPTION</span>
       </div>
     </div>
-    <app-icon [icon]="'dotsVertical'"/>
+    <app-icon [icon]="'dotsVertical'" />
   </div>
   <div class="post_main">
     <div class="post_main-text">
       {{ post.content | cutText }}
       @for (tag of post.tags; track $index) {
-        <span class="post_main-text-span">#{{ tag }}</span>
+      <span class="post_main-text-span">#{{ tag }}</span>
       }
     </div>
     @if (post.image) {
-      <img class="post_main-image" src="{{ post.image }}" alt="post image"/>
+    <img class="post_main-image" src="{{ post.image }}" alt="post image" />
     }
     <div class="post_main-icons">
       <div class="post_main-icons-communicate">
         <div class="post_main-icons-communicate-likes">
           <span *appShowIfLiked="post.likes">{{ post.likes }}</span>
           <button (click)="likePost(post._id)">
-            <app-icon [icon]="'like'"/>
+            <app-icon [icon]="'like'" />
           </button>
         </div>
         <button (click)="toggleComments()">
           <div class="post_main-icons-communicate-comments">
             <span>{{ post.comments.length }}</span>
-            <app-icon [icon]="'chat'"/>
+            <app-icon [icon]="'chat'" />
           </div>
         </button>
         <div class="post_main-icons-communicate-share">
           <span>187</span>
-          <app-icon [icon]="'share'"/>
+          <app-icon [icon]="'share'" />
         </div>
       </div>
-      <app-icon [icon]="'bookmark'"/>
+      <app-icon [icon]="'bookmark'" />
     </div>
     <div class="post_main-comments" *ngIf="showComments">
       @for (comment of post.comments; track $index) {
-        <div class="post_main-comments-item box-shadow">
-          <p class="post_main-comments-item-name">comment authorName</p>
-          <p class="post_main-comments-item-content">{{ comment }}</p>
-        </div>
+      <div class="post_main-comments-item box-shadow">
+        <p class="post_main-comments-item-name">comment authorName</p>
+        <p class="post_main-comments-item-content">{{ comment }}</p>
+      </div>
       }
     </div>
   </div>
@@ -66,13 +66,13 @@
     </div>
     <div class="post_bottom-btns">
       <button>
-        <app-icon [icon]="'attach'"/>
+        <app-icon [icon]="'attach'" />
       </button>
       <button>
-        <app-icon [icon]="'smile'"/>
+        <app-icon [icon]="'smile'" />
       </button>
       <button>
-        <app-icon [icon]="'send'"/>
+        <app-icon [icon]="'send'" />
       </button>
     </div>
   </div>

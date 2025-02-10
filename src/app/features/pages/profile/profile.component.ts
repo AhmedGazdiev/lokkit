@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { UserService } from '../../../core/services/user.service';
 import { RouterOutlet } from '@angular/router';
+import { UserService } from '../../../core/services/user.service';
 
 @Component({
   selector: 'app-profile',

@@ -1,6 +1,6 @@
 .post_container {
   background-color: white;
-  border: 1px solid #f0f3f7;
+  border: 1px solid var(--border);
   border-radius: 23px;
   width: 696px;
   transition: all 0.5s ease;
@@ -13,7 +13,7 @@
 }
 
 .post_top {
-  border-bottom: 1px solid #f0f3f7;
+  border-bottom: 1px solid var(--border);
   padding: 20px;
   display: flex;
   align-items: start;
@@ -35,7 +35,7 @@
 
       .post_top-info-block-desc {
         line-height: 22px;
-        color: #475569;
+        color: var(--color2);
       }
     }
   }
@@ -55,7 +55,7 @@
     line-height: 22.4px;
 
     .post_main-text-span {
-      color: #4f46e5;
+      color: var(--purple);
       margin-left: 4px;
     }
   }
@@ -110,7 +110,7 @@
       align-items: start;
       gap: 8px;
       border-radius: 24px;
-      border: 1px solid #f0f3f7;
+      border: 1px solid var(--border);
       width: 656px;
       padding: 16px 20px;
       transition: all 0.5s ease;
@@ -124,7 +124,7 @@
 }
 
 .post_bottom {
-  border-top: 1px solid #f0f3f7;
+  border-top: 1px solid var(--border);
   padding: 20px;
   display: flex;
   align-items: start;
@@ -138,13 +138,9 @@
     .post_bottom-comment-input {
       outline: none;
       padding: 8px 12px;
-      border: 1px solid #f0f3f7;
+      border: 1px solid var(--border);
       border-radius: 123px;
       width: 400px;
-
-      &:active {
-        border: 1px solid #e8ebef;
-      }
     }
   }
 
@@ -155,8 +151,8 @@
 
     button {
       outline: none;
-      background-color: white;
-      border: 1px solid #f0f3f7;
+      background-color: var(--white);
+      border: 1px solid var(--border);
       padding: 8px 10px;
       border-radius: 100%;
       cursor: pointer;

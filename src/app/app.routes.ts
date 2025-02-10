@@ -11,9 +11,8 @@ export const routes: Routes = [
   { path: '', redirectTo: 'feed', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: '', redirectTo: 'feed', pathMatch: 'full' },
   {
-    path: 'profile/:id',
+    path: 'profile',
     component: ProfileComponent,
     canActivate: [authGuard],
     // children: [{ path: 'info' }, { path: 'posts' }, { path: 'favorites' }],

@@ -1,13 +1,16 @@
+:host {
+  width: 100%;
+}
+
 .user {
-  width: 1544px;
   height: 100%;
+  width: 100%;
 
   background-color: var(--white);
   border: 1px solid var(--border);
   border-radius: 12px;
   transition: all 0.5s ease;
   padding: 8px 12px;
-  min-width: 500px;
 
   display: flex;
   align-items: center;

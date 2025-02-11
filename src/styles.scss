@@ -35,3 +35,15 @@ body {
 .span {
   color: var(--color2);
 }
+
+.container {
+  display: flex;
+  position: relative;
+  max-width: 1420px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.general_container {
+  width: 100%;
+}

@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
 import { EmptyComponent } from './features/pages/empty/empty.component';
-import { FeedComponent } from './features/pages/feed/feed.component';
 import { LoginComponent } from './features/pages/login/login.component';
 import { ProfileComponent } from './features/pages/profile/profile.component';
 import { RegisterComponent } from './features/pages/register/register.component';
 import { UsersComponent } from './features/pages/users/users.component';
+import { FeedLayoutComponent } from './shared/components/feed-layout/feed-layout.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'feed', pathMatch: 'full' },
@@ -18,6 +18,6 @@ export const routes: Routes = [
     // children: [{ path: 'info' }, { path: 'posts' }, { path: 'favorites' }],
   },
   { path: 'users', component: UsersComponent },
-  { path: 'feed', component: FeedComponent },
+  { path: 'feed', component: FeedLayoutComponent },
   { path: '**', component: EmptyComponent },
 ];

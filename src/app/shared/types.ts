@@ -34,4 +34,5 @@ export type iconTypes =
   | 'youtube'
   | 'plus'
   | 'plusGrey'
-  | 'plusRed';
+  | 'plusRed'
+  | 'logout';

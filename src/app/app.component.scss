@@ -1,4 +1,14 @@
 .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.general_container {
+  width: 100%;
+}
+
+.main_container {
   max-width: 1600px;
   margin: 0 auto;
   min-height: 100vh;

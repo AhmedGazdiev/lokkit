@@ -22,11 +22,7 @@
         </button>
       </div>
 
-      <img
-        class="header_user_authorized_avatar"
-        [src]="userService.activeUser.avatar"
-        alt=""
-      />
+      <app-drop-down [avatar]="userService.activeUser.avatar" />
     </div>
     } @else {
     <div class="header_user_not-authorized_btns">

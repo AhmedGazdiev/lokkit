@@ -4,7 +4,6 @@ import { EmptyComponent } from './features/pages/empty/empty.component';
 import { LoginComponent } from './features/pages/login/login.component';
 import { ProfileComponent } from './features/pages/profile/profile.component';
 import { RegisterComponent } from './features/pages/register/register.component';
-import { UsersComponent } from './features/pages/users/users.component';
 import { FeedLayoutComponent } from './shared/components/feed-layout/feed-layout.component';
 
 export const routes: Routes = [
@@ -17,7 +16,15 @@ export const routes: Routes = [
     canActivate: [authGuard],
     // children: [{ path: 'info' }, { path: 'posts' }, { path: 'favorites' }],
   },
-  { path: 'users', component: UsersComponent },
+  {
+    path: 'users',
+    loadComponent: () =>
+      import('./features/pages/users/users.component').then(
+        (u) => u.UsersComponent
+      ),
+  },
   { path: 'feed', component: FeedLayoutComponent },
   { path: '**', component: EmptyComponent },
 ];
+
+// component: UsersComponent

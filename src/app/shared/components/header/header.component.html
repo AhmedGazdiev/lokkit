@@ -1,0 +1,38 @@
+<div class="header_container">
+  <div class="header_search_input">
+    <input type="text" placeholder="Search for friends, groups, pages" />
+    <app-icon [icon]="'search'" />
+  </div>
+  <div class="header_user_data">
+    @if (userService.activeUser) {
+    <div class="header_user_authorized_section">
+      <div class="header_user_authorized_btns">
+        <button class="header_user_post_btn">
+          Add New Post
+          <app-icon [icon]="'plus'" />
+        </button>
+        <button class="header_user_icon_btn">
+          <app-icon [icon]="'helpSupportDark'" />
+        </button>
+        <button class="header_user_icon_btn">
+          <app-icon [icon]="'notifications'" />
+        </button>
+        <button class="header_user_icon_btn">
+          <app-icon [icon]="'settingsDark'" />
+        </button>
+      </div>
+
+      <img
+        class="header_user_authorized_avatar"
+        [src]="userService.activeUser.avatar"
+        alt=""
+      />
+    </div>
+    } @else {
+    <div class="header_user_not-authorized_btns">
+      <button routerLink="/login" class="header_user_auth">Login</button>
+      <button routerLink="/register" class="header_user_auth">Register</button>
+    </div>
+    }
+  </div>
+</div>

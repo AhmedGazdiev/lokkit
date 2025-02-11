@@ -1,11 +1,10 @@
 .users_container {
-  border: 1px solid var(--border);
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 22px;
-  padding: 28px;
+  padding: 28px 0 28px 28px;
 
   h2 {
     font-size: 32px;

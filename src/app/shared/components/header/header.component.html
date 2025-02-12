@@ -4,7 +4,6 @@
     <app-icon [icon]="'search'" />
   </div>
   <div class="header_user_data">
-    @if (userService.activeUser) {
     <div class="header_user_authorized_section">
       <div class="header_user_authorized_btns">
         <button class="header_user_post_btn">
@@ -22,13 +21,7 @@
         </button>
       </div>
 
-      <app-drop-down [avatar]="userService.activeUser.avatar" />
+      <app-drop-down [avatar]="userService.activeUser?.avatar" />
     </div>
-    } @else {
-    <div class="header_user_not-authorized_btns">
-      <button routerLink="/login" class="header_user_auth">Login</button>
-      <button routerLink="/register" class="header_user_auth">Register</button>
-    </div>
-    }
   </div>
 </header>

@@ -10,6 +10,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class DropDownComponent {
   @Input() avatar?: string;
+  @Input() id!: number | undefined;
 
   showDropdown = false;
   private router = inject(Router);

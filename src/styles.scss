@@ -47,3 +47,35 @@ body {
 .general_container {
   width: 100%;
 }
+
+.btn {
+  background-color: var(--purple);
+  padding: 12px 20px;
+  border-radius: 123px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.7%;
+  color: var(--white);
+  transition: all 0.5s ease;
+
+  &:active {
+    transform: scale(1.1);
+  }
+}
+
+.un-btn {
+  background-color: var(--background2);
+  color: var(--red);
+  padding: 12px 20px;
+  border-radius: 123px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.7%;
+  transition: all 0.5s ease;
+
+  &:active {
+    transform: scale(1.1);
+  }
+}

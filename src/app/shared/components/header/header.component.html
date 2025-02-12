@@ -21,7 +21,10 @@
         </button>
       </div>
 
-      <app-drop-down [avatar]="userService.activeUser?.avatar" />
+      <app-drop-down
+        [avatar]="userService.activeUser?.avatar"
+        [id]="userService.activeUser?._id"
+      />
     </div>
   </div>
 </header>

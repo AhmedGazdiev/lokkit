@@ -5,7 +5,7 @@
 >
   <img [src]="avatar" alt="User Avatar" class="avatar" />
   <div *ngIf="showDropdown" class="dropdown-menu box-shadow">
-    <a class="dropdown_link" routerLink="/profile">Profile</a>
+    <a class="dropdown_link" [routerLink]="['/profile', id]">Profile</a>
     <a class="dropdown_link" routerLink="/settings">Settings</a>
     <a class="dropdown_link" (click)="logout()">Logout</a>
   </div>

@@ -16,9 +16,13 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'feed', pathMatch: 'full' },
       {
-        path: 'profile',
+        path: 'profile/:id',
         component: ProfileComponent,
         canActivate: [authGuard],
+        loadChildren: () =>
+          import('./features/pages/profile/profile.routes').then(
+            (p) => p.profileRoutes
+          ),
       },
       {
         path: 'users',

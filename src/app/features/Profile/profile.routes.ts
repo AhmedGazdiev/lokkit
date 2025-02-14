@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { DevicesComponent } from './devices/devices.component';
-import { InfoComponent } from './info/info.component';
-import { SettingsComponent } from './settings/settings.component';
+import { DevicesComponent } from './pages/devices/devices.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { InfoComponent } from './pages/info/info.component';
 
 export const profileRoutes: Routes = [
   { path: 'info', component: InfoComponent },

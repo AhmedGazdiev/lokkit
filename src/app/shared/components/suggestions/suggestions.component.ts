@@ -4,7 +4,7 @@ import { IconComponent } from '../icon/icon.component';
 @Component({
   selector: 'app-side-right',
   imports: [IconComponent],
-  templateUrl: './side-right.component.html',
-  styleUrl: './side-right.component.scss',
+  templateUrl: './suggestions.component.html',
+  styleUrl: './suggestions.component.scss',
 })
-export class SideRightComponent {}
+export class SuggestionsComponent {}

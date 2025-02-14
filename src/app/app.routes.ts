@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
 import { authGuard, notAuthGuard } from './core/guards/auth.guard';
-import { AuthLayoutComponent } from './features/layouts/auth-layout/auth-layout.component';
-import { NotAuthLayoutComponent } from './features/layouts/not-auth-layout/not-auth-layout.component';
+import { AuthLayoutComponent } from './features/Auth/layouts/auth-layout/auth-layout.component';
+import { NotAuthLayoutComponent } from './features/Auth/layouts/not-auth-layout/not-auth-layout.component';
+import { LoginComponent } from './features/Auth/pages/login/login.component';
+import { RegisterComponent } from './features/Auth/pages/register/register.component';
 import { EmptyComponent } from './features/pages/empty/empty.component';
-import { LoginComponent } from './features/pages/login/login.component';
-import { ProfileComponent } from './features/pages/profile/profile.component';
-import { RegisterComponent } from './features/pages/register/register.component';
-import { FeedLayoutComponent } from './shared/components/feed-layout/feed-layout.component';
+import { FeedComponent } from './features/Post/pages/feed/feed.component';
+import { ProfileComponent } from './features/Profile/profile.component';
 
 export const routes: Routes = [
   {
@@ -20,18 +20,18 @@ export const routes: Routes = [
         component: ProfileComponent,
         canActivate: [authGuard],
         loadChildren: () =>
-          import('./features/pages/profile/profile.routes').then(
+          import('./features/Profile/profile.routes').then(
             (p) => p.profileRoutes
           ),
       },
       {
         path: 'users',
         loadComponent: () =>
-          import('./features/pages/users/users.component').then(
+          import('./features/User/pages/users/users.component').then(
             (u) => u.UsersComponent
           ),
       },
-      { path: 'feed', component: FeedLayoutComponent },
+      { path: 'feed', component: FeedComponent },
     ],
   },
   {
@@ -45,5 +45,3 @@ export const routes: Routes = [
   },
   { path: '**', component: EmptyComponent },
 ];
-
-// component: UsersComponent

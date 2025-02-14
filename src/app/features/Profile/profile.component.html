@@ -1,0 +1,20 @@
+<div class="profile_container">
+  <h2>Profile</h2>
+
+  <div class="profile_links">
+    <a routerLink="info">
+      <app-icon [icon]="'user'" />
+      Info
+    </a>
+    <a routerLink="settings">
+      <app-icon [icon]="'settingsDark'" />
+      Settings
+    </a>
+    <a routerLink="devices">
+      <app-icon [icon]="'touch'" />
+      Devices
+    </a>
+  </div>
+
+  <router-outlet />
+</div>

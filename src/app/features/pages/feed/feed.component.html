@@ -1,5 +1,0 @@
-<div class="feed_container">
-  @for (post of postService.posts; track post._id) {
-  <app-post [post]="post" (likeFn)="like($event)" />
-  }
-</div>

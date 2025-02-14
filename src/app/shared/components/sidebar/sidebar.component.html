@@ -1,0 +1,55 @@
+<div class="sidabar_container">
+  <div class="sidebar_search">
+    <app-icon [icon]="'bigLogo'" />
+    <div class="sidebar_search_input">
+      <app-icon [icon]="'search'" />
+      <input type="text" placeholder="Search" />
+    </div>
+    <div class="sidebar_search_links">
+      <a routerLink="/" class="sidebar_search_link">
+        <app-icon [icon]="'home'" />
+        Home
+      </a>
+      <a routerLink="tasks" class="sidebar_search_link">
+        <app-icon [icon]="'tasks'" />
+        Tasks
+      </a>
+      <a routerLink="users" class="sidebar_search_link">
+        <app-icon [icon]="'users'" />
+        Users
+      </a>
+      <a routerLink="apis" class="sidebar_search_link">
+        <app-icon [icon]="'cube'" />
+        APIs
+      </a>
+      <a routerLink="subscriptions" class="sidebar_search_link">
+        <app-icon [icon]="'creditCard'" />
+        Subscribtions
+      </a>
+      <a routerLink="settings" class="sidebar_search_link">
+        <app-icon [icon]="'settingsLight'" />
+        Settings
+      </a>
+      <a routerLink="support" class="sidebar_search_link">
+        <app-icon [icon]="'helpSupportLight'" />
+        Help & Suppport
+      </a>
+    </div>
+  </div>
+  <div class="sidebar_user">
+    <div class="sidebar_user_data">
+      <img
+        class="avatar"
+        src="https://images.unsplash.com/photo-1737543456099-9e88da04eaef?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="user image"
+      />
+      <div class="sidebar_user_info">
+        <span class="sidebar_user_name">John Doe</span>
+        <span class="sidebar_user_status">Basic Member</span>
+      </div>
+    </div>
+    <button class="sidebar_user_logout">
+      <app-icon [icon]="'logout'" />
+    </button>
+  </div>
+</div>

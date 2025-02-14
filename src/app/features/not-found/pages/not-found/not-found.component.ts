@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-empty',
   imports: [RouterLink],
-  templateUrl: './empty.component.html',
-  styleUrl: './empty.component.scss',
+  templateUrl: './not-found.component.html',
+  styleUrl: './not-found.component.scss',
 })
-export class EmptyComponent {}
+export class NotFoundComponent {}

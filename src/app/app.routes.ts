@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
 import { authGuard, notAuthGuard } from './core/guards/auth.guard';
-import { AuthLayoutComponent } from './features/Auth/layouts/auth-layout/auth-layout.component';
-import { NotAuthLayoutComponent } from './features/Auth/layouts/not-auth-layout/not-auth-layout.component';
-import { LoginComponent } from './features/Auth/pages/login/login.component';
-import { RegisterComponent } from './features/Auth/pages/register/register.component';
-import { EmptyComponent } from './features/pages/empty/empty.component';
-import { FeedComponent } from './features/Post/pages/feed/feed.component';
-import { ProfileComponent } from './features/Profile/profile.component';
+import { AuthLayoutComponent } from './features/auth/layouts/auth-layout/auth-layout.component';
+import { NotAuthLayoutComponent } from './features/auth/layouts/not-auth-layout/not-auth-layout.component';
+import { LoginComponent } from './features/auth/pages/login/login.component';
+import { RegisterComponent } from './features/auth/pages/register/register.component';
+import { NotFoundComponent } from './features/not-found/pages/not-found/not-found.component';
+import { FeedComponent } from './features/post/pages/feed/feed.component';
+import { ProfileComponent } from './features/profile/profile.component';
 
 export const routes: Routes = [
   {
@@ -20,14 +20,14 @@ export const routes: Routes = [
         component: ProfileComponent,
         canActivate: [authGuard],
         loadChildren: () =>
-          import('./features/Profile/profile.routes').then(
+          import('./features/profile/profile.routes').then(
             (p) => p.profileRoutes
           ),
       },
       {
         path: 'users',
         loadComponent: () =>
-          import('./features/User/pages/users/users.component').then(
+          import('./features/user/pages/users/users.component').then(
             (u) => u.UsersComponent
           ),
       },
@@ -43,5 +43,5 @@ export const routes: Routes = [
       { path: 'register', component: RegisterComponent },
     ],
   },
-  { path: '**', component: EmptyComponent },
+  { path: '**', component: NotFoundComponent },
 ];

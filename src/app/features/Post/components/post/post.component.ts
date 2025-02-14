@@ -2,11 +2,12 @@ import { NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Post } from '../../../../core/models/post';
 import { IconComponent } from '../../../../shared/components/icon/icon.component';
+import { ShowIfLikedDirective } from '../../../../shared/directives/show-if-liked.directive';
 import { CutTextPipe } from '../../../../shared/pipes/cut-text.pipe';
 
 @Component({
   selector: 'app-post',
-  imports: [IconComponent, NgIf, CutTextPipe],
+  imports: [IconComponent, NgIf, CutTextPipe, ShowIfLikedDirective],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss',
 })

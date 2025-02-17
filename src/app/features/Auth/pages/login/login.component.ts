@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { IconComponent } from '../../../../shared/components/icon/icon.component';
+import { LoginFormComponent } from '../../components/login-form/login-form.component';
 
 @Component({
   selector: 'app-login',
-  imports: [IconComponent, RouterLink],
+  imports: [LoginFormComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })

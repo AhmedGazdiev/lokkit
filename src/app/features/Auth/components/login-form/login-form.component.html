@@ -8,8 +8,8 @@
       <app-icon [icon]="'email'" />
       <input class="input" type="email" id="email" placeholder="Email" formControlName="email" />
     </label>
-    @if (!loginForm.controls.email.valid && loginForm.controls.email.touched) {
-      <span class="form_error">This field is required to fill in</span>
+    @if (loginForm.controls.email.invalid && loginForm.controls.email.touched) {
+      <span class="form_error">This field is not valid</span>
     }
     <label for="password">
       <app-icon [icon]="'unlock'" />
@@ -21,8 +21,8 @@
         formControlName="password"
       />
     </label>
-    @if (!loginForm.controls.password.valid && loginForm.controls.password.touched) {
-      <span class="form_error">This field is required to fill in</span>
+    @if (loginForm.controls.password.invalid && loginForm.controls.password.touched) {
+      <span class="form_error">This field is required</span>
     }
     <div class="forgot">
       <label for="checkbox">
@@ -31,7 +31,7 @@
       </label>
       <a class="link" [routerLink]="['/forgot']"> Forgot Password? </a>
     </div>
-    <button class="auth_btn" type="submit" [disabled]="!loginForm.valid">Login</button>
+    <button class="auth_btn" type="submit" [disabled]="loginForm.invalid">Login</button>
     <div class="account">
       <span class="span">Don't have an account?</span>
       <a class="link" [routerLink]="['/register']">Register</a>

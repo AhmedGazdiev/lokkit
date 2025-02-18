@@ -9,4 +9,8 @@ export class AuthService {
   public login(email: any, password: any) {
     console.log('Данные пользователя:', email, password)
   }
+
+  public register(data:any) {
+    console.log('Данные пользователя:', data)
+  }
 }

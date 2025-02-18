@@ -29,6 +29,7 @@ export class RegisterFormComponent {
   onSubmit() {
     if (this.registerForm.valid) {
       console.log('Form data:', this.registerForm.value);
+      this.authService.register(this.registerForm.value)
     }
   }
 }

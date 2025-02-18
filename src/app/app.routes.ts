@@ -7,6 +7,7 @@ import { RegisterComponent } from './features/auth/pages/register/register.compo
 import { NotFoundComponent } from './features/not-found/pages/not-found/not-found.component';
 import { FeedComponent } from './features/post/pages/feed/feed.component';
 import { ProfileComponent } from './features/profile/profile.component';
+import {CreatePostComponent} from './features/post/pages/create-post/create-post.component';
 
 export const routes: Routes = [
   {
@@ -32,6 +33,7 @@ export const routes: Routes = [
           ),
       },
       { path: 'feed', component: FeedComponent },
+      { path: 'create-post', component: CreatePostComponent },
     ],
   },
   {

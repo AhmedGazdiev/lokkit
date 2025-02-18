@@ -30,10 +30,8 @@ export class LoginFormComponent {
   });
 
   public onSubmit() {
-    const {email, password} = this.loginForm.value
-
     if (this.loginForm.valid) {
-      this.authService.login(email, password)
+      this.authService.login(this.loginForm.value)
     }
   }
 }

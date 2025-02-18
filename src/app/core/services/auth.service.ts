@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   public isLoggedIn: boolean = false;
 
-  public login(email: any, password: any) {
-    console.log('Данные пользователя:', email, password)
+  public login(data:any) {
+    console.log('Данные пользователя:', data)
   }
 
   public register(data:any) {

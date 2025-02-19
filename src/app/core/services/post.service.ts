@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Post } from '../models/post';
-import { postsData } from '../postsData';
+import {Injectable} from '@angular/core';
+import {Post} from '../models/post';
+import {postsData} from '../postsData';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +8,10 @@ import { postsData } from '../postsData';
 export class PostService {
   public posts: Post[] = postsData;
   public post!: Post | undefined;
+
+  createPost(data: any) {
+    console.log(data)
+  }
 
   getPosts() {
     this.posts = postsData;

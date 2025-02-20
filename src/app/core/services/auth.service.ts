@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
-  public isLoggedIn: boolean = true;
+  public isLoggedIn: boolean = false;
 
   public login(data:any) {
     console.log('Данные пользователя:', data)

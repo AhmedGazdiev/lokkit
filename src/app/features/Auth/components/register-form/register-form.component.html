@@ -8,24 +8,36 @@
       <app-icon [icon]="'email'"/>
       <input class="input" type="email" id="email" placeholder="Email" formControlName="email"/>
     </label>
-    <span
-      *ngIf="registerForm.controls['email'].invalid
-      && registerForm.controls['email'].touched"
-      class="form_error"
-    >
-      The email is invalid.
-    </span>
+    @if (registerForm.controls['email'].invalid
+    && registerForm.controls['email'].touched) {
+      @if (registerForm.get(['email'])?.errors?.['required']) {
+        <span class="form_error">
+        The email is required.
+      </span>
+      }
+      @if (registerForm.get(['email'])?.errors?.['email']) {
+        <span class="form_error">
+        The email isn't valid.
+      </span>
+      }
+    }
     <label for="username">
       <app-icon [icon]="'user'"/>
       <input class="input" type="text" id="username" placeholder="Username" formControlName="username"/>
     </label>
-    <span
-      *ngIf="registerForm.controls['username'].invalid
-      && registerForm.controls['username'].touched"
-      class="form_error"
-    >
-      The username is required
-    </span>
+    @if (registerForm.controls['username'].invalid
+    && registerForm.controls['username'].touched) {
+      @if (registerForm.get(['username'])?.errors?.['required']) {
+        <span class="form_error">
+        The username is required.
+      </span>
+      }
+      @if (registerForm.get(['username'])?.errors?.['minlength']) {
+        <span class="form_error">
+        The username must contain at least 4 characters.
+      </span>
+      }
+    }
     <label for="password">
       <app-icon [icon]="'unlock'"/>
       <input
@@ -36,13 +48,19 @@
         formControlName="password"
       />
     </label>
-    <span
-      *ngIf="registerForm.controls['password'].invalid
-      && registerForm.controls['password'].touched"
-      class="form_error"
-    >
-      The password is required and must be at least 6 characters long.
-    </span>
+    @if (registerForm.controls['password'].invalid
+    && registerForm.controls['password'].touched) {
+      @if (registerForm.get(['password'])?.errors?.['required']) {
+        <span class="form_error">
+        The password is required.
+      </span>
+      }
+      @if (registerForm.get(['password'])?.errors?.['minlength']) {
+        <span class="form_error">
+        The password must contain at least 6 characters.
+      </span>
+      }
+    }
     <label for="confirm_password">
       <app-icon [icon]="'unlock'"/>
       <input
@@ -53,12 +71,24 @@
         formControlName="confirmPassword"
       />
     </label>
-    <span class="form_error"
-          *ngIf="registerForm.controls['confirmPassword'].invalid
-          && registerForm.controls['confirmPassword'].touched"
-    >
-        Passwords do not match.
-    </span>
+    @if (registerForm.errors?.['passwordMismatch']
+    && registerForm.controls['confirmPassword'].touched) {
+      @if (registerForm.get(['confirmPassword'])?.errors?.['required']) {
+        <span class="form_error">
+        The confirmPassword is required.
+      </span>
+      }
+      @if (registerForm.get(['confirmPassword'])?.errors?.['minlength']) {
+        <span class="form_error">
+        The confirmPassword must contain at least 6 characters.
+      </span>
+      }
+      @if (registerForm.errors?.['passwordMismatch']) {
+        <span class="form_error">
+        Passwords don't match
+      </span>
+      }
+    }
     <button class="btn" [disabled]="registerForm.invalid">Register</button>
     <div class="account">
       <span class="span">Don't have an account?</span>

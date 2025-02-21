@@ -1,4 +1,5 @@
-.create_post_form{
+.create_post_form {
+  background-color: var(--white);
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 20px;
@@ -6,7 +7,7 @@
 
   display: flex;
   flex-direction: column;
-  gap:24px;
+  gap: 24px;
 }
 
 h3 {
@@ -16,13 +17,13 @@ h3 {
   letter-spacing: -0.7%;
 }
 
-.post_form{
+.post_form {
   display: flex;
   flex-direction: column;
-  gap:16px;
+  gap: 16px;
 }
 
-.file_label{
+.file_label {
   width: 100%;
   background: var(--background2);
   height: 165px;
@@ -33,12 +34,22 @@ h3 {
   cursor: pointer;
   padding: 0.75rem 0 0.75rem 1rem;
 
-  input{
+  input {
     display: none;
   }
 }
 
-.post_image{
+.post_image {
   width: 100px;
   height: 100%;
+}
+
+.post_form_tag {
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 100px;
+    margin-right: 8px;
+  }
 }

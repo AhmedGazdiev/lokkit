@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {FormArray, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {IconComponent} from '../../../../shared/components/icon/icon.component';
 import {InputComponent} from '../../../../shared/components/input/input.component';
 import {PostService} from '../../../../core/services/post.service';
@@ -22,7 +22,7 @@ export class CreatePostFormComponent {
     title: new FormControl('', [Validators.required, Validators.minLength(4)]),
     content: new FormControl('', [Validators.required, Validators.maxLength(300)]),
     image: new FormControl(null, [Validators.required]),
-    // tags: new FormArray([], [Validators.required, Validators.minLength(1)]),
+    tags: new FormArray([])
   })
 
   onChangeFile(event: any) {
@@ -33,6 +33,18 @@ export class CreatePostFormComponent {
         image: file
       })
     }
+  }
+
+  get tags() {
+    return this.postForm.get(['tags']) as FormArray;
+  }
+
+  addTag() {
+    this.tags.push(new FormControl('', Validators.required));
+  }
+
+  deleteTag(index: number) {
+    this.tags.removeAt(index)
   }
 
 

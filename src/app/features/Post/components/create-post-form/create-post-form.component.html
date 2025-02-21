@@ -20,6 +20,21 @@
       placeholder="Content"
       formControlName="content"
     />
+    <div formArrayName="tags">
+      @for (tag of tags.controls; track $index) {
+        <div class="post_form_tag">
+          <label [for]="'tag-' + $index">
+            Тег {{ $index + 1 }}:
+            <input [id]="'tag-' + $index" [formControlName]="$index"/>
+          </label>
+          <button type="button" (click)="deleteTag($index)">
+            <app-icon [icon]="'close'"/>
+          </button>
+        </div>
+      }
+    </div>
+
+    <button type="button" (click)="addTag()">Добавить тег</button>
     <button type="submit" class="btn">Create Post</button>
   </form>
 </div>

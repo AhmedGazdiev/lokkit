@@ -1,12 +1,12 @@
 <div class="login box-shadow">
   <div class="login_logo">
-    <app-icon [icon]="'bigLogo'" />
+    <app-icon [icon]="'bigLogo'"/>
     <span>login</span>
   </div>
   <form class="form" [formGroup]="loginForm" (submit)="onSubmit()">
     <label for="email">
-      <app-icon [icon]="'email'" />
-      <input class="input" type="email" id="email" placeholder="Email" formControlName="email" />
+      <app-icon [icon]="'email'"/>
+      <input class="input" type="email" id="email" placeholder="Email" formControlName="email"/>
     </label>
     @if (loginForm.controls['email'].invalid
     && loginForm.controls['email'].touched) {
@@ -22,7 +22,7 @@
       }
     }
     <label for="password">
-      <app-icon [icon]="'unlock'" />
+      <app-icon [icon]="'unlock'"/>
       <input
         class="input"
         type="password"
@@ -46,7 +46,7 @@
     }
     <div class="forgot">
       <label for="checkbox">
-        <input type="checkbox" id="checkbox" />
+        <input type="checkbox" id="checkbox"/>
         <span class="span">Remember me</span>
       </label>
       <a class="link" [routerLink]="['/forgot']"> Forgot Password? </a>
@@ -58,13 +58,13 @@
     </div>
     <div class="link_btns">
       <button>
-        <app-icon [icon]="'google'" />
+        <app-icon [icon]="'google'"/>
       </button>
       <button>
-        <app-icon [icon]="'vk'" />
+        <app-icon [icon]="'vk'"/>
       </button>
       <button>
-        <app-icon [icon]="'youtube'" />
+        <app-icon [icon]="'youtube'"/>
       </button>
     </div>
   </form>

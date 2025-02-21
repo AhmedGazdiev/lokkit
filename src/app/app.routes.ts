@@ -26,14 +26,23 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'post',
+        loadChildren: () => import('./features/post/post.routes').then(
+          (p) => p.postRoutes
+        )
+      },
+
+      {
         path: 'users',
         loadComponent: () =>
           import('./features/user/pages/users/users.component').then(
             (u) => u.UsersComponent
           ),
       },
-      { path: 'feed', component: FeedComponent },
-      { path: 'create-post', component: CreatePostComponent },
+      {
+        path: 'feed',
+        component: FeedComponent
+      },
     ],
   },
   {

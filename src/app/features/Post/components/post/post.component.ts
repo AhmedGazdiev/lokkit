@@ -5,10 +5,11 @@ import { IconComponent } from '../../../../shared/components/icon/icon.component
 import { ShowIfLikedDirective } from '../../../../shared/directives/show-if-liked.directive';
 import { CutTextPipe } from '../../../../shared/pipes/cut-text.pipe';
 import {UsernamePipe} from '../../../../shared/pipes/username.pipe';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-post',
-  imports: [IconComponent, NgIf, CutTextPipe, ShowIfLikedDirective, UsernamePipe],
+  imports: [IconComponent, NgIf, CutTextPipe, ShowIfLikedDirective, UsernamePipe, RouterLink],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss',
 })

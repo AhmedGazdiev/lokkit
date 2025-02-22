@@ -29,4 +29,8 @@ export class PostService {
     }
     return postId;
   }
+
+  deletePost() {
+    console.log('this Post has been deleted')
+  }
 }

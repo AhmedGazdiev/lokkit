@@ -21,10 +21,9 @@
         </button>
       </div>
 
-      <app-drop-down
-        [avatar]="userService.activeUser?.avatar"
-        [id]="userService.activeUser?._id"
-      />
+      <app-drop-down [appDropDown]="dropDownItems">
+        <img class="avatar" [src]="userService.activeUser?.avatar" alt="avatar">
+      </app-drop-down>
     </div>
   </div>
 </header>

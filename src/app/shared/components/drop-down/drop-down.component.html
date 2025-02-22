@@ -3,10 +3,20 @@
   (mouseenter)="showDropdown = true"
   (mouseleave)="showDropdown = false"
 >
-  <img [src]="avatar" alt="User Avatar" class="avatar" />
-  <div *ngIf="showDropdown" class="dropdown-menu box-shadow">
-    <a class="dropdown_link" [routerLink]="['/profile', id]">Profile</a>
-    <a class="dropdown_link" routerLink="/settings">Settings</a>
-    <a class="dropdown_link" (click)="logout()">Logout</a>
-  </div>
+  <ng-content/>
+  @if (showDropdown) {
+    <div class="dropdown-menu">
+      @for (item of dropDownItems; track $index) {
+        @if (item.click) {
+          <button class="dropdown-menu-item" (click)="item.click()">
+            {{ item.label }}
+          </button>
+        } @else {
+          <a class="dropdown-menu-item" [routerLink]="item.link">
+            {{ item.label }}
+          </a>
+        }
+      }
+    </div>
+  }
 </div>

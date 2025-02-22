@@ -7,10 +7,14 @@ export class AuthService {
   public isLoggedIn: boolean = true;
 
   public login(data:any) {
-    console.log('Данные пользователя:', data)
+    console.log('User data:', data)
   }
 
   public register(data:any) {
-    console.log('Данные пользователя:', data)
+    console.log('User data:', data)
+  }
+
+  public logout() {
+    console.log('User logged out')
   }
 }

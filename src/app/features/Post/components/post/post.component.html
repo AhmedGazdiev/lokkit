@@ -1,19 +1,22 @@
-<article class="post_container box-shadow" [routerLink]="['/post', post._id, 'detail']">
+<article class="post_container box-shadow">
   <div class="post_top">
     <div class="post_top-info">
       <img
-        class="post_avatar"
         src="https://images.unsplash.com/photo-1737543456099-9e88da04eaef?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="avatar"
+        class="post_avatar"
       />
       <div class="post_top-info-block">
         <p class="post_top-info-block-name">{{ 'USERNAME'| username }}</p>
         <span class="post_top-info-block-desc">USER DESCRIPTION</span>
       </div>
     </div>
-    <app-icon [icon]="'dotsVertical'"/>
+    <app-drop-down [appDropDown]="dropDownItems">
+      <app-icon [icon]="'dotsVertical'"/>
+    </app-drop-down>
   </div>
   <div class="post_main">
-    <div class="post_main-text">
+    <div class="post_main-text" [routerLink]="['/post', post._id, 'detail']">
       {{ post.content | cutText }}
       @for (tag of post.tags; track $index) {
         <span class="post_main-text-span">#{{ tag }}</span>

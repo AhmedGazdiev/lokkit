@@ -1,9 +1,12 @@
 import {Component, inject} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {EditPostFormComponent} from '../../components/edit-post-form/edit-post-form.component';
 
 @Component({
   selector: 'app-edit-post',
-  imports: [],
+  imports: [
+    EditPostFormComponent
+  ],
   templateUrl: './edit-post.component.html',
   styleUrl: './edit-post.component.scss'
 })
@@ -13,5 +16,6 @@ export class EditPostComponent {
 
   ngOnInit(): void {
     this.editId = this.route.snapshot.paramMap.get('id');
+    console.log(this.editId)
   }
 }

@@ -1,0 +1,23 @@
+<div class="edit_post_form">
+  <h3>Edit Post Form</h3>
+  <form class="post_form">
+    <label for="file" class='file_label'>
+      <input type="file" id='file'/>
+      <app-icon [icon]="'plusGrey'"/>
+    </label>
+    <app-input
+      class="input"
+      type="text"
+      placeholder="Title"
+    />
+    <app-input
+      [showIcon]="true"
+      class="input"
+      type="text"
+      placeholder="Content"
+    />
+
+    <button type="button">Add a tag</button>
+    <button type="submit" class="btn">Update Post</button>
+  </form>
+</div>

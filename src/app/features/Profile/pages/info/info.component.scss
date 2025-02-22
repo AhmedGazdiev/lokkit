@@ -8,6 +8,7 @@
     height: 150px;
     border-radius: 100%;
   }
+
   .profile_user_btns {
     display: flex;
     align-items: center;
@@ -31,12 +32,14 @@
       width: 500px;
     }
   }
+
   .profile_info_section {
     display: flex;
     align-items: center;
     gap: 42px;
     width: 500px;
   }
+
   .profile_password {
     display: flex;
     flex-direction: column;

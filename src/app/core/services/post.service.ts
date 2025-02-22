@@ -9,20 +9,20 @@ export class PostService {
   public posts: Post[] = postsData;
   public post!: Post | undefined;
 
-  createPost(data: any) {
+  public createPost(data: any) {
     console.log(data)
   }
 
-  getPosts() {
+  public getPosts() {
     this.posts = postsData;
   }
 
-  getPostById(id: number) {
+  public getPostById(id: number) {
     this.post = this.posts.find((post) => post._id === id);
     return this.post;
   }
 
-  likePost(id: number) {
+  public likePost(id: number) {
     const postId = this.getPostById(id);
     if (postId !== undefined) {
       postId.likes++;
@@ -30,7 +30,7 @@ export class PostService {
     return postId;
   }
 
-  deletePost() {
+  public deletePost() {
     console.log('this Post has been deleted')
   }
 }

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../../../../shared/components/header/header.component';
-import { SidebarComponent } from '../../../../shared/components/sidebar/sidebar.component';
+import {Component} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
+import {HeaderComponent} from '../../../../shared/components/header/header.component';
+import {SidebarComponent} from '../../../../shared/components/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-auth-layout',
@@ -9,4 +9,5 @@ import { SidebarComponent } from '../../../../shared/components/sidebar/sidebar.
   templateUrl: './auth-layout.component.html',
   styleUrl: './auth-layout.component.scss',
 })
-export class AuthLayoutComponent {}
+export class AuthLayoutComponent {
+}

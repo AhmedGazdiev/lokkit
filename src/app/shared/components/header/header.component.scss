@@ -18,9 +18,11 @@
   border: 1px solid var(--border);
   width: 400px;
   padding: 8px 16px;
+
   &:focus-within {
     border: 1px solid var(--purple);
   }
+
   input {
     width: 90%;
   }
@@ -62,6 +64,7 @@
         border-radius: 123px;
       }
     }
+
     .header_user_authorized_avatar {
       border-radius: 100%;
       width: 48px;

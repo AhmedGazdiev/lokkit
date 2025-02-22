@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 import {User} from '../../core/models/user';
 
 @Pipe({
@@ -7,7 +7,7 @@ import {User} from '../../core/models/user';
 export class NamePipe implements PipeTransform {
 
   transform(value: User): string {
-    return value.name + ' ' + value.username;
+    return value.fullName + ' ' + value.username;
   }
 
 }

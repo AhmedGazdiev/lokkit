@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
-import { UserService } from '../../../../core/services/user.service';
-import { InputComponent } from '../../../../shared/components/input/input.component';
+import {Component, inject} from '@angular/core';
+import {UserService} from '../../../../core/services/user.service';
+import {InputComponent} from '../../../../shared/components/input/input.component';
 
 @Component({
   selector: 'app-info',

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -6,11 +6,11 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   public isLoggedIn: boolean = true;
 
-  public login(data:any) {
+  public login(data: any) {
     console.log('User data:', data)
   }
 
-  public register(data:any) {
+  public register(data: any) {
     console.log('User data:', data)
   }
 

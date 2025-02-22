@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { User } from '../../../../core/models/user';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {User} from '../../../../core/models/user';
 import {UsernamePipe} from '../../../../shared/pipes/username.pipe';
 
 @Component({

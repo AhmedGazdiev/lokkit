@@ -3,7 +3,7 @@ import { User } from './models/user';
 export const usersData: User[] = [
   {
     _id: 123,
-    name: 'Ahmed Gazdiev',
+    fullName: 'Ahmed Gazdiev',
     username: 'ahm_gazdiev',
     email: 'ahmedgazdiev@example.com',
     avatar:
@@ -13,7 +13,7 @@ export const usersData: User[] = [
   },
   {
     _id: 456,
-    name: 'Mustafa Aushev',
+    fullName: 'Mustafa Aushev',
     username: 'm_aushev',
     email: 'mustafaaushev@example.com',
     avatar:
@@ -23,7 +23,7 @@ export const usersData: User[] = [
   },
   {
     _id: 789,
-    name: 'Yakhya Mestoev',
+    fullName: 'Yakhya Mestoev',
     username: 'yakhya_mestoev',
     email: 'yakhyanovate@example.com',
     avatar:
@@ -33,7 +33,7 @@ export const usersData: User[] = [
   },
   {
     _id: 101112,
-    name: 'Abu-Bakr user',
+    fullName: 'Abu-Bakr user',
     username: 'abu_aushev',
     email: 'abuaushev@example.com',
     avatar:
@@ -43,7 +43,7 @@ export const usersData: User[] = [
   },
   {
     _id: 131415,
-    name: 'Angelina Jolie',
+    fullName: 'Angelina Jolie',
     username: 'angelina_jol',
     email: 'angelinajol@example.com',
     avatar:
@@ -53,7 +53,7 @@ export const usersData: User[] = [
   },
   {
     _id: 161718,
-    name: 'John Wick',
+    fullName: 'John Wick',
     username: 'john_wick',
     email: 'johndwick@gexample.com',
     avatar:

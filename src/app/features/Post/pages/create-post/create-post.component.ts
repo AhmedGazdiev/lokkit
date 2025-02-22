@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {CreatePostFormComponent} from '../../components/create-post-form/create-post-form.component';
 
 @Component({

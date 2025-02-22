@@ -4,12 +4,11 @@ import {RouterLink} from '@angular/router';
 import {AuthService} from '../../../../core/services/auth.service';
 import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {passwordMatchValidator} from '../../password.validator';
-import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-register-form',
   imports: [
-    IconComponent, RouterLink, ReactiveFormsModule, NgIf
+    IconComponent, RouterLink, ReactiveFormsModule
   ],
   templateUrl: './register-form.component.html',
   styleUrl: './register-form.component.scss'

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { IconComponent } from '../icon/icon.component';
+import {Component} from '@angular/core';
+import {RouterLink} from '@angular/router';
+import {IconComponent} from '../icon/icon.component';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,4 +8,5 @@ import { IconComponent } from '../icon/icon.component';
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
 })
-export class SidebarComponent {}
+export class SidebarComponent {
+}

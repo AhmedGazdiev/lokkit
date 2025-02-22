@@ -1,8 +1,8 @@
-import { NgFor } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { User } from '../../../../core/models/user';
-import { UserService } from '../../../../core/services/user.service';
-import { UserComponent } from '../../components/user/user.component';
+import {NgFor} from '@angular/common';
+import {Component, inject} from '@angular/core';
+import {User} from '../../../../core/models/user';
+import {UserService} from '../../../../core/services/user.service';
+import {UserComponent} from '../../components/user/user.component';
 
 @Component({
   selector: 'app-users',
@@ -16,7 +16,7 @@ export class UsersComponent {
   updateUser(id: number): void {
     const updatedUser: User = {
       _id: id,
-      name: 'Usman Gazdiev',
+      fullName: 'Usman Gazdiev',
       username: '@usm_gaz',
       email: 'usman@mail.com',
       avatar:

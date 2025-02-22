@@ -20,8 +20,12 @@ export class CreatePostFormComponent {
 
   public postForm = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(4)]),
-    content: new FormControl('', [Validators.required, Validators.maxLength(300)]),
-    image: new FormControl(null, [Validators.required]),
+    content: new FormControl('', [
+      Validators.required,
+      Validators.minLength(12),
+      Validators.maxLength(300)
+    ]),
+    image: new FormControl(null),
     tags: new FormArray([])
   })
 

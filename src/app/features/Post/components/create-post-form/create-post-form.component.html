@@ -13,12 +13,14 @@
       type="text"
       placeholder="Title"
       formControlName="title"
+      [errors]="postForm.controls.title.errors"
     />
     <app-input
       class="input"
       type="text"
       placeholder="Content"
       formControlName="content"
+      [errors]="postForm.controls.content.errors"
     />
     <div formArrayName="tags">
       @for (tag of tags.controls; track $index) {

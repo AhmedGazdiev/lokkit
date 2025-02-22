@@ -72,6 +72,10 @@ body {
   &:active {
     transform: scale(.95);
   }
+
+  &:disabled {
+    opacity: 0.8;
+  }
 }
 
 .un-btn {
@@ -92,6 +96,10 @@ body {
 
   &:active {
     transform: scale(.95);
+  }
+
+  &:disabled {
+    opacity: 0.8;
   }
 }
 

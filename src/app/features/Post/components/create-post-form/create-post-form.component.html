@@ -13,6 +13,8 @@
       type="text"
       placeholder="Title"
       formControlName="title"
+      [initiallyInactive]="false"
+      [showIcon]="false"
       [errors]="postForm.controls.title.errors"
     />
     <app-input
@@ -20,6 +22,8 @@
       type="text"
       placeholder="Content"
       formControlName="content"
+      [initiallyInactive]="false"
+      [showIcon]="false"
       [errors]="postForm.controls.content.errors"
     />
     <div formArrayName="tags">

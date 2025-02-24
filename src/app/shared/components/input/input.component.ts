@@ -10,7 +10,8 @@ import {
   signal,
   ViewChild,
 } from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {AbstractControl, ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {iconTypes} from '../../types';
 
 @Component({
   selector: 'app-input',

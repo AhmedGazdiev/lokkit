@@ -4,14 +4,14 @@ import {Post} from '../../../../core/models/post';
 import {IconComponent} from '../../../../shared/components/icon/icon.component';
 import {CutTextPipe} from '../../../../shared/pipes/cut-text.pipe';
 import {UsernamePipe} from '../../../../shared/pipes/username.pipe';
-import {RouterLink} from '@angular/router';
 import {DropDownItem} from '../../../../shared/components/drop-down/drop-down.type';
 import {PostService} from '../../../../core/services/post.service';
 import {DropDownComponent} from '../../../../shared/components/drop-down/drop-down.component';
+import {ShowIfLikedDirective} from '../../../../shared/directives/show-if-liked.directive';
 
 @Component({
   selector: 'app-post',
-  imports: [IconComponent, NgIf, CutTextPipe, UsernamePipe, RouterLink, DropDownComponent],
+  imports: [IconComponent, NgIf, CutTextPipe, UsernamePipe, DropDownComponent, ShowIfLikedDirective],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss',
 })
@@ -40,7 +40,6 @@ export class PostComponent implements OnInit {
       }
     ];
   }
-
 
 
   likePost(id: any) {

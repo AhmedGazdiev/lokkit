@@ -16,7 +16,7 @@
     </app-drop-down>
   </div>
   <div class="post_main">
-    <div class="post_main-text" [routerLink]="['/post', post._id, 'detail']">
+    <div class="post_main-text">
       {{ post.content | cutText }}
       @for (tag of post.tags; track $index) {
         <span class="post_main-text-span">#{{ tag }}</span>

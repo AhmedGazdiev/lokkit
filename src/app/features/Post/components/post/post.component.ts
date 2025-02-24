@@ -1,5 +1,5 @@
 import {NgIf} from '@angular/common';
-import {Component, EventEmitter, inject, Input, Output} from '@angular/core';
+import {Component, EventEmitter, inject, Input, OnInit, Output} from '@angular/core';
 import {Post} from '../../../../core/models/post';
 import {IconComponent} from '../../../../shared/components/icon/icon.component';
 import {CutTextPipe} from '../../../../shared/pipes/cut-text.pipe';
@@ -15,21 +15,33 @@ import {DropDownComponent} from '../../../../shared/components/drop-down/drop-do
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss',
 })
-export class PostComponent {
+export class PostComponent implements OnInit {
   @Input() post!: Post;
   @Output() likeFn = new EventEmitter();
   private postService = inject(PostService);
 
-  public dropDownItems: DropDownItem[] = [
-    {
-      label: 'Edit',
-      link: `/post/${this.post?._id}/edit`,
-    },
-    {
-      label: 'Delete',
-      click: () => this.postService.deletePost()
-    }
-  ];
+  public dropDownItems: DropDownItem[] = []
+
+  ngOnInit() {
+    this.dropDownItems = [
+      {
+        label: 'Detail',
+        // link: `/post/${this.post?._id}/detail`,
+        link: ['/post', this.post?._id, 'detail'],
+      },
+      {
+        label: 'Edit',
+        // link: `/post/${this.post?._id}/edit`,
+        link: ['/post', this.post?._id, 'edit'],
+      },
+      {
+        label: 'Delete',
+        click: () => this.postService.deletePost()
+      }
+    ];
+  }
+
+
 
   likePost(id: any) {
     this.likeFn.emit(id);

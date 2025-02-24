@@ -30,6 +30,10 @@ export class PostService {
     return postId;
   }
 
+  public updatePost(data: any) {
+    console.log('This post has been edited:', data);
+  }
+
   public deletePost() {
     console.log('this Post has been deleted')
   }

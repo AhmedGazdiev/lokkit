@@ -7,15 +7,16 @@
   @if (showDropdown) {
     <div class="dropdown-menu">
       @for (item of dropDownItems; track $index) {
-        @if (item.click) {
-          <button class="dropdown-menu-item" (click)="item.click()">
-            {{ item.label }}
-          </button>
-        } @else {
+        <ng-container *ngIf="item.link; else notLink">
           <a class="dropdown-menu-item" [routerLink]="item.link">
             {{ item.label }}
           </a>
-        }
+        </ng-container>
+        <ng-template #notLink>
+          <button class="dropdown-menu-item" (click)="item.click?.()">
+            {{ item.label }}
+          </button>
+        </ng-template>
       }
     </div>
   }

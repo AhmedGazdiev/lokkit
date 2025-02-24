@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -10,7 +10,8 @@ import {
   signal,
   ViewChild,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {AbstractControl, ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {iconTypes} from '../../types';
 
 @Component({
   selector: 'app-input',
@@ -32,12 +33,21 @@ export class InputComponent implements ControlValueAccessor {
   @Input() initiallyInactive: boolean = true;
   @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild('inputElement') inputElement!: ElementRef;
+  @Input() errors: { [key: string]: boolean } | null = null;
+
   isActive: boolean = false;
   valueSignal = signal<string>('');
-  private onChange: (value: string) => void = () => {};
-  private onTouched: () => void = () => {};
+  private onChange: (value: string) => void = () => {
+  };
+  private onTouched: () => void = () => {
+  };
 
-  constructor(private hostEl: ElementRef, private renderer: Renderer2) {}
+  constructor(private hostEl: ElementRef, private renderer: Renderer2) {
+  }
+
+  ngOnInit() {
+    this.isActive = !this.initiallyInactive;
+  }
 
   ngAfterViewInit(): void {
     const hostAttributes = this.hostEl.nativeElement.attributes;
@@ -54,9 +64,6 @@ export class InputComponent implements ControlValueAccessor {
       }
       this.renderer.setAttribute(inputEl, attr.name, attr.value);
     }
-  }
-  ngOnInit() {
-    this.isActive = !this.initiallyInactive;
   }
 
   onInputChange(event: Event) {

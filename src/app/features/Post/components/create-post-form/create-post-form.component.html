@@ -1,0 +1,46 @@
+<div class="create_post_form">
+  <h3>Create a new Post</h3>
+  <form [formGroup]="postForm" (submit)="onSubmit()" class="post_form">
+    <label for="file" class='file_label'>
+      <input type="file" id='file' (change)="onChangeFile($event)" formControlName="image"/>
+      <app-icon [icon]="'plusGrey'"/>
+    </label>
+    @if (fileUrl) {
+      <img [src]="fileUrl" alt="image" class="post_image">
+    }
+    <app-input
+      class="input"
+      type="text"
+      placeholder="Title"
+      formControlName="title"
+      [initiallyInactive]="false"
+      [showIcon]="false"
+      [errors]="postForm.controls.title.errors"
+    />
+    <app-input
+      class="input"
+      type="text"
+      placeholder="Content"
+      formControlName="content"
+      [initiallyInactive]="false"
+      [showIcon]="false"
+      [errors]="postForm.controls.content.errors"
+    />
+    <div formArrayName="tags">
+      @for (tag of tags.controls; track $index) {
+        <div class="post_form_tag">
+          <label [for]="'tag-' + $index">
+            Тег {{ $index + 1 }}:
+            <input [id]="'tag-' + $index" [formControlName]="$index"/>
+          </label>
+          <button type="button" (click)="deleteTag($index)">
+            <app-icon [icon]="'close'"/>
+          </button>
+        </div>
+      }
+    </div>
+
+    <button type="button" (click)="addTag()">Добавить тег</button>
+    <button type="submit" class="btn">Create Post</button>
+  </form>
+</div>

@@ -66,7 +66,9 @@
   }
 
   .post_main-icons {
+    width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
     .post_main-icons-communicate {
@@ -91,6 +93,9 @@
         align-items: start;
         gap: 8px;
       }
+    }
+
+    .post_main-icons-bookmark {
     }
   }
 
@@ -156,3 +161,4 @@
     }
   }
 }
+

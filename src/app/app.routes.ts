@@ -17,6 +17,7 @@ export const routes: Routes = [
       {path: '', redirectTo: 'feed', pathMatch: 'full'},
       {
         path: 'profile/:id',
+        title: 'Profile',
         component: ProfileComponent,
         canActivate: [authGuard],
         loadChildren: () =>
@@ -33,6 +34,7 @@ export const routes: Routes = [
 
       {
         path: 'users',
+        title: 'Users',
         loadComponent: () =>
           import('./features/user/pages/users/users.component').then(
             (u) => u.UsersComponent
@@ -40,6 +42,7 @@ export const routes: Routes = [
       },
       {
         path: 'feed',
+        title: 'Feed Posts',
         component: FeedComponent
       },
     ],
@@ -49,10 +52,10 @@ export const routes: Routes = [
     component: NotAuthLayoutComponent,
     canActivate: [notAuthGuard],
     children: [
-      {path: 'login', component: LoginComponent},
-      {path: 'register', component: RegisterComponent},
+      {path: 'login', title: 'Login', component: LoginComponent},
+      {path: 'register', title: 'Register', component: RegisterComponent},
       {path: '', redirectTo: 'login', pathMatch: 'full'},
     ],
   },
-  {path: '**', component: NotFoundComponent},
+  {path: '**', title:'Page 404', component: NotFoundComponent},
 ];

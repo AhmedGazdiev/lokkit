@@ -1,0 +1,109 @@
+<div class="register box-shadow">
+  <div class="register_logo">
+    <app-icon [icon]="'bigLogo'"/>
+    <span>register</span>
+  </div>
+  <form class="form" [formGroup]="registerForm" (submit)="onSubmit()">
+    <label for="email">
+      <app-icon [icon]="'email'"/>
+      <input class="input" type="email" id="email" placeholder="Email" formControlName="email"/>
+    </label>
+    @if (registerForm.controls['email'].invalid
+    && registerForm.controls['email'].touched) {
+      @if (registerForm.get(['email'])?.errors?.['required']) {
+        <span class="form_error">
+        The email is required.
+      </span>
+      }
+      @if (registerForm.get(['email'])?.errors?.['email']) {
+        <span class="form_error">
+        The email isn't valid.
+      </span>
+      }
+    }
+    <label for="username">
+      <app-icon [icon]="'user'"/>
+      <input class="input" type="text" id="username" placeholder="Username" formControlName="username"/>
+    </label>
+    @if (registerForm.controls['username'].invalid
+    && registerForm.controls['username'].touched) {
+      @if (registerForm.get(['username'])?.errors?.['required']) {
+        <span class="form_error">
+        The username is required.
+      </span>
+      }
+      @if (registerForm.get(['username'])?.errors?.['minlength']) {
+        <span class="form_error">
+        The username must contain at least 4 characters.
+      </span>
+      }
+    }
+    <label for="password">
+      <app-icon [icon]="'unlock'"/>
+      <input
+        class="input"
+        type="password"
+        id="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+    </label>
+    @if (registerForm.controls['password'].invalid
+    && registerForm.controls['password'].touched) {
+      @if (registerForm.get(['password'])?.errors?.['required']) {
+        <span class="form_error">
+        The password is required.
+      </span>
+      }
+      @if (registerForm.get(['password'])?.errors?.['minlength']) {
+        <span class="form_error">
+        The password must contain at least 6 characters.
+      </span>
+      }
+    }
+    <label for="confirm_password">
+      <app-icon [icon]="'unlock'"/>
+      <input
+        class="input"
+        type="password"
+        id="confirm_password"
+        placeholder="Confirm Password"
+        formControlName="confirmPassword"
+      />
+    </label>
+    @if (registerForm.errors?.['passwordMismatch']
+    && registerForm.controls['confirmPassword'].touched) {
+      @if (registerForm.get(['confirmPassword'])?.errors?.['required']) {
+        <span class="form_error">
+        The confirmPassword is required.
+      </span>
+      }
+      @if (registerForm.get(['confirmPassword'])?.errors?.['minlength']) {
+        <span class="form_error">
+        The confirmPassword must contain at least 6 characters.
+      </span>
+      }
+      @if (registerForm.errors?.['passwordMismatch']) {
+        <span class="form_error">
+        Passwords don't match
+      </span>
+      }
+    }
+    <button class="btn" [disabled]="registerForm.invalid">Register</button>
+    <div class="account">
+      <span class="span">Don't have an account?</span>
+      <a class="link" [routerLink]="['/login']">LogIn</a>
+    </div>
+    <div class="link_btns">
+      <button>
+        <app-icon [icon]="'google'"/>
+      </button>
+      <button>
+        <app-icon [icon]="'vk'"/>
+      </button>
+      <button>
+        <app-icon [icon]="'youtube'"/>
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-not-auth-layout',
@@ -7,4 +7,5 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './not-auth-layout.component.html',
   styleUrl: './not-auth-layout.component.scss',
 })
-export class NotAuthLayoutComponent {}
+export class NotAuthLayoutComponent {
+}

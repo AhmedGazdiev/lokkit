@@ -1,21 +1,18 @@
-import { NgIf } from '@angular/common';
-import { Component, inject, Input } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import {Component, Input} from '@angular/core';
+import {RouterLink} from '@angular/router';
+import {DropDownItem} from './drop-down.type';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-drop-down',
-  imports: [NgIf, RouterLink],
+  imports: [RouterLink,NgIf],
   templateUrl: './drop-down.component.html',
   styleUrl: './drop-down.component.scss',
 })
 export class DropDownComponent {
-  @Input() avatar?: string;
-  @Input() id!: number | undefined;
-
+  @Input('appDropDown') dropDownItems!: DropDownItem[];
   showDropdown = false;
-  private router = inject(Router);
-
-  logout() {
-    this.router.navigate(['/login']);
+  ngOnInit() {
+    console.log(this.dropDownItems)
   }
 }

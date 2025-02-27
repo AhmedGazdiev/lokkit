@@ -19,6 +19,7 @@ body {
 
 .box-shadow {
   transition: all 0.5s ease;
+
   &:hover {
     -webkit-box-shadow: 0 0 25px -12px rgba(34, 60, 80, 0.5);
     -moz-box-shadow: 0 0 25px -12px rgba(34, 60, 80, 0.5);
@@ -46,9 +47,10 @@ body {
 }
 
 .main_container {
+  padding-top: 28px;
   max-width: 1420px;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .btn {
@@ -62,8 +64,17 @@ body {
   color: var(--white);
   transition: all 0.5s ease;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
   &:active {
-    transform: scale(1.1);
+    transform: scale(.95);
+  }
+
+  &:disabled {
+    opacity: 0.8;
   }
 }
 
@@ -78,8 +89,17 @@ body {
   letter-spacing: -0.7%;
   transition: all 0.5s ease;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
   &:active {
-    transform: scale(1.1);
+    transform: scale(.95);
+  }
+
+  &:disabled {
+    opacity: 0.8;
   }
 }
 
@@ -88,4 +108,9 @@ body {
   font-weight: 700;
   line-height: 28px;
   letter-spacing: -0.7%;
+}
+
+.form_error {
+  color: var(--red);
+  font-size: 12px;
 }

@@ -1,0 +1,1481 @@
+{
+  "users": [
+    {
+      "userId": "1",
+      "username": "ivan_ivanov",
+      "email": "ivanov@gmail.com",
+      "phoneNumber": "+7 900 123-45-67",
+      "password": "123456",
+      "profile": {
+        "firstName": "Иван",
+        "lastName": "Иванов",
+        "middleName": "Петрович",
+        "gender": "male",
+        "birthday": "1990-05-15",
+        "bio": "Люблю путешествия и футбол. Фронтенд-разработчик.",
+        "avatarUrl": "https://api.dicebear.com/9.x/adventurer/svg?seed=Jocelyn",
+        "coverPhotoUrl": "https://example.com/images/covers/ivan_cover.jpg",
+        "location": {
+          "country": "Россия",
+          "city": "Москва",
+          "address": "ул. Пушкина, д. 10, кв. 5",
+          "geoCoordinates": {
+            "latitude": 55.7558,
+            "longitude": 37.6173
+          }
+        },
+        "languages": ["ru", "en"]
+      },
+      "registrationDate": "2023-12-20T10:15:30Z",
+      "lastLoginDate": "2025-01-23T08:45:00Z",
+      "status": {
+        "online": false,
+        "lastSeen": "2025-01-23T08:50:00Z",
+        "currentActivity": "Просмотр ленты"
+      },
+      "verificationStatus": "verified",
+      "followersCount": 240,
+      "followingCount": 180,
+      "followers": [
+        {
+          "userId": "88888888",
+          "username": "petr_petrov",
+          "displayName": "Пётр Петров",
+          "avatarUrl": "https://example.com/images/avatars/petr.jpg",
+          "status": "online"
+        },
+        {
+          "userId": "77777777",
+          "username": "olga_smirnova",
+          "displayName": "Ольга Смирнова",
+          "avatarUrl": "https://example.com/images/avatars/olga.jpg",
+          "status": "offline"
+        }
+      ],
+      "following": [
+        {
+          "userId": "88888888",
+          "username": "petr_petrov",
+          "displayName": "Пётр Петров",
+          "avatarUrl": "https://example.com/images/avatars/petr.jpg",
+          "status": "online"
+        },
+        {
+          "userId": "77777777",
+          "username": "olga_smirnova",
+          "displayName": "Ольга Смирнова",
+          "avatarUrl": "https://example.com/images/avatars/olga.jpg",
+          "status": "offline"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "1001",
+          "groupName": "Футбольные фанаты",
+          "role": "admin",
+          "joinedDate": "2024-02-10T12:30:00Z"
+        },
+        {
+          "groupId": "1002",
+          "groupName": "Фронтенд-разработка",
+          "role": "member",
+          "joinedDate": "2024-03-05T09:45:00Z"
+        }
+      ],
+      "posts": [
+        {
+          "postId": "p-12345",
+          "creationDate": "2025-01-15T14:00:00Z",
+          "content": "Привет всем! Давно не виделись.",
+          "mediaUrls": [],
+          "likes": 15,
+          "comments": [
+            {
+              "commentId": "c-1",
+              "authorId": "88888888",
+              "authorUsername": "petr_petrov",
+              "text": "Иван, давно хотел спросить, как дела?",
+              "commentDate": "2025-01-15T14:10:00Z",
+              "likes": 2
+            }
+          ],
+          "visibility": "friends"
+        },
+        {
+          "postId": "p-12346",
+          "creationDate": "2025-01-18T09:25:00Z",
+          "content": "Наконец-то нашёл время разобрать фото из последней поездки!",
+          "mediaUrls": [
+            "https://example.com/images/posts/trip1.jpg",
+            "https://example.com/images/posts/trip2.jpg"
+          ],
+          "likes": 34,
+          "comments": [],
+          "visibility": "public"
+        }
+      ],
+      "notifications": [
+        {
+          "notificationId": "n-1001",
+          "type": "friend_request",
+          "fromUser": {
+            "userId": "66666666",
+            "username": "mary_sidorova"
+          },
+          "message": "Мария Сидорова хочет добавить вас в друзья.",
+          "date": "2025-01-22T20:15:00Z",
+          "read": false
+        },
+        {
+          "notificationId": "n-1002",
+          "type": "comment",
+          "fromUser": {
+            "userId": "77777777",
+            "username": "olga_smirnova"
+          },
+          "message": "Ольга прокомментировала ваш пост",
+          "date": "2025-01-23T07:50:00Z",
+          "read": true
+        }
+      ],
+      "messages": [
+        {
+          "conversationId": "conv-0001",
+          "withUserId": "88888888",
+          "withUsername": "petr_petrov",
+          "unreadCount": 0,
+          "lastMessage": {
+            "text": "Увидимся сегодня?",
+            "sentAt": "2025-01-23T08:00:00Z"
+          }
+        },
+        {
+          "conversationId": "conv-0002",
+          "withUserId": "77777777",
+          "withUsername": "olga_smirnova",
+          "unreadCount": 2,
+          "lastMessage": {
+            "text": "Я скинула тебе документы, посмотри!",
+            "sentAt": "2025-01-23T08:10:00Z"
+          }
+        }
+      ],
+      "preferences": {
+        "theme": "dark",
+        "language": "ru",
+        "timeZone": "Europe/Moscow",
+        "notificationSettings": {
+          "emailNotifications": true,
+          "pushNotifications": true,
+          "smsNotifications": false,
+          "friendRequest": true,
+          "comments": true,
+          "mentions": true
+        }
+      },
+      "privacySettings": {
+        "profileVisibility": "friends",
+        "showBirthday": true,
+        "showPhoneNumber": "onlyMe",
+        "showEmail": "friends",
+        "allowTagging": true,
+        "allowMessagesFromNonFriends": false
+      },
+      "accountSecurity": {
+        "passwordUpdatedDate": "2025-01-01T10:00:00Z",
+        "twoFactorEnabled": true,
+        "backupCodes": ["ABC123", "XYZ987", "JKL456", "QWE321"],
+        "loginHistory": [
+          {
+            "loginDate": "2025-01-23T08:45:00Z",
+            "ipAddress": "192.168.1.10",
+            "location": "Москва, Россия",
+            "device": "Chrome (Windows 10)"
+          },
+          {
+            "loginDate": "2025-01-22T21:00:00Z",
+            "ipAddress": "192.168.1.22",
+            "location": "Москва, Россия",
+            "device": "Mobile Safari (iPhone 14)"
+          }
+        ]
+      },
+      "statistics": {
+        "postCount": 325,
+        "commentsCount": 890,
+        "likesReceived": 4321,
+        "friendsGainedThisMonth": 10,
+        "averageDailyPosts": 2.1
+      },
+      "interests": [
+        "футбол",
+        "программирование",
+        "путешествия",
+        "история"
+      ],
+      "savedItems": [
+        {
+          "itemId": "p-99999",
+          "type": "post",
+          "title": "Интересная статья о фронтенде",
+          "savedDate": "2025-01-20T17:00:00Z"
+        },
+        {
+          "itemId": "g-2001",
+          "type": "group",
+          "title": "Клуб любителей музыки",
+          "savedDate": "2025-01-18T12:00:00Z"
+        }
+      ],
+      "thirdPartyConnections": [
+        {
+          "serviceName": "Facebook",
+          "linkedAccount": "ivan_ivanov_fb",
+          "linkedDate": "2024-12-10T14:30:00Z"
+        },
+        {
+          "serviceName": "Google",
+          "linkedAccount": "ivan.ivanov@gmail.com",
+          "linkedDate": "2025-01-05T09:00:00Z"
+        }
+      ],
+      "isDeleted": false,
+      "meta": {
+        "lastProfileUpdate": "2025-01-15T16:40:00Z",
+        "createdBy": "system",
+        "tags": ["VIP", "beta_tester"]
+      }
+    },
+    {
+      "userId": "2",
+      "username": "ivan_ivanov",
+      "email": "ivan.ivanov@example.com",
+      "phoneNumber": "+7 900 123-45-67",
+      "password": "123456",
+      "profile": {
+        "firstName": "Иван",
+        "lastName": "Иванов",
+        "middleName": "Петрович",
+        "gender": "male",
+        "birthday": "1990-05-15",
+        "bio": "Люблю путешествия и футбол. Фронтенд-разработчик.",
+        "avatarUrl": "https://api.dicebear.com/9.x/adventurer/svg?seed=Katherine",
+        "coverPhotoUrl": "https://example.com/images/covers/ivan_cover.jpg",
+        "location": {
+          "country": "Россия",
+          "city": "Москва",
+          "address": "ул. Пушкина, д. 10, кв. 5",
+          "geoCoordinates": {
+            "latitude": 55.7558,
+            "longitude": 37.6173
+          }
+        },
+        "languages": ["ru", "en"]
+      },
+      "registrationDate": "2023-12-20T10:15:30Z",
+      "lastLoginDate": "2025-01-23T08:45:00Z",
+      "status": {
+        "online": false,
+        "lastSeen": "2025-01-23T08:50:00Z",
+        "currentActivity": "Просмотр ленты"
+      },
+      "verificationStatus": "verified",
+      "followersCount": 240,
+      "followingCount": 180,
+      "followers": [
+        {
+          "userId": "88888888",
+          "username": "petr_petrov",
+          "displayName": "Пётр Петров",
+          "avatarUrl": "https://example.com/images/avatars/petr.jpg",
+          "status": "online"
+        },
+        {
+          "userId": "77777777",
+          "username": "olga_smirnova",
+          "displayName": "Ольга Смирнова",
+          "avatarUrl": "https://example.com/images/avatars/olga.jpg",
+          "status": "offline"
+        }
+      ],
+      "following": [
+        {
+          "userId": "88888888",
+          "username": "petr_petrov",
+          "displayName": "Пётр Петров",
+          "avatarUrl": "https://example.com/images/avatars/petr.jpg",
+          "status": "online"
+        },
+        {
+          "userId": "77777777",
+          "username": "olga_smirnova",
+          "displayName": "Ольга Смирнова",
+          "avatarUrl": "https://example.com/images/avatars/olga.jpg",
+          "status": "offline"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "1001",
+          "groupName": "Футбольные фанаты",
+          "role": "admin",
+          "joinedDate": "2024-02-10T12:30:00Z"
+        },
+        {
+          "groupId": "1002",
+          "groupName": "Фронтенд-разработка",
+          "role": "member",
+          "joinedDate": "2024-03-05T09:45:00Z"
+        }
+      ],
+      "posts": [
+        {
+          "postId": "p-12345",
+          "creationDate": "2025-01-15T14:00:00Z",
+          "content": "Привет всем! Давно не виделись.",
+          "mediaUrls": [],
+          "likes": 15,
+          "comments": [
+            {
+              "commentId": "c-1",
+              "authorId": "88888888",
+              "authorUsername": "petr_petrov",
+              "text": "Иван, давно хотел спросить, как дела?",
+              "commentDate": "2025-01-15T14:10:00Z",
+              "likes": 2
+            }
+          ],
+          "visibility": "friends"
+        },
+        {
+          "postId": "p-12346",
+          "creationDate": "2025-01-18T09:25:00Z",
+          "content": "Наконец-то нашёл время разобрать фото из последней поездки!",
+          "mediaUrls": [
+            "https://example.com/images/posts/trip1.jpg",
+            "https://example.com/images/posts/trip2.jpg"
+          ],
+          "likes": 34,
+          "comments": [],
+          "visibility": "public"
+        }
+      ],
+      "notifications": [
+        {
+          "notificationId": "n-1001",
+          "type": "friend_request",
+          "fromUser": {
+            "userId": "66666666",
+            "username": "mary_sidorova"
+          },
+          "message": "Мария Сидорова хочет добавить вас в друзья.",
+          "date": "2025-01-22T20:15:00Z",
+          "read": false
+        },
+        {
+          "notificationId": "n-1002",
+          "type": "comment",
+          "fromUser": {
+            "userId": "77777777",
+            "username": "olga_smirnova"
+          },
+          "message": "Ольга прокомментировала ваш пост",
+          "date": "2025-01-23T07:50:00Z",
+          "read": true
+        }
+      ],
+      "messages": [
+        {
+          "conversationId": "conv-0001",
+          "withUserId": "88888888",
+          "withUsername": "petr_petrov",
+          "unreadCount": 0,
+          "lastMessage": {
+            "text": "Увидимся сегодня?",
+            "sentAt": "2025-01-23T08:00:00Z"
+          }
+        },
+        {
+          "conversationId": "conv-0002",
+          "withUserId": "77777777",
+          "withUsername": "olga_smirnova",
+          "unreadCount": 2,
+          "lastMessage": {
+            "text": "Я скинула тебе документы, посмотри!",
+            "sentAt": "2025-01-23T08:10:00Z"
+          }
+        }
+      ],
+      "preferences": {
+        "theme": "dark",
+        "language": "ru",
+        "timeZone": "Europe/Moscow",
+        "notificationSettings": {
+          "emailNotifications": true,
+          "pushNotifications": true,
+          "smsNotifications": false,
+          "friendRequest": true,
+          "comments": true,
+          "mentions": true
+        }
+      },
+      "privacySettings": {
+        "profileVisibility": "friends",
+        "showBirthday": true,
+        "showPhoneNumber": "onlyMe",
+        "showEmail": "friends",
+        "allowTagging": true,
+        "allowMessagesFromNonFriends": false
+      },
+      "accountSecurity": {
+        "passwordUpdatedDate": "2025-01-01T10:00:00Z",
+        "twoFactorEnabled": true,
+        "backupCodes": ["ABC123", "XYZ987", "JKL456", "QWE321"],
+        "loginHistory": [
+          {
+            "loginDate": "2025-01-23T08:45:00Z",
+            "ipAddress": "192.168.1.10",
+            "location": "Москва, Россия",
+            "device": "Chrome (Windows 10)"
+          },
+          {
+            "loginDate": "2025-01-22T21:00:00Z",
+            "ipAddress": "192.168.1.22",
+            "location": "Москва, Россия",
+            "device": "Mobile Safari (iPhone 14)"
+          }
+        ]
+      },
+      "statistics": {
+        "postCount": 325,
+        "commentsCount": 890,
+        "likesReceived": 4321,
+        "friendsGainedThisMonth": 10,
+        "averageDailyPosts": 2.1
+      },
+      "interests": [
+        "футбол",
+        "программирование",
+        "путешествия",
+        "история"
+      ],
+      "savedItems": [
+        {
+          "itemId": "p-99999",
+          "type": "post",
+          "title": "Интересная статья о фронтенде",
+          "savedDate": "2025-01-20T17:00:00Z"
+        },
+        {
+          "itemId": "g-2001",
+          "type": "group",
+          "title": "Клуб любителей музыки",
+          "savedDate": "2025-01-18T12:00:00Z"
+        }
+      ],
+      "thirdPartyConnections": [
+        {
+          "serviceName": "Facebook",
+          "linkedAccount": "ivan_ivanov_fb",
+          "linkedDate": "2024-12-10T14:30:00Z"
+        },
+        {
+          "serviceName": "Google",
+          "linkedAccount": "ivan.ivanov@gmail.com",
+          "linkedDate": "2025-01-05T09:00:00Z"
+        }
+      ],
+      "isDeleted": false,
+      "meta": {
+        "lastProfileUpdate": "2025-01-15T16:40:00Z",
+        "createdBy": "system",
+        "tags": ["VIP", "beta_tester"]
+      }
+    },
+    {
+      "userId": "3",
+      "username": "ivan_ivanov",
+      "email": "ivan.ivanov@example.com",
+      "phoneNumber": "+7 900 123-45-67",
+      "password": "123456",
+      "profile": {
+        "firstName": "Иван",
+        "lastName": "Иванов",
+        "middleName": "Петрович",
+        "gender": "male",
+        "birthday": "1990-05-15",
+        "bio": "Люблю путешествия и футбол. Фронтенд-разработчик.",
+        "avatarUrl": "https://api.dicebear.com/9.x/adventurer/svg?seed=Valentina",
+        "coverPhotoUrl": "https://example.com/images/covers/ivan_cover.jpg",
+        "location": {
+          "country": "Россия",
+          "city": "Москва",
+          "address": "ул. Пушкина, д. 10, кв. 5",
+          "geoCoordinates": {
+            "latitude": 55.7558,
+            "longitude": 37.6173
+          }
+        },
+        "languages": ["ru", "en"]
+      },
+      "registrationDate": "2023-12-20T10:15:30Z",
+      "lastLoginDate": "2025-01-23T08:45:00Z",
+      "status": {
+        "online": false,
+        "lastSeen": "2025-01-23T08:50:00Z",
+        "currentActivity": "Просмотр ленты"
+      },
+      "verificationStatus": "verified",
+      "followersCount": 240,
+      "followingCount": 180,
+      "followers": [
+        {
+          "userId": "88888888",
+          "username": "petr_petrov",
+          "displayName": "Пётр Петров",
+          "avatarUrl": "https://example.com/images/avatars/petr.jpg",
+          "status": "online"
+        },
+        {
+          "userId": "77777777",
+          "username": "olga_smirnova",
+          "displayName": "Ольга Смирнова",
+          "avatarUrl": "https://example.com/images/avatars/olga.jpg",
+          "status": "offline"
+        }
+      ],
+      "following": [
+        {
+          "userId": "88888888",
+          "username": "petr_petrov",
+          "displayName": "Пётр Петров",
+          "avatarUrl": "https://example.com/images/avatars/petr.jpg",
+          "status": "online"
+        },
+        {
+          "userId": "77777777",
+          "username": "olga_smirnova",
+          "displayName": "Ольга Смирнова",
+          "avatarUrl": "https://example.com/images/avatars/olga.jpg",
+          "status": "offline"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "1001",
+          "groupName": "Футбольные фанаты",
+          "role": "admin",
+          "joinedDate": "2024-02-10T12:30:00Z"
+        },
+        {
+          "groupId": "1002",
+          "groupName": "Фронтенд-разработка",
+          "role": "member",
+          "joinedDate": "2024-03-05T09:45:00Z"
+        }
+      ],
+      "posts": [
+        {
+          "postId": "p-12345",
+          "creationDate": "2025-01-15T14:00:00Z",
+          "content": "Привет всем! Давно не виделись.",
+          "mediaUrls": [],
+          "likes": 15,
+          "comments": [
+            {
+              "commentId": "c-1",
+              "authorId": "88888888",
+              "authorUsername": "petr_petrov",
+              "text": "Иван, давно хотел спросить, как дела?",
+              "commentDate": "2025-01-15T14:10:00Z",
+              "likes": 2
+            }
+          ],
+          "visibility": "friends"
+        },
+        {
+          "postId": "p-12346",
+          "creationDate": "2025-01-18T09:25:00Z",
+          "content": "Наконец-то нашёл время разобрать фото из последней поездки!",
+          "mediaUrls": [
+            "https://example.com/images/posts/trip1.jpg",
+            "https://example.com/images/posts/trip2.jpg"
+          ],
+          "likes": 34,
+          "comments": [],
+          "visibility": "public"
+        }
+      ],
+      "notifications": [
+        {
+          "notificationId": "n-1001",
+          "type": "friend_request",
+          "fromUser": {
+            "userId": "66666666",
+            "username": "mary_sidorova"
+          },
+          "message": "Мария Сидорова хочет добавить вас в друзья.",
+          "date": "2025-01-22T20:15:00Z",
+          "read": false
+        },
+        {
+          "notificationId": "n-1002",
+          "type": "comment",
+          "fromUser": {
+            "userId": "77777777",
+            "username": "olga_smirnova"
+          },
+          "message": "Ольга прокомментировала ваш пост",
+          "date": "2025-01-23T07:50:00Z",
+          "read": true
+        }
+      ],
+      "messages": [
+        {
+          "conversationId": "conv-0001",
+          "withUserId": "88888888",
+          "withUsername": "petr_petrov",
+          "unreadCount": 0,
+          "lastMessage": {
+            "text": "Увидимся сегодня?",
+            "sentAt": "2025-01-23T08:00:00Z"
+          }
+        },
+        {
+          "conversationId": "conv-0002",
+          "withUserId": "77777777",
+          "withUsername": "olga_smirnova",
+          "unreadCount": 2,
+          "lastMessage": {
+            "text": "Я скинула тебе документы, посмотри!",
+            "sentAt": "2025-01-23T08:10:00Z"
+          }
+        }
+      ],
+      "preferences": {
+        "theme": "dark",
+        "language": "ru",
+        "timeZone": "Europe/Moscow",
+        "notificationSettings": {
+          "emailNotifications": true,
+          "pushNotifications": true,
+          "smsNotifications": false,
+          "friendRequest": true,
+          "comments": true,
+          "mentions": true
+        }
+      },
+      "privacySettings": {
+        "profileVisibility": "friends",
+        "showBirthday": true,
+        "showPhoneNumber": "onlyMe",
+        "showEmail": "friends",
+        "allowTagging": true,
+        "allowMessagesFromNonFriends": false
+      },
+      "accountSecurity": {
+        "passwordUpdatedDate": "2025-01-01T10:00:00Z",
+        "twoFactorEnabled": true,
+        "backupCodes": ["ABC123", "XYZ987", "JKL456", "QWE321"],
+        "loginHistory": [
+          {
+            "loginDate": "2025-01-23T08:45:00Z",
+            "ipAddress": "192.168.1.10",
+            "location": "Москва, Россия",
+            "device": "Chrome (Windows 10)"
+          },
+          {
+            "loginDate": "2025-01-22T21:00:00Z",
+            "ipAddress": "192.168.1.22",
+            "location": "Москва, Россия",
+            "device": "Mobile Safari (iPhone 14)"
+          }
+        ]
+      },
+      "statistics": {
+        "postCount": 325,
+        "commentsCount": 890,
+        "likesReceived": 4321,
+        "friendsGainedThisMonth": 10,
+        "averageDailyPosts": 2.1
+      },
+      "interests": [
+        "футбол",
+        "программирование",
+        "путешествия",
+        "история"
+      ],
+      "savedItems": [
+        {
+          "itemId": "p-99999",
+          "type": "post",
+          "title": "Интересная статья о фронтенде",
+          "savedDate": "2025-01-20T17:00:00Z"
+        },
+        {
+          "itemId": "g-2001",
+          "type": "group",
+          "title": "Клуб любителей музыки",
+          "savedDate": "2025-01-18T12:00:00Z"
+        }
+      ],
+      "thirdPartyConnections": [
+        {
+          "serviceName": "Facebook",
+          "linkedAccount": "ivan_ivanov_fb",
+          "linkedDate": "2024-12-10T14:30:00Z"
+        },
+        {
+          "serviceName": "Google",
+          "linkedAccount": "ivan.ivanov@gmail.com",
+          "linkedDate": "2025-01-05T09:00:00Z"
+        }
+      ],
+      "isDeleted": false,
+      "meta": {
+        "lastProfileUpdate": "2025-01-15T16:40:00Z",
+        "createdBy": "system",
+        "tags": ["VIP", "beta_tester"]
+      }
+    },
+    {
+      "userId": "4",
+      "username": "ivan_ivanov",
+      "email": "ivan.ivanov@example.com",
+      "phoneNumber": "+7 900 123-45-67",
+      "password": "123456",
+      "profile": {
+        "firstName": "Иван",
+        "lastName": "Иванов",
+        "middleName": "Петрович",
+        "gender": "male",
+        "birthday": "1990-05-15",
+        "bio": "Люблю путешествия и футбол. Фронтенд-разработчик.",
+        "avatarUrl": "https://api.dicebear.com/9.x/adventurer/svg?seed=Adrian",
+        "coverPhotoUrl": "https://example.com/images/covers/ivan_cover.jpg",
+        "location": {
+          "country": "Россия",
+          "city": "Москва",
+          "address": "ул. Пушкина, д. 10, кв. 5",
+          "geoCoordinates": {
+            "latitude": 55.7558,
+            "longitude": 37.6173
+          }
+        },
+        "languages": ["ru", "en"]
+      },
+      "registrationDate": "2023-12-20T10:15:30Z",
+      "lastLoginDate": "2025-01-23T08:45:00Z",
+      "status": {
+        "online": false,
+        "lastSeen": "2025-01-23T08:50:00Z",
+        "currentActivity": "Просмотр ленты"
+      },
+      "verificationStatus": "verified",
+      "followersCount": 240,
+      "followingCount": 180,
+      "followers": [
+        {
+          "userId": "88888888",
+          "username": "petr_petrov",
+          "displayName": "Пётр Петров",
+          "avatarUrl": "https://example.com/images/avatars/petr.jpg",
+          "status": "online"
+        },
+        {
+          "userId": "77777777",
+          "username": "olga_smirnova",
+          "displayName": "Ольга Смирнова",
+          "avatarUrl": "https://example.com/images/avatars/olga.jpg",
+          "status": "offline"
+        }
+      ],
+      "following": [
+        {
+          "userId": "88888888",
+          "username": "petr_petrov",
+          "displayName": "Пётр Петров",
+          "avatarUrl": "https://example.com/images/avatars/petr.jpg",
+          "status": "online"
+        },
+        {
+          "userId": "77777777",
+          "username": "olga_smirnova",
+          "displayName": "Ольга Смирнова",
+          "avatarUrl": "https://example.com/images/avatars/olga.jpg",
+          "status": "offline"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "1001",
+          "groupName": "Футбольные фанаты",
+          "role": "admin",
+          "joinedDate": "2024-02-10T12:30:00Z"
+        },
+        {
+          "groupId": "1002",
+          "groupName": "Фронтенд-разработка",
+          "role": "member",
+          "joinedDate": "2024-03-05T09:45:00Z"
+        }
+      ],
+      "posts": [
+        {
+          "postId": "p-12345",
+          "creationDate": "2025-01-15T14:00:00Z",
+          "content": "Привет всем! Давно не виделись.",
+          "mediaUrls": [],
+          "likes": 15,
+          "comments": [
+            {
+              "commentId": "c-1",
+              "authorId": "88888888",
+              "authorUsername": "petr_petrov",
+              "text": "Иван, давно хотел спросить, как дела?",
+              "commentDate": "2025-01-15T14:10:00Z",
+              "likes": 2
+            }
+          ],
+          "visibility": "friends"
+        },
+        {
+          "postId": "p-12346",
+          "creationDate": "2025-01-18T09:25:00Z",
+          "content": "Наконец-то нашёл время разобрать фото из последней поездки!",
+          "mediaUrls": [
+            "https://example.com/images/posts/trip1.jpg",
+            "https://example.com/images/posts/trip2.jpg"
+          ],
+          "likes": 34,
+          "comments": [],
+          "visibility": "public"
+        }
+      ],
+      "notifications": [
+        {
+          "notificationId": "n-1001",
+          "type": "friend_request",
+          "fromUser": {
+            "userId": "66666666",
+            "username": "mary_sidorova"
+          },
+          "message": "Мария Сидорова хочет добавить вас в друзья.",
+          "date": "2025-01-22T20:15:00Z",
+          "read": false
+        },
+        {
+          "notificationId": "n-1002",
+          "type": "comment",
+          "fromUser": {
+            "userId": "77777777",
+            "username": "olga_smirnova"
+          },
+          "message": "Ольга прокомментировала ваш пост",
+          "date": "2025-01-23T07:50:00Z",
+          "read": true
+        }
+      ],
+      "messages": [
+        {
+          "conversationId": "conv-0001",
+          "withUserId": "88888888",
+          "withUsername": "petr_petrov",
+          "unreadCount": 0,
+          "lastMessage": {
+            "text": "Увидимся сегодня?",
+            "sentAt": "2025-01-23T08:00:00Z"
+          }
+        },
+        {
+          "conversationId": "conv-0002",
+          "withUserId": "77777777",
+          "withUsername": "olga_smirnova",
+          "unreadCount": 2,
+          "lastMessage": {
+            "text": "Я скинула тебе документы, посмотри!",
+            "sentAt": "2025-01-23T08:10:00Z"
+          }
+        }
+      ],
+      "preferences": {
+        "theme": "dark",
+        "language": "ru",
+        "timeZone": "Europe/Moscow",
+        "notificationSettings": {
+          "emailNotifications": true,
+          "pushNotifications": true,
+          "smsNotifications": false,
+          "friendRequest": true,
+          "comments": true,
+          "mentions": true
+        }
+      },
+      "privacySettings": {
+        "profileVisibility": "friends",
+        "showBirthday": true,
+        "showPhoneNumber": "onlyMe",
+        "showEmail": "friends",
+        "allowTagging": true,
+        "allowMessagesFromNonFriends": false
+      },
+      "accountSecurity": {
+        "passwordUpdatedDate": "2025-01-01T10:00:00Z",
+        "twoFactorEnabled": true,
+        "backupCodes": ["ABC123", "XYZ987", "JKL456", "QWE321"],
+        "loginHistory": [
+          {
+            "loginDate": "2025-01-23T08:45:00Z",
+            "ipAddress": "192.168.1.10",
+            "location": "Москва, Россия",
+            "device": "Chrome (Windows 10)"
+          },
+          {
+            "loginDate": "2025-01-22T21:00:00Z",
+            "ipAddress": "192.168.1.22",
+            "location": "Москва, Россия",
+            "device": "Mobile Safari (iPhone 14)"
+          }
+        ]
+      },
+      "statistics": {
+        "postCount": 325,
+        "commentsCount": 890,
+        "likesReceived": 4321,
+        "friendsGainedThisMonth": 10,
+        "averageDailyPosts": 2.1
+      },
+      "interests": [
+        "футбол",
+        "программирование",
+        "путешествия",
+        "история"
+      ],
+      "savedItems": [
+        {
+          "itemId": "p-99999",
+          "type": "post",
+          "title": "Интересная статья о фронтенде",
+          "savedDate": "2025-01-20T17:00:00Z"
+        },
+        {
+          "itemId": "g-2001",
+          "type": "group",
+          "title": "Клуб любителей музыки",
+          "savedDate": "2025-01-18T12:00:00Z"
+        }
+      ],
+      "thirdPartyConnections": [
+        {
+          "serviceName": "Facebook",
+          "linkedAccount": "ivan_ivanov_fb",
+          "linkedDate": "2024-12-10T14:30:00Z"
+        },
+        {
+          "serviceName": "Google",
+          "linkedAccount": "ivan.ivanov@gmail.com",
+          "linkedDate": "2025-01-05T09:00:00Z"
+        }
+      ],
+      "isDeleted": false,
+      "meta": {
+        "lastProfileUpdate": "2025-01-15T16:40:00Z",
+        "createdBy": "system",
+        "tags": ["VIP", "beta_tester"]
+      }
+    },
+    {
+      "userId": "5",
+      "username": "ivan_ivanov",
+      "email": "ivan.ivanov@example.com",
+      "phoneNumber": "+7 900 123-45-67",
+      "password": "123456",
+      "profile": {
+        "firstName": "Иван",
+        "lastName": "Иванов",
+        "middleName": "Петрович",
+        "gender": "male",
+        "birthday": "1990-05-15",
+        "bio": "Люблю путешествия и футбол. Фронтенд-разработчик.",
+        "avatarUrl": "https://api.dicebear.com/9.x/adventurer/svg?seed=Aidan",
+        "coverPhotoUrl": "https://example.com/images/covers/ivan_cover.jpg",
+        "location": {
+          "country": "Россия",
+          "city": "Москва",
+          "address": "ул. Пушкина, д. 10, кв. 5",
+          "geoCoordinates": {
+            "latitude": 55.7558,
+            "longitude": 37.6173
+          }
+        },
+        "languages": ["ru", "en"]
+      },
+      "registrationDate": "2023-12-20T10:15:30Z",
+      "lastLoginDate": "2025-01-23T08:45:00Z",
+      "status": {
+        "online": false,
+        "lastSeen": "2025-01-23T08:50:00Z",
+        "currentActivity": "Просмотр ленты"
+      },
+      "verificationStatus": "verified",
+      "followersCount": 240,
+      "followingCount": 180,
+      "followers": [
+        {
+          "userId": "88888888",
+          "username": "petr_petrov",
+          "displayName": "Пётр Петров",
+          "avatarUrl": "https://example.com/images/avatars/petr.jpg",
+          "status": "online"
+        },
+        {
+          "userId": "77777777",
+          "username": "olga_smirnova",
+          "displayName": "Ольга Смирнова",
+          "avatarUrl": "https://example.com/images/avatars/olga.jpg",
+          "status": "offline"
+        }
+      ],
+      "following": [
+        {
+          "userId": "88888888",
+          "username": "petr_petrov",
+          "displayName": "Пётр Петров",
+          "avatarUrl": "https://example.com/images/avatars/petr.jpg",
+          "status": "online"
+        },
+        {
+          "userId": "77777777",
+          "username": "olga_smirnova",
+          "displayName": "Ольга Смирнова",
+          "avatarUrl": "https://example.com/images/avatars/olga.jpg",
+          "status": "offline"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "1001",
+          "groupName": "Футбольные фанаты",
+          "role": "admin",
+          "joinedDate": "2024-02-10T12:30:00Z"
+        },
+        {
+          "groupId": "1002",
+          "groupName": "Фронтенд-разработка",
+          "role": "member",
+          "joinedDate": "2024-03-05T09:45:00Z"
+        }
+      ],
+      "posts": [
+        {
+          "postId": "p-12345",
+          "creationDate": "2025-01-15T14:00:00Z",
+          "content": "Привет всем! Давно не виделись.",
+          "mediaUrls": [],
+          "likes": 15,
+          "comments": [
+            {
+              "commentId": "c-1",
+              "authorId": "88888888",
+              "authorUsername": "petr_petrov",
+              "text": "Иван, давно хотел спросить, как дела?",
+              "commentDate": "2025-01-15T14:10:00Z",
+              "likes": 2
+            }
+          ],
+          "visibility": "friends"
+        },
+        {
+          "postId": "p-12346",
+          "creationDate": "2025-01-18T09:25:00Z",
+          "content": "Наконец-то нашёл время разобрать фото из последней поездки!",
+          "mediaUrls": [
+            "https://example.com/images/posts/trip1.jpg",
+            "https://example.com/images/posts/trip2.jpg"
+          ],
+          "likes": 34,
+          "comments": [],
+          "visibility": "public"
+        }
+      ],
+      "notifications": [
+        {
+          "notificationId": "n-1001",
+          "type": "friend_request",
+          "fromUser": {
+            "userId": "66666666",
+            "username": "mary_sidorova"
+          },
+          "message": "Мария Сидорова хочет добавить вас в друзья.",
+          "date": "2025-01-22T20:15:00Z",
+          "read": false
+        },
+        {
+          "notificationId": "n-1002",
+          "type": "comment",
+          "fromUser": {
+            "userId": "77777777",
+            "username": "olga_smirnova"
+          },
+          "message": "Ольга прокомментировала ваш пост",
+          "date": "2025-01-23T07:50:00Z",
+          "read": true
+        }
+      ],
+      "messages": [
+        {
+          "conversationId": "conv-0001",
+          "withUserId": "88888888",
+          "withUsername": "petr_petrov",
+          "unreadCount": 0,
+          "lastMessage": {
+            "text": "Увидимся сегодня?",
+            "sentAt": "2025-01-23T08:00:00Z"
+          }
+        },
+        {
+          "conversationId": "conv-0002",
+          "withUserId": "77777777",
+          "withUsername": "olga_smirnova",
+          "unreadCount": 2,
+          "lastMessage": {
+            "text": "Я скинула тебе документы, посмотри!",
+            "sentAt": "2025-01-23T08:10:00Z"
+          }
+        }
+      ],
+      "preferences": {
+        "theme": "dark",
+        "language": "ru",
+        "timeZone": "Europe/Moscow",
+        "notificationSettings": {
+          "emailNotifications": true,
+          "pushNotifications": true,
+          "smsNotifications": false,
+          "friendRequest": true,
+          "comments": true,
+          "mentions": true
+        }
+      },
+      "privacySettings": {
+        "profileVisibility": "friends",
+        "showBirthday": true,
+        "showPhoneNumber": "onlyMe",
+        "showEmail": "friends",
+        "allowTagging": true,
+        "allowMessagesFromNonFriends": false
+      },
+      "accountSecurity": {
+        "passwordUpdatedDate": "2025-01-01T10:00:00Z",
+        "twoFactorEnabled": true,
+        "backupCodes": ["ABC123", "XYZ987", "JKL456", "QWE321"],
+        "loginHistory": [
+          {
+            "loginDate": "2025-01-23T08:45:00Z",
+            "ipAddress": "192.168.1.10",
+            "location": "Москва, Россия",
+            "device": "Chrome (Windows 10)"
+          },
+          {
+            "loginDate": "2025-01-22T21:00:00Z",
+            "ipAddress": "192.168.1.22",
+            "location": "Москва, Россия",
+            "device": "Mobile Safari (iPhone 14)"
+          }
+        ]
+      },
+      "statistics": {
+        "postCount": 325,
+        "commentsCount": 890,
+        "likesReceived": 4321,
+        "friendsGainedThisMonth": 10,
+        "averageDailyPosts": 2.1
+      },
+      "interests": [
+        "футбол",
+        "программирование",
+        "путешествия",
+        "история"
+      ],
+      "savedItems": [
+        {
+          "itemId": "p-99999",
+          "type": "post",
+          "title": "Интересная статья о фронтенде",
+          "savedDate": "2025-01-20T17:00:00Z"
+        },
+        {
+          "itemId": "g-2001",
+          "type": "group",
+          "title": "Клуб любителей музыки",
+          "savedDate": "2025-01-18T12:00:00Z"
+        }
+      ],
+      "thirdPartyConnections": [
+        {
+          "serviceName": "Facebook",
+          "linkedAccount": "ivan_ivanov_fb",
+          "linkedDate": "2024-12-10T14:30:00Z"
+        },
+        {
+          "serviceName": "Google",
+          "linkedAccount": "ivan.ivanov@gmail.com",
+          "linkedDate": "2025-01-05T09:00:00Z"
+        }
+      ],
+      "isDeleted": false,
+      "meta": {
+        "lastProfileUpdate": "2025-01-15T16:40:00Z",
+        "createdBy": "system",
+        "tags": ["VIP", "beta_tester"]
+      }
+    },
+    {
+      "userId": "6",
+      "username": "ivan_ivanov",
+      "email": "ivan.ivanov@example.com",
+      "phoneNumber": "+7 900 123-45-67",
+      "password": "123456",
+      "profile": {
+        "firstName": "Иван",
+        "lastName": "Иванов",
+        "middleName": "Петрович",
+        "gender": "male",
+        "birthday": "1990-05-15",
+        "bio": "Люблю путешествия и футбол. Фронтенд-разработчик.",
+        "avatarUrl": "https://api.dicebear.com/9.x/adventurer/svg?seed=Sara",
+        "coverPhotoUrl": "https://example.com/images/covers/ivan_cover.jpg",
+        "location": {
+          "country": "Россия",
+          "city": "Москва",
+          "address": "ул. Пушкина, д. 10, кв. 5",
+          "geoCoordinates": {
+            "latitude": 55.7558,
+            "longitude": 37.6173
+          }
+        },
+        "languages": ["ru", "en"]
+      },
+      "registrationDate": "2023-12-20T10:15:30Z",
+      "lastLoginDate": "2025-01-23T08:45:00Z",
+      "status": {
+        "online": false,
+        "lastSeen": "2025-01-23T08:50:00Z",
+        "currentActivity": "Просмотр ленты"
+      },
+      "verificationStatus": "verified",
+      "followersCount": 240,
+      "followingCount": 180,
+      "followers": [
+        {
+          "userId": "88888888",
+          "username": "petr_petrov",
+          "displayName": "Пётр Петров",
+          "avatarUrl": "https://example.com/images/avatars/petr.jpg",
+          "status": "online"
+        },
+        {
+          "userId": "77777777",
+          "username": "olga_smirnova",
+          "displayName": "Ольга Смирнова",
+          "avatarUrl": "https://example.com/images/avatars/olga.jpg",
+          "status": "offline"
+        }
+      ],
+      "following": [
+        {
+          "userId": "88888888",
+          "username": "petr_petrov",
+          "displayName": "Пётр Петров",
+          "avatarUrl": "https://example.com/images/avatars/petr.jpg",
+          "status": "online"
+        },
+        {
+          "userId": "77777777",
+          "username": "olga_smirnova",
+          "displayName": "Ольга Смирнова",
+          "avatarUrl": "https://example.com/images/avatars/olga.jpg",
+          "status": "offline"
+        }
+      ],
+      "groups": [
+        {
+          "groupId": "1001",
+          "groupName": "Футбольные фанаты",
+          "role": "admin",
+          "joinedDate": "2024-02-10T12:30:00Z"
+        },
+        {
+          "groupId": "1002",
+          "groupName": "Фронтенд-разработка",
+          "role": "member",
+          "joinedDate": "2024-03-05T09:45:00Z"
+        }
+      ],
+      "posts": [
+        {
+          "postId": "p-12345",
+          "creationDate": "2025-01-15T14:00:00Z",
+          "content": "Привет всем! Давно не виделись.",
+          "mediaUrls": [],
+          "likes": 15,
+          "comments": [
+            {
+              "commentId": "c-1",
+              "authorId": "88888888",
+              "authorUsername": "petr_petrov",
+              "text": "Иван, давно хотел спросить, как дела?",
+              "commentDate": "2025-01-15T14:10:00Z",
+              "likes": 2
+            }
+          ],
+          "visibility": "friends"
+        },
+        {
+          "postId": "p-12346",
+          "creationDate": "2025-01-18T09:25:00Z",
+          "content": "Наконец-то нашёл время разобрать фото из последней поездки!",
+          "mediaUrls": [
+            "https://example.com/images/posts/trip1.jpg",
+            "https://example.com/images/posts/trip2.jpg"
+          ],
+          "likes": 34,
+          "comments": [],
+          "visibility": "public"
+        }
+      ],
+      "notifications": [
+        {
+          "notificationId": "n-1001",
+          "type": "friend_request",
+          "fromUser": {
+            "userId": "66666666",
+            "username": "mary_sidorova"
+          },
+          "message": "Мария Сидорова хочет добавить вас в друзья.",
+          "date": "2025-01-22T20:15:00Z",
+          "read": false
+        },
+        {
+          "notificationId": "n-1002",
+          "type": "comment",
+          "fromUser": {
+            "userId": "77777777",
+            "username": "olga_smirnova"
+          },
+          "message": "Ольга прокомментировала ваш пост",
+          "date": "2025-01-23T07:50:00Z",
+          "read": true
+        }
+      ],
+      "messages": [
+        {
+          "conversationId": "conv-0001",
+          "withUserId": "88888888",
+          "withUsername": "petr_petrov",
+          "unreadCount": 0,
+          "lastMessage": {
+            "text": "Увидимся сегодня?",
+            "sentAt": "2025-01-23T08:00:00Z"
+          }
+        },
+        {
+          "conversationId": "conv-0002",
+          "withUserId": "77777777",
+          "withUsername": "olga_smirnova",
+          "unreadCount": 2,
+          "lastMessage": {
+            "text": "Я скинула тебе документы, посмотри!",
+            "sentAt": "2025-01-23T08:10:00Z"
+          }
+        }
+      ],
+      "preferences": {
+        "theme": "dark",
+        "language": "ru",
+        "timeZone": "Europe/Moscow",
+        "notificationSettings": {
+          "emailNotifications": true,
+          "pushNotifications": true,
+          "smsNotifications": false,
+          "friendRequest": true,
+          "comments": true,
+          "mentions": true
+        }
+      },
+      "privacySettings": {
+        "profileVisibility": "friends",
+        "showBirthday": true,
+        "showPhoneNumber": "onlyMe",
+        "showEmail": "friends",
+        "allowTagging": true,
+        "allowMessagesFromNonFriends": false
+      },
+      "accountSecurity": {
+        "passwordUpdatedDate": "2025-01-01T10:00:00Z",
+        "twoFactorEnabled": true,
+        "backupCodes": ["ABC123", "XYZ987", "JKL456", "QWE321"],
+        "loginHistory": [
+          {
+            "loginDate": "2025-01-23T08:45:00Z",
+            "ipAddress": "192.168.1.10",
+            "location": "Москва, Россия",
+            "device": "Chrome (Windows 10)"
+          },
+          {
+            "loginDate": "2025-01-22T21:00:00Z",
+            "ipAddress": "192.168.1.22",
+            "location": "Москва, Россия",
+            "device": "Mobile Safari (iPhone 14)"
+          }
+        ]
+      },
+      "statistics": {
+        "postCount": 325,
+        "commentsCount": 890,
+        "likesReceived": 4321,
+        "friendsGainedThisMonth": 10,
+        "averageDailyPosts": 2.1
+      },
+      "interests": [
+        "футбол",
+        "программирование",
+        "путешествия",
+        "история"
+      ],
+      "savedItems": [
+        {
+          "itemId": "p-99999",
+          "type": "post",
+          "title": "Интересная статья о фронтенде",
+          "savedDate": "2025-01-20T17:00:00Z"
+        },
+        {
+          "itemId": "g-2001",
+          "type": "group",
+          "title": "Клуб любителей музыки",
+          "savedDate": "2025-01-18T12:00:00Z"
+        }
+      ],
+      "thirdPartyConnections": [
+        {
+          "serviceName": "Facebook",
+          "linkedAccount": "ivan_ivanov_fb",
+          "linkedDate": "2024-12-10T14:30:00Z"
+        },
+        {
+          "serviceName": "Google",
+          "linkedAccount": "ivan.ivanov@gmail.com",
+          "linkedDate": "2025-01-05T09:00:00Z"
+        }
+      ],
+      "isDeleted": false,
+      "meta": {
+        "lastProfileUpdate": "2025-01-15T16:40:00Z",
+        "createdBy": "system",
+        "tags": ["VIP", "beta_tester"]
+      }
+    }
+  ]
+
+}

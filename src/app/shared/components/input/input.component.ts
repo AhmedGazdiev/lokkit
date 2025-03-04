@@ -1,4 +1,4 @@
-import {CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -8,10 +8,9 @@ import {
   Output,
   Renderer2,
   signal,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
-import {AbstractControl, ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {iconTypes} from '../../types';
+import { AbstractControl, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -22,9 +21,9 @@ import {iconTypes} from '../../types';
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => InputComponent),
-      multi: true,
-    },
-  ],
+      multi: true
+    }
+  ]
 })
 export class InputComponent implements ControlValueAccessor {
   @Input() type: string = 'text';
@@ -37,13 +36,13 @@ export class InputComponent implements ControlValueAccessor {
 
   isActive: boolean = false;
   valueSignal = signal<string>('');
-  private onChange: (value: string) => void = () => {
-  };
-  private onTouched: () => void = () => {
-  };
+  private onChange: (value: string) => void = () => {};
+  private onTouched: () => void = () => {};
 
-  constructor(private hostEl: ElementRef, private renderer: Renderer2) {
-  }
+  constructor(
+    private hostEl: ElementRef,
+    private renderer: Renderer2
+  ) {}
 
   ngOnInit() {
     this.isActive = !this.initiallyInactive;
@@ -55,11 +54,7 @@ export class InputComponent implements ControlValueAccessor {
 
     for (let i = 0; i < hostAttributes.length; i++) {
       const attr = hostAttributes[i];
-      if (
-        attr.name.startsWith('_ngcontent') ||
-        attr.name === 'class' ||
-        attr.name === 'style'
-      ) {
+      if (attr.name.startsWith('_ngcontent') || attr.name === 'class' || attr.name === 'style') {
         continue;
       }
       this.renderer.setAttribute(inputEl, attr.name, attr.value);

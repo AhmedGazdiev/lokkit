@@ -1,13 +1,13 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {ActivatedRoute, RouterLink, RouterOutlet} from '@angular/router';
-import {UserService} from '../../core/services/user.service';
-import {IconComponent} from '../../shared/components/icon/icon.component';
+import { Component, inject, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
+import { IconComponent } from '@/app/shared/components/icon/icon.component';
+import { UserService } from '@/app/core/services/user.service';
 
 @Component({
   selector: 'app-profile',
   imports: [RouterOutlet, RouterLink, IconComponent],
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.scss',
+  styleUrl: './profile.component.scss'
 })
 export class ProfileComponent implements OnInit {
   public userService = inject(UserService);

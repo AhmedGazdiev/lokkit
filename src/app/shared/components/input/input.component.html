@@ -1,12 +1,12 @@
 <div class="input_container">
   @if (iconType) {
-    <img class="img" src="assets/icons/{{ iconType }}.svg" alt=""/>
+    <img class="img" src="assets/icons/{{ iconType }}.svg" alt="" />
   }
   <input
     [ngClass]="{
-    'px-10': iconType,
-    'px-4': !iconType,
-  }"
+      'px-10': iconType,
+      'px-4': !iconType
+    }"
     class="input"
     #inputElement
     [type]="type"

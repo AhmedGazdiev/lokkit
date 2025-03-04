@@ -1,4 +1,4 @@
-import {Post} from './models/post';
+import { Post } from './models/post';
 
 export const postsData: Post[] = [
   {
@@ -12,7 +12,7 @@ export const postsData: Post[] = [
     likes: 0,
     comments: ['Отличный пост!', 'Спасибо за информацию.'],
     createdAt: '2023-10-01T12:00:00Z',
-    tags: ['природа', 'пейзажи', 'спорт'],
+    tags: ['природа', 'пейзажи', 'спорт']
   },
   {
     _id: 5678,
@@ -25,7 +25,7 @@ export const postsData: Post[] = [
     likes: 20,
     comments: ['Интересно!', 'Продолжайте в том же духе.'],
     createdAt: '2023-10-02T14:30:00Z',
-    tags: ['пейзажи', 'спорт', 'мир', 'машины'],
+    tags: ['пейзажи', 'спорт', 'мир', 'машины']
   },
   {
     _id: 9101112,
@@ -38,7 +38,7 @@ export const postsData: Post[] = [
     likes: 10,
     comments: ['Классно!', 'Жду новых постов.'],
     createdAt: '2023-10-03T09:15:00Z',
-    tags: ['спорт', 'мир', 'машины', 'frontend'],
+    tags: ['спорт', 'мир', 'машины', 'frontend']
   },
   {
     _id: 13141516,
@@ -51,7 +51,7 @@ export const postsData: Post[] = [
     likes: 25,
     comments: ['Отлично!', 'Спасибо за полезный контент.'],
     createdAt: '2023-10-04T16:45:00Z',
-    tags: ['пейзажи', 'спорт', 'мир', 'машины', 'frontend'],
+    tags: ['пейзажи', 'спорт', 'мир', 'машины', 'frontend']
   },
   {
     _id: 147715,
@@ -63,7 +63,7 @@ export const postsData: Post[] = [
     likes: 111,
     comments: ['Класс!', 'Программирование топ!!!'],
     createdAt: '2023-10-04T16:45:00Z',
-    tags: ['программирование', 'разработка', 'frontend'],
+    tags: ['программирование', 'разработка', 'frontend']
   },
   {
     _id: 17181920,
@@ -76,7 +76,7 @@ export const postsData: Post[] = [
     likes: 30,
     comments: ['Супер!', 'Очень интересно.'],
     createdAt: '2023-10-05T11:00:00Z',
-    tags: ['природа', 'пейзажи', 'мир'],
+    tags: ['природа', 'пейзажи', 'мир']
   },
   {
     _id: 21222324,
@@ -89,7 +89,7 @@ export const postsData: Post[] = [
     likes: 0,
     comments: ['Круто!', 'Продолжайте радовать нас.'],
     createdAt: '2023-10-06T13:20:00Z',
-    tags: ['спорт', 'машины'],
+    tags: ['спорт', 'машины']
   },
   {
     _id: 25262728,
@@ -102,7 +102,7 @@ export const postsData: Post[] = [
     likes: 22,
     comments: ['Отличная работа!', 'Спасибо за пост.'],
     createdAt: '2023-10-07T10:10:00Z',
-    tags: ['программирование', 'frontend'],
+    tags: ['программирование', 'frontend']
   },
   {
     _id: 29303132,
@@ -115,7 +115,7 @@ export const postsData: Post[] = [
     likes: 0,
     comments: ['Интересный материал!', 'Спасибо за информацию.'],
     createdAt: '2023-10-08T17:00:00Z',
-    tags: ['спорт', 'программирование', 'frontend'],
+    tags: ['спорт', 'программирование', 'frontend']
   },
   {
     _id: 33343536,
@@ -128,7 +128,7 @@ export const postsData: Post[] = [
     likes: 28,
     comments: ['Отличный пост!', 'Очень полезно.'],
     createdAt: '2023-10-09T08:45:00Z',
-    tags: ['программирование', 'frontend'],
+    tags: ['программирование', 'frontend']
   },
   {
     _id: 33551,
@@ -140,7 +140,7 @@ export const postsData: Post[] = [
     likes: 1201,
     comments: ['Класс!', 'Программирование топ!!!'],
     createdAt: '2023-10-04T16:45:00Z',
-    tags: ['программирование', 'разработка', 'frontend'],
+    tags: ['программирование', 'разработка', 'frontend']
   },
   {
     _id: 37383940,
@@ -153,6 +153,6 @@ export const postsData: Post[] = [
     likes: 0,
     comments: ['Супер!', 'Спасибо за интересный контент.'],
     createdAt: '2023-10-10T15:30:00Z',
-    tags: ['природа', 'пейзажи', 'программирование', 'frontend'],
-  },
+    tags: ['природа', 'пейзажи', 'программирование', 'frontend']
+  }
 ];

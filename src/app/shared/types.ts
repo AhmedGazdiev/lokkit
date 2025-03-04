@@ -35,4 +35,5 @@ export type iconTypes =
   | 'plus'
   | 'plusGrey'
   | 'plusRed'
-  | 'logout' | 'close'
+  | 'logout'
+  | 'close';

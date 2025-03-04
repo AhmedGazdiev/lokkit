@@ -1,7 +1,7 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'cutText',
+  name: 'cutText'
 })
 export class CutTextPipe implements PipeTransform {
   transform(value: string, max: number = 100): string {

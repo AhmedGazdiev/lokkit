@@ -1,14 +1,12 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {User} from '../../../../core/models/user';
-import {UsernamePipe} from '../../../../shared/pipes/username.pipe';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { UsernamePipe } from '@/app/shared/pipes/username.pipe';
+import { User } from '@/app/core/models/user';
 
 @Component({
   selector: 'app-user',
-  imports: [
-    UsernamePipe
-  ],
+  imports: [UsernamePipe],
   templateUrl: './user.component.html',
-  styleUrl: './user.component.scss',
+  styleUrl: './user.component.scss'
 })
 export class UserComponent {
   @Input() user!: User;

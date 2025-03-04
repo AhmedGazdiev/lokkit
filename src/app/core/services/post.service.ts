@@ -1,16 +1,16 @@
-import {Injectable} from '@angular/core';
-import {Post} from '../models/post';
-import {postsData} from '../postsData';
+import { Injectable } from '@angular/core';
+import { postsData } from '../postsData';
+import { Post } from '@/app/core/models/post';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class PostService {
   public posts: Post[] = postsData;
   public post!: Post | undefined;
 
   public createPost(data: any) {
-    console.log(data)
+    console.log(data);
   }
 
   public getPosts() {
@@ -18,7 +18,7 @@ export class PostService {
   }
 
   public getPostById(id: number) {
-    this.post = this.posts.find((post) => post._id === id);
+    this.post = this.posts.find(post => post._id === id);
     return this.post;
   }
 
@@ -35,6 +35,6 @@ export class PostService {
   }
 
   public deletePost() {
-    console.log('this Post has been deleted')
+    console.log('this Post has been deleted');
   }
 }

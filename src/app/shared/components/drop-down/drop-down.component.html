@@ -1,9 +1,5 @@
-<div
-  class="user-avatar"
-  (mouseenter)="showDropdown = true"
-  (mouseleave)="showDropdown = false"
->
-  <ng-content/>
+<div class="user-avatar" (mouseenter)="showDropdown = true" (mouseleave)="showDropdown = false">
+  <ng-content />
   @if (showDropdown) {
     <div class="dropdown-menu">
       @for (item of dropDownItems; track $index) {

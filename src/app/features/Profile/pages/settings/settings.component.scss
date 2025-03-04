@@ -66,10 +66,12 @@
     background-color: var(--border);
     border: 2px solid var(--border);
     border-radius: 4px;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition:
+      background-color 0.3s,
+      border-color 0.3s;
 
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       display: none;
       left: 6px;

@@ -1,13 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Post } from '../../../../core/models/post';
-import { PostService } from '../../../../core/services/post.service';
+import { PostService } from '@/app/core/services/post.service';
+import { Post } from '@/app/core/models/post';
 
 @Component({
   selector: 'app-detail-post',
   imports: [],
   templateUrl: './detail-post.component.html',
-  styleUrl: './detail-post.component.scss',
+  styleUrl: './detail-post.component.scss'
 })
 export class DetailPostComponent implements OnInit {
   private postService = inject(PostService);

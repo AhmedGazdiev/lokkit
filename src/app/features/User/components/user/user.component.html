@@ -1,10 +1,10 @@
 <div class="user box-shadow">
-  <div class="user_info">
-    <img class="user_info-avatar" [src]="user.avatar" alt="" />
-    <div class="user_info-desc">
-      <p class="user_info-desc-name">{{ user.fullName }}</p>
-      <p class="user_info-desc-username">{{ user.username | username }}</p>
+    <div class="user_info">
+        <img class="user_info-avatar" [src]="user.avatar" alt="" />
+        <div class="user_info-desc">
+            <p class="user_info-desc-name">{{ user.fullName }}</p>
+            <p class="user_info-desc-username">{{ user.username | username }}</p>
+        </div>
     </div>
-  </div>
-  <button class="btn" (click)="updateUser(user._id)">update</button>
+    <button class="btn" (click)="updateUser(user._id)">update</button>
 </div>

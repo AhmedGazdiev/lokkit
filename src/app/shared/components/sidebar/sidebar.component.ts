@@ -3,9 +3,9 @@ import { RouterLink } from '@angular/router';
 import { IconComponent } from '@/app/shared/components/icon/icon.component';
 
 @Component({
-  selector: 'app-sidebar',
-  imports: [IconComponent, RouterLink],
-  templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss'
+    selector: 'app-sidebar',
+    imports: [IconComponent, RouterLink],
+    templateUrl: './sidebar.component.html',
+    styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {}

@@ -1,41 +1,41 @@
 .profile_container {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 22px;
-  padding: 28px 0 28px 28px;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 22px;
+    padding: 28px 0 28px 28px;
+    width: 100%;
 }
 
 h2 {
-  font-size: 32px;
-  font-weight: 700;
+    font-size: 32px;
+    font-weight: 700;
 }
 
 .profile_links {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-
-  a {
-    padding: 8px 12px;
-    border-radius: 10px;
-
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 16px;
-    color: var(--color);
-    background-color: var(--white);
-    transition: all 0.5s ease;
+    gap: 30px;
 
-    &:active {
-      background-color: var(--border);
+    a {
+        padding: 8px 12px;
+        border-radius: 10px;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        color: var(--color);
+        background-color: var(--white);
+        transition: all 0.5s ease;
+
+        &:active {
+            background-color: var(--border);
+        }
     }
-  }
 }
 
 .active-link {
-  background-color: var(--border);
-  color: var(--white);
+    background-color: var(--border);
+    color: var(--white);
 }

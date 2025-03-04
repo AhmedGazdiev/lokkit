@@ -4,9 +4,9 @@ import { SidebarComponent } from '@/app/shared/components/sidebar/sidebar.compon
 import { HeaderComponent } from '@/app/shared/components/header/header.component';
 
 @Component({
-  selector: 'app-auth-layout',
-  imports: [RouterOutlet, SidebarComponent, HeaderComponent],
-  templateUrl: './auth-layout.component.html',
-  styleUrl: './auth-layout.component.scss'
+    selector: 'app-auth-layout',
+    imports: [RouterOutlet, SidebarComponent, HeaderComponent],
+    templateUrl: './auth-layout.component.html',
+    styleUrl: './auth-layout.component.scss'
 })
 export class AuthLayoutComponent {}

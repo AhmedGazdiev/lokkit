@@ -4,11 +4,11 @@ import { PasswordFormComponent } from '@/app/features/profile/components/passwor
 import { UserService } from '@/app/core/services/user.service';
 
 @Component({
-  selector: 'app-info',
-  imports: [InfoFormComponent, PasswordFormComponent],
-  templateUrl: './info.component.html',
-  styleUrl: './info.component.scss'
+    selector: 'app-info',
+    imports: [InfoFormComponent, PasswordFormComponent],
+    templateUrl: './info.component.html',
+    styleUrl: './info.component.scss'
 })
 export class InfoComponent {
-  public userService = inject(UserService);
+    public userService = inject(UserService);
 }

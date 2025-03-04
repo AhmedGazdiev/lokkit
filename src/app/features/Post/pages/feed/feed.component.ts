@@ -4,15 +4,15 @@ import { SuggestionsComponent } from '@/app/shared/components/suggestions/sugges
 import { PostService } from '@/app/core/services/post.service';
 
 @Component({
-  selector: 'app-feed',
-  imports: [PostComponent, SuggestionsComponent],
-  templateUrl: './feed.component.html',
-  styleUrl: './feed.component.scss'
+    selector: 'app-feed',
+    imports: [PostComponent, SuggestionsComponent],
+    templateUrl: './feed.component.html',
+    styleUrl: './feed.component.scss'
 })
 export class FeedComponent {
-  public postService = inject(PostService);
+    public postService = inject(PostService);
 
-  like(id: number) {
-    this.postService.likePost(id);
-  }
+    like(id: number) {
+        this.postService.likePost(id);
+    }
 }

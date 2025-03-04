@@ -1,24 +1,24 @@
 .profile_section1 {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
-
-  .profile_avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 100%;
-  }
-
-  .profile_user_btns {
     display: flex;
     align-items: center;
-    gap: 10px;
-  }
+    gap: 16px;
+    margin-bottom: 24px;
+
+    .profile_avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+    }
+
+    .profile_user_btns {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 }
 
 .profile_section2 {
-  display: flex;
-  align-items: center;
-  gap: 44px;
+    display: flex;
+    align-items: center;
+    gap: 44px;
 }

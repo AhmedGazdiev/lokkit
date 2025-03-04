@@ -1,60 +1,60 @@
 .input_container {
-  position: relative;
-  border-radius: 9999px;
-  flex-grow: 1;
+    position: relative;
+    border-radius: 9999px;
+    flex-grow: 1;
 }
 
 .input {
-  padding: 0.75rem 0 0.75rem 1rem;
-  border-radius: 9999px;
-  width: 100%;
-  border: 1px solid;
-  transition: all 300ms ease-in-out;
-  color: var(--color2);
-  font-size: 16px;
-  font-weight: 700;
-  border-color: var(--purple);
-
-  &::placeholder {
-    padding-right: 16px;
-    color: var(--border);
+    padding: 0.75rem 0 0.75rem 1rem;
+    border-radius: 9999px;
+    width: 100%;
+    border: 1px solid;
+    transition: all 300ms ease-in-out;
+    color: var(--color2);
     font-size: 16px;
     font-weight: 700;
-  }
-
-  &:disabled {
-    background-color: var(--background2);
-    color: var(--color2);
-    border-color: var(--background2);
-  }
-
-  &:focus {
     border-color: var(--purple);
-  }
+
+    &::placeholder {
+        padding-right: 16px;
+        color: var(--border);
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    &:disabled {
+        background-color: var(--background2);
+        color: var(--color2);
+        border-color: var(--background2);
+    }
+
+    &:focus {
+        border-color: var(--purple);
+    }
 }
 
 .img {
-  position: absolute;
-  top: 50%;
-  right: 0.25rem;
-  transform: translate(-0.25rem, -50%);
-  cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 0.25rem;
+    transform: translate(-0.25rem, -50%);
+    cursor: pointer;
 }
 
 .svg {
-  position: absolute;
-  top: 50%;
-  right: 0.25rem;
-  transform: translate(-0.25rem, -50%);
-  cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 0.25rem;
+    transform: translate(-0.25rem, -50%);
+    cursor: pointer;
 }
 
 .px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
 }
 
 .px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }

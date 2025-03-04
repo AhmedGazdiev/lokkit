@@ -1,8 +1,8 @@
 <div class="feed_container">
-  <div class="feed_posts">
-    @for (post of postService.posts; track post._id) {
-      <app-post [post]="post" (likeFn)="like($event)" />
-    }
-  </div>
-  <app-suggestions />
+    <div class="feed_posts">
+        @for (post of postService.posts; track post._id) {
+            <app-post [post]="post" (likeFn)="like($event)" />
+        }
+    </div>
+    <app-suggestions />
 </div>

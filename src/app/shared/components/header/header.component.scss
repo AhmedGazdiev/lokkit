@@ -1,81 +1,81 @@
 .header_container {
-  background-color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 32px;
-  border: 1px solid var(--border);
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 32px;
+    border: 1px solid var(--border);
 
-  height: 88px;
+    height: 88px;
 }
 
 .header_search_input {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  border-radius: 24px;
-  border: 1px solid var(--border);
-  width: 400px;
-  padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    width: 400px;
+    padding: 8px 16px;
 
-  &:focus-within {
-    border: 1px solid var(--purple);
-  }
+    &:focus-within {
+        border: 1px solid var(--purple);
+    }
 
-  input {
-    width: 90%;
-  }
+    input {
+        width: 90%;
+    }
 }
 
 .header_user_data {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  .header_user_not-authorized_btns {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 8px;
 
-    .header_user_auth {
-      padding: 12px 32px;
-      background-color: var(--purple);
-      border-radius: 123px;
-      color: var(--white);
-      font-weight: 700;
-      font-size: 16px;
-    }
-  }
+    .header_user_not-authorized_btns {
+        display: flex;
+        align-items: center;
+        gap: 16px;
 
-  .header_user_authorized_section {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-
-    .header_user_authorized_btns {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      .header_user_icon_btn {
-        border: 1px solid var(--border);
-        padding: 12px;
-        border-radius: 123px;
-      }
+        .header_user_auth {
+            padding: 12px 32px;
+            background-color: var(--purple);
+            border-radius: 123px;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 16px;
+        }
     }
 
-    .header_user_authorized_avatar {
-      border-radius: 100%;
-      width: 48px;
-      height: 48px;
+    .header_user_authorized_section {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .header_user_authorized_btns {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .header_user_icon_btn {
+                border: 1px solid var(--border);
+                padding: 12px;
+                border-radius: 123px;
+            }
+        }
+
+        .header_user_authorized_avatar {
+            border-radius: 100%;
+            width: 48px;
+            height: 48px;
+        }
     }
-  }
 }
 
 .avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 123px;
-  cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 123px;
+    cursor: pointer;
 }

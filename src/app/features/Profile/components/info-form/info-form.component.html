@@ -1,10 +1,18 @@
 <form class="profile_info_form" [formGroup]="profileInfoForm" (ngSubmit)="onSubmit()">
-  <h3 class="form_title">Info</h3>
-  <div class="form_names">
-    <app-input placeholder="FullName" formControlName="fullName" [errors]="profileInfoForm.controls.fullName.errors" />
-    <app-input placeholder="Username" formControlName="username" [errors]="profileInfoForm.controls.username.errors" />
-  </div>
-  <app-input placeholder="City" formControlName="city" [errors]="profileInfoForm.controls.city.errors" />
-  <app-input placeholder="Story" formControlName="story" [errors]="profileInfoForm.controls.story.errors" />
-  <button class="btn" type="submit" [disabled]="profileInfoForm.invalid">Save</button>
+    <h3 class="form_title">Info</h3>
+    <div class="form_names">
+        <app-input
+            placeholder="FullName"
+            formControlName="fullName"
+            [errors]="profileInfoForm.controls.fullName.errors"
+        />
+        <app-input
+            placeholder="Username"
+            formControlName="username"
+            [errors]="profileInfoForm.controls.username.errors"
+        />
+    </div>
+    <app-input placeholder="City" formControlName="city" [errors]="profileInfoForm.controls.city.errors" />
+    <app-input placeholder="Story" formControlName="story" [errors]="profileInfoForm.controls.story.errors" />
+    <button class="btn" type="submit" [disabled]="profileInfoForm.invalid">Save</button>
 </form>

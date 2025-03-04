@@ -4,7 +4,7 @@ import { SettingsComponent } from '@/app/features/profile/pages/settings/setting
 import { DevicesComponent } from '@/app/features/profile/pages/devices/devices.component';
 
 export const profileRoutes: Routes = [
-  { path: 'info', title: 'Profile Info', component: InfoComponent },
-  { path: 'settings', title: 'Profile Settings', component: SettingsComponent },
-  { path: 'devices', title: 'Profile Devices', component: DevicesComponent }
+    { path: 'info', title: 'Profile Info', component: InfoComponent },
+    { path: 'settings', title: 'Profile Settings', component: SettingsComponent },
+    { path: 'devices', title: 'Profile Devices', component: DevicesComponent }
 ];

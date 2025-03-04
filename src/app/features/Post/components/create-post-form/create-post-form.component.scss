@@ -1,55 +1,55 @@
 .create_post_form {
-  background-color: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 20px;
-  width: 696px;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 20px;
+    width: 696px;
 
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 h3 {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
-  letter-spacing: -0.7%;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.7%;
 }
 
 .post_form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .file_label {
-  width: 100%;
-  background: var(--background2);
-  height: 165px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0.75rem 0 0.75rem 1rem;
+    width: 100%;
+    background: var(--background2);
+    height: 165px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0.75rem 0 0.75rem 1rem;
 
-  input {
-    display: none;
-  }
+    input {
+        display: none;
+    }
 }
 
 .post_image {
-  width: 100px;
-  height: 100%;
+    width: 100px;
+    height: 100%;
 }
 
 .post_form_tag {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 
-  input {
-    width: 100px;
-    margin-right: 8px;
-  }
+    input {
+        width: 100px;
+        margin-right: 8px;
+    }
 }

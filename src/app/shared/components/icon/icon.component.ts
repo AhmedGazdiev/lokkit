@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { iconTypes } from '@/app/shared/types';
 
 @Component({
-  selector: 'app-icon',
-  imports: [],
-  templateUrl: './icon.component.html',
-  styleUrl: './icon.component.scss'
+    selector: 'app-icon',
+    imports: [],
+    templateUrl: './icon.component.html',
+    styleUrl: './icon.component.scss'
 })
 export class IconComponent {
-  @Input('icon') icon!: iconTypes;
+    @Input('icon') icon!: iconTypes;
 }

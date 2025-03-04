@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { UsernamePipe } from '@/app/shared/pipes/username.pipe';
-import { User } from '@/app/core/models/user';
+import { UsernamePipe } from '@shared/pipes/username.pipe';
+import { User } from '@core/models/user';
 
 @Component({
     selector: 'app-user',

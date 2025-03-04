@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EditPostFormComponent } from '@/app/features/post/components/edit-post-form/edit-post-form.component';
+import { EditPostFormComponent } from '@features/post/components/edit-post-form/edit-post-form.component';
 
 @Component({
     selector: 'app-edit-post',

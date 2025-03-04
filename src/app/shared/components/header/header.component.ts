@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { DropDownComponent } from '../drop-down/drop-down.component';
-import { IconComponent } from '../icon/icon.component';
 import { RouterLink } from '@angular/router';
-import { DropDownItem } from '../drop-down/drop-down.type';
-import { UserService } from '@/app/core/services/user.service';
-import { AuthService } from '@/app/core/services/auth.service';
+import { IconComponent } from '@shared/components/icon/icon.component';
+import { DropDownComponent } from '@shared/components/drop-down/drop-down.component';
+import { UserService } from '@core/services/user.service';
+import { AuthService } from '@core/services/auth.service';
+import { DropDownItem } from '@shared/components/drop-down/drop-down.type';
 
 @Component({
     selector: 'app-header',

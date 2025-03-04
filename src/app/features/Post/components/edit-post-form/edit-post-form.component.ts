@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IconComponent } from '@/app/shared/components/icon/icon.component';
-import { InputComponent } from '@/app/shared/components/input/input.component';
-import { PostService } from '@/app/core/services/post.service';
+import { IconComponent } from '@shared/components/icon/icon.component';
+import { InputComponent } from '@shared/components/input/input.component';
+import { PostService } from '@core/services/post.service';
 
 @Component({
     selector: 'app-edit-post-form',

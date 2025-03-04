@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { passwordMatchValidator } from '@/app/features/auth/password.validator';
-import { InputComponent } from '@/app/shared/components/input/input.component';
+import { passwordMatchValidator } from '@features/auth/validators/password.validator';
+import { InputComponent } from '@shared/components/input/input.component';
 
 @Component({
     selector: 'app-password-form',

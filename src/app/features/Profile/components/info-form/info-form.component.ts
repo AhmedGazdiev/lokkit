@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { InputComponent } from '@/app/shared/components/input/input.component';
+import { InputComponent } from '@shared/components/input/input.component';
 
 @Component({
     selector: 'app-info-form',

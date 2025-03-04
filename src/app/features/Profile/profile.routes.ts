@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { InfoComponent } from '@/app/features/profile/pages/info/info.component';
-import { SettingsComponent } from '@/app/features/profile/pages/settings/settings.component';
-import { DevicesComponent } from '@/app/features/profile/pages/devices/devices.component';
+import { InfoComponent } from '@features/profile/pages/info/info.component';
+import { SettingsComponent } from '@features/profile/pages/settings/settings.component';
+import { DevicesComponent } from '@features/profile/pages/devices/devices.component';
 
 export const profileRoutes: Routes = [
     { path: 'info', title: 'Profile Info', component: InfoComponent },

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { IconComponent } from '@/app/shared/components/icon/icon.component';
+import { IconComponent } from '@shared/components/icon/icon.component';
 
 @Component({
     selector: 'app-sidebar',

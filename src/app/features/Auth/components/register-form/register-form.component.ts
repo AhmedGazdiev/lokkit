@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AuthService } from '@/app/core/services/auth.service';
-import { IconComponent } from '@/app/shared/components/icon/icon.component';
-import { passwordMatchValidator } from '@/app/features/auth/password.validator';
+import { AuthService } from '@core/services/auth.service';
+import { passwordMatchValidator } from '@features/auth/validators/password.validator';
+import { IconComponent } from '@shared/components/icon/icon.component';
 
 @Component({
     selector: 'app-register-form',

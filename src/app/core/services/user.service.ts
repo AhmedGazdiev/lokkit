@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { usersData } from '../usersData';
-import { User } from '@/app/core/models/user';
+import { User } from '@core/models/user';
 
 @Injectable({
     providedIn: 'root'
@@ -10,7 +10,7 @@ export class UserService {
     public activeUser: User | null = this.users[0];
 
     public getUsers() {
-        this.users;
+        return this.users;
     }
 
     public getUserById(id: number): User | undefined {

@@ -1,13 +1,13 @@
 import { NgIf } from '@angular/common';
 import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
-import { IconComponent } from '@/app/shared/components/icon/icon.component';
-import { CutTextPipe } from '@/app/shared/pipes/cut-text.pipe';
-import { UsernamePipe } from '@/app/shared/pipes/username.pipe';
-import { DropDownComponent } from '@/app/shared/components/drop-down/drop-down.component';
-import { ShowIfLikedDirective } from '@/app/shared/directives/show-if-liked.directive';
-import { PostService } from '@/app/core/services/post.service';
-import { Post } from '@/app/core/models/post';
-import { DropDownItem } from '@/app/shared/components/drop-down/drop-down.type';
+import { IconComponent } from '@shared/components/icon/icon.component';
+import { CutTextPipe } from '@shared/pipes/cut-text.pipe';
+import { UsernamePipe } from '@shared/pipes/username.pipe';
+import { DropDownComponent } from '@shared/components/drop-down/drop-down.component';
+import { ShowIfLikedDirective } from '@shared/directives/show-if-liked.directive';
+import { Post } from '@core/models/post';
+import { PostService } from '@core/services/post.service';
+import { DropDownItem } from '@shared/components/drop-down/drop-down.type';
 
 @Component({
     selector: 'app-post',

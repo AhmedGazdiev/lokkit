@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { AuthLayoutComponent } from '@/app/features/auth/layouts/auth-layout/auth-layout.component';
-import { authGuard, notAuthGuard } from '@/app/core/guards/auth.guard';
-import { ProfileComponent } from '@/app/features/profile/profile.component';
-import { FeedComponent } from '@/app/features/post/pages/feed/feed.component';
-import { NotAuthLayoutComponent } from '@/app/features/auth/layouts/not-auth-layout/not-auth-layout.component';
-import { LoginComponent } from '@/app/features/auth/pages/login/login.component';
-import { RegisterComponent } from '@/app/features/auth/pages/register/register.component';
-import { NotFoundComponent } from '@/app/features/not-found/pages/not-found/not-found.component';
+import { ProfileComponent } from '@features/profile/profile.component';
+import { FeedComponent } from '@features/post/pages/feed/feed.component';
+import { LoginComponent } from '@features/auth/pages/login/login.component';
+import { RegisterComponent } from '@features/auth/pages/register/register.component';
+import { NotFoundComponent } from '@features/not-found/pages/not-found/not-found.component';
+import { AuthLayoutComponent } from '@features/auth/layouts/auth-layout/auth-layout.component';
+import { authGuard, notAuthGuard } from '@core/guards/auth.guard';
+import { NotAuthLayoutComponent } from '@features/auth/layouts/not-auth-layout/not-auth-layout.component';
 
 export const routes: Routes = [
     {

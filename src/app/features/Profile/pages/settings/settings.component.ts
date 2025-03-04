@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { InputComponent } from '@/app/shared/components/input/input.component';
+import { InputComponent } from '@shared/components/input/input.component';
 
 @Component({
     selector: 'app-settings',

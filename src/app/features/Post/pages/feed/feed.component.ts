@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { PostComponent } from '@/app/features/post/components/post/post.component';
-import { SuggestionsComponent } from '@/app/shared/components/suggestions/suggestions.component';
-import { PostService } from '@/app/core/services/post.service';
+import { SuggestionsComponent } from '@shared/components/suggestions/suggestions.component';
+import { PostComponent } from '@features/post/components/post/post.component';
+import { PostService } from '@core/services/post.service';
 
 @Component({
     selector: 'app-feed',

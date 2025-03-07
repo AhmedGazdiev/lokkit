@@ -17,7 +17,7 @@ export class LocalStorageService {
         localStorage.removeItem(key);
     }
 
-    public cleat(): void {
+    public clear(): void {
         localStorage.clear();
     }
 }

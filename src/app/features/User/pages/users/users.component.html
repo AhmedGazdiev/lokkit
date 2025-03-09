@@ -1,10 +1,6 @@
 <div class="users_container">
     <h2>Users</h2>
-    @if (userService.users$ | async; as users) {
-        @for (user of users; track $index) {
-            <app-user [user]="user" (update)="updateUser($event)" />
-        }
-    } @else {
-        <p>No users found</p>
-    }
+    <ng-container *ngFor="let user of userService.users; let i = index">
+        <app-user [user]="user" (update)="updateUser($event)" />
+    </ng-container>
 </div>

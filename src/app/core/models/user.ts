@@ -1,14 +1,9 @@
 export interface User {
-    id: number;
+    _id: number;
     fullName: string;
     username: string;
     email: string;
-    password?: string;
     avatar: string;
-    gender: UserGender;
-    role: UserRole;
-    joined?: Date;
+    gender: 'male' | 'female';
+    role: 'admin' | 'user';
 }
-
-type UserGender = 'male' | 'female';
-type UserRole = 'admin' | 'user';

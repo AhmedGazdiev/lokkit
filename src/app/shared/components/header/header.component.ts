@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { AuthService } from '@core/services/auth.service';
-import { UserService } from '@core/services/user.service';
-import { DropDownComponent } from '@shared/components/drop-down/drop-down.component';
-import { DropDownItem } from '@shared/components/drop-down/drop-down.type';
 import { IconComponent } from '@shared/components/icon/icon.component';
+import { DropDownComponent } from '@shared/components/drop-down/drop-down.component';
+import { UserService } from '@core/services/user.service';
+import { AuthService } from '@core/services/auth.service';
+import { DropDownItem } from '@shared/components/drop-down/drop-down.type';
 
 @Component({
     selector: 'app-header',
@@ -19,7 +19,7 @@ export class HeaderComponent {
     public dropDownItems: DropDownItem[] = [
         {
             label: 'Profile',
-            link: `/profile/${this.userService.activeUser$.value?.id}`
+            link: `/profile/${this.userService.activeUser?._id}`
         },
         {
             label: 'Settings',

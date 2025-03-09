@@ -1,6 +1,6 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { User } from '@core/models/user';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, catchError, delay, finalize, map, Observable, retry, tap, throwError } from 'rxjs';
 import { HttpService } from './http.service';
 import { LocalStorageService } from './local-storage.service';
 
@@ -12,11 +12,24 @@ export class UserService {
     private readonly localStorageService = inject(LocalStorageService);
     private usersSubject$ = new BehaviorSubject<User[]>([]);
     public readonly users$ = this.usersSubject$.asObservable();
-    public loading$ = new BehaviorSubject<boolean>(false);
-    public readonly activeUser$ = new BehaviorSubject<User | null>(this.usersSubject$.value[0]);
+    public loading = signal<boolean>(false);
+    public readonly activeUser$ = this.users$.pipe(map(users => users[0]));
 
-    public getUsers() {
-        return this.users$;
+    public getUsers(): Observable<User[]> {
+        this.loading.set(true);
+        return this.http.get<User[]>('/users').pipe(
+            delay(1000),
+            retry(2),
+            tap(res => {
+                this.usersSubject$.next([...res]);
+                this.localStorageService.set('users', res);
+            }),
+            catchError(error => {
+                console.error('Ошибка при получении пользователей:', error);
+                return throwError(() => new Error('Не удалось получить пользователей.'));
+            }),
+            finalize(() => this.loading.set(false))
+        );
     }
 
     public getUserById(id: number): User | undefined {

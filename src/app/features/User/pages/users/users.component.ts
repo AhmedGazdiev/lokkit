@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { User } from '@core/models/user';
 import { UserService } from '@core/services/user.service';
 import { UserComponent } from '@features/user/components/user/user.component';
@@ -10,8 +10,13 @@ import { UserComponent } from '@features/user/components/user/user.component';
     templateUrl: './users.component.html',
     styleUrl: './users.component.scss'
 })
-export class UsersComponent {
-    public userService = inject(UserService);
+export class UsersComponent implements OnInit {
+    private userService = inject(UserService);
+    public users$ = this.userService.users$;
+
+    ngOnInit(): void {
+        this.userService.getUsers().subscribe();
+    }
 
     updateUser(id: number): void {
         const updatedUser: User = {

@@ -26,12 +26,10 @@ export class PostComponent implements OnInit {
         this.dropDownItems = [
             {
                 label: 'Detail',
-                // link: `/post/${this.post?._id}/detail`,
                 link: ['/post', this.post?._id, 'detail']
             },
             {
                 label: 'Edit',
-                // link: `/post/${this.post?._id}/edit`,
                 link: ['/post', this.post?._id, 'edit']
             },
             {

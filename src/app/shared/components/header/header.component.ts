@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { User } from '@core/models/user';
 import { AuthService } from '@core/services/auth.service';
 import { UserService } from '@core/services/user.service';
 import { DropDownComponent } from '@shared/components/drop-down/drop-down.component';
@@ -15,11 +16,18 @@ import { IconComponent } from '@shared/components/icon/icon.component';
 export class HeaderComponent {
     public userService = inject(UserService);
     public authService = inject(AuthService);
+    activeUser = signal<User | null>(null);
+
+    constructor() {
+        this.userService.activeUser$.subscribe(user => {
+            this.activeUser.set(user);
+        });
+    }
 
     public dropDownItems: DropDownItem[] = [
         {
             label: 'Profile',
-            link: `/profile/${this.userService.activeUser$.value?.id}`
+            link: `/profile/${this.activeUser()?.id}`
         },
         {
             label: 'Settings',

@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { ProfileComponent } from '@features/profile/profile.component';
-import { FeedComponent } from '@features/post/pages/feed/feed.component';
+import { authGuard, notAuthGuard } from '@core/guards/auth.guard';
+import { AuthLayoutComponent } from '@features/auth/layouts/auth-layout/auth-layout.component';
+import { NotAuthLayoutComponent } from '@features/auth/layouts/not-auth-layout/not-auth-layout.component';
 import { LoginComponent } from '@features/auth/pages/login/login.component';
 import { RegisterComponent } from '@features/auth/pages/register/register.component';
 import { NotFoundComponent } from '@features/not-found/pages/not-found/not-found.component';
-import { AuthLayoutComponent } from '@features/auth/layouts/auth-layout/auth-layout.component';
-import { authGuard, notAuthGuard } from '@core/guards/auth.guard';
-import { NotAuthLayoutComponent } from '@features/auth/layouts/not-auth-layout/not-auth-layout.component';
+import { FeedComponent } from '@features/post/pages/feed/feed.component';
+import { ProfileComponent } from '@features/profile/profile.component';
 
 export const routes: Routes = [
     {
@@ -20,17 +20,17 @@ export const routes: Routes = [
                 title: 'Profile',
                 component: ProfileComponent,
                 canActivate: [authGuard],
-                loadChildren: () => import('./features/profile/profile.routes').then(p => p.profileRoutes)
+                loadChildren: () => import('@features/profile/profile.routes').then(p => p.profileRoutes)
             },
             {
                 path: 'post',
-                loadChildren: () => import('./features/post/post.routes').then(p => p.postRoutes)
+                loadChildren: () => import('@features/post/post.routes').then(p => p.postRoutes)
             },
 
             {
                 path: 'users',
                 title: 'Users',
-                loadComponent: () => import('./features/user/pages/users/users.component').then(u => u.UsersComponent)
+                loadComponent: () => import('@features/user/pages/users/users.component').then(u => u.UsersComponent)
             },
             {
                 path: 'feed',

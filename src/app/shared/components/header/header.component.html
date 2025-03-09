@@ -22,7 +22,7 @@
             </div>
 
             <app-drop-down [appDropDown]="dropDownItems">
-                <img class="avatar" [src]="userService.activeUser$.value?.avatar" alt="avatar" />
+                <img class="avatar" [src]="activeUser()?.avatar" alt="avatar" />
             </app-drop-down>
         </div>
     </div>

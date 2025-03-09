@@ -1,3 +1,4 @@
+import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { User } from '@core/models/user';
 import { UserService } from '@core/services/user.service';
@@ -5,7 +6,7 @@ import { UserComponent } from '@features/user/components/user/user.component';
 
 @Component({
     selector: 'app-users',
-    imports: [UserComponent],
+    imports: [UserComponent, AsyncPipe],
     templateUrl: './users.component.html',
     styleUrl: './users.component.scss'
 })
@@ -14,7 +15,7 @@ export class UsersComponent {
 
     updateUser(id: number): void {
         const updatedUser: User = {
-            _id: id,
+            id: id,
             fullName: 'Usman Gazdiev',
             username: '@usm_gaz',
             email: 'usman@mail.com',
@@ -24,10 +25,5 @@ export class UsersComponent {
         };
 
         this.userService.updateUser(id, updatedUser);
-        console.log(this.userService.users);
-    }
-
-    switchUser(id: number): void {
-        this.userService.switchUser(id);
     }
 }

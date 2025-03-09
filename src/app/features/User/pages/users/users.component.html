@@ -1,7 +1,7 @@
 <div class="users_container">
     <h2>Users</h2>
-    @if (userService.users.length) {
-        @for (user of userService.users; track $index) {
+    @if (userService.users$ | async; as users) {
+        @for (user of users; track $index) {
             <app-user [user]="user" (update)="updateUser($event)" />
         }
     } @else {

@@ -3,7 +3,12 @@ export interface User {
     fullName: string;
     username: string;
     email: string;
+    password?: string;
     avatar: string;
-    gender: 'male' | 'female';
-    role: 'admin' | 'user';
+    gender: UserGender;
+    role: UserRole;
+    joined?: Date;
 }
+
+type UserGender = 'male' | 'female';
+type UserRole = 'admin' | 'user';

@@ -1,12 +1,11 @@
-import { NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { UserComponent } from '@features/user/components/user/user.component';
 import { User } from '@core/models/user';
 import { UserService } from '@core/services/user.service';
+import { UserComponent } from '@features/user/components/user/user.component';
 
 @Component({
     selector: 'app-users',
-    imports: [NgFor, UserComponent],
+    imports: [UserComponent],
     templateUrl: './users.component.html',
     styleUrl: './users.component.scss'
 })

@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
-import { usersData } from '../usersData';
 import { User } from '@core/models/user';
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
-    public users: User[] = usersData;
+    public users: User[] = [];
     public activeUser: User | null = this.users[0];
 
     public getUsers() {

@@ -65,5 +65,20 @@ export class UserService {
         );
     }
 
-    public updateUser(id: number, newUser: User): void {}
+    public updateUser(id: number, updatedUser: Partial<User>): Observable<User> {
+        this.loading.set(true);
+        return this.http.put<User, Partial<User>>(`/users/${id}`, updatedUser).pipe(
+            delay(1000),
+            retry(2),
+            tap(res => {
+                this.usersSubject$.next(this.usersSubject$.value.map(user => (user.id === res.id ? res : user)));
+                this.localStorageService.set('users', this.usersSubject$.value);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                console.error('Ошибка при получении пользователей:', error);
+                return throwError(() => new Error('Не удалось получить пользователя.'));
+            })
+        );
+    }
 }

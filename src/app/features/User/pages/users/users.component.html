@@ -2,7 +2,7 @@
     <h2>Users</h2>
     @if (users$ | async; as users) {
         @for (user of users; track $index) {
-            <app-user [user]="user" (update)="updateUser($event)" />
+            <app-user [user]="user" />
         }
     } @else {
         <p>No users found</p>

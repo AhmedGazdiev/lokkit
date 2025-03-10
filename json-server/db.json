@@ -9,7 +9,9 @@
             "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_23.png",
             "gender": "male",
             "role": "admin",
-            "joined": "2023-01-01T00:00:00Z"
+            "joined": "2023-01-01T00:00:00Z",
+            "city": "Venna",
+            "story": "I love coding and exploring new technologies."
         },
         {
             "id": 1257564,
@@ -20,7 +22,9 @@
             "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_3.png",
             "gender": "male",
             "role": "user",
-            "joined": "2023-01-01T00:00:00Z"
+            "joined": "2023-01-01T00:00:00Z",
+            "city": "New York",
+            "story": "I enjoy traveling and trying new cuisines."
         },
         {
             "id": 475768355462,
@@ -31,7 +35,9 @@
             "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_2.png",
             "gender": "female",
             "role": "user",
-            "joined": "2023-02-01T00:00:00Z"
+            "joined": "2023-02-01T00:00:00Z",
+            "city": "London",
+            "story": "I am passionate about art and photography."
         },
         {
             "id": 885746363,
@@ -42,7 +48,9 @@
             "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
             "gender": "female",
             "role": "user",
-            "joined": "2023-03-01T00:00:00Z"
+            "joined": "2023-03-01T00:00:00Z",
+            "city": "Paris",
+            "story": "I love reading books and writing poetry."
         },
         {
             "id": 443657654734,
@@ -53,7 +61,9 @@
             "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_14.png",
             "gender": "male",
             "role": "user",
-            "joined": "2023-04-01T00:00:00Z"
+            "joined": "2023-04-01T00:00:00Z",
+            "city": "Berlin",
+            "story": "I am a fitness enthusiast and love outdoor activities."
         },
         {
             "id": 566352345346,
@@ -64,7 +74,9 @@
             "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_26.png",
             "gender": "male",
             "role": "user",
-            "joined": "2023-05-01T00:00:00Z"
+            "joined": "2023-05-01T00:00:00Z",
+            "city": "Tokyo",
+            "story": "I am a tech geek and love building gadgets."
         },
         {
             "id": 6743645745,
@@ -75,7 +87,9 @@
             "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_12.png",
             "gender": "female",
             "role": "user",
-            "joined": "2023-06-01T00:00:00Z"
+            "joined": "2023-06-01T00:00:00Z",
+            "city": "Sydney",
+            "story": "I enjoy hiking and exploring nature."
         },
         {
             "id": 7666636376356,
@@ -86,7 +100,9 @@
             "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_34.png",
             "gender": "male",
             "role": "user",
-            "joined": "2023-07-01T00:00:00Z"
+            "joined": "2023-07-01T00:00:00Z",
+            "city": "Toronto",
+            "story": "I am a music lover and play the guitar."
         },
         {
             "id": 65464747458,
@@ -97,7 +113,9 @@
             "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_31.png",
             "gender": "female",
             "role": "user",
-            "joined": "2023-08-01T00:00:00Z"
+            "joined": "2023-08-01T00:00:00Z",
+            "city": "Seoul",
+            "story": "I am a foodie and love cooking new recipes."
         },
         {
             "id": 908708708707,
@@ -108,7 +126,9 @@
             "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_9.png",
             "gender": "male",
             "role": "user",
-            "joined": "2023-09-01T00:00:00Z"
+            "joined": "2023-09-01T00:00:00Z",
+            "city": "Chicago",
+            "story": "I am a sports fan and love watching basketball."
         },
         {
             "id": 13466885680,
@@ -119,7 +139,9 @@
             "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_24.png",
             "gender": "female",
             "role": "user",
-            "joined": "2023-10-01T00:00:00Z"
+            "joined": "2023-10-01T00:00:00Z",
+            "city": "San Francisco",
+            "story": "I am a startup enthusiast and love building new products."
         }
     ],
     "posts": [

@@ -26,7 +26,9 @@ export class UsersComponent implements OnInit {
             email: 'usman@mail.com',
             avatar: 'https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png',
             gender: 'male',
-            role: 'user'
+            role: 'user',
+            city: 'Moscow',
+            story: 'I love coding and exploring new technologies.'
         };
 
         this.userService.updateUser(id, updatedUser);

@@ -8,6 +8,8 @@ export interface User {
     gender: UserGender;
     role: UserRole;
     joined?: Date;
+    city: string;
+    story: string;
 }
 
 type UserGender = 'male' | 'female';

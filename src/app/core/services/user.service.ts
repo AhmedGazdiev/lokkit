@@ -81,4 +81,21 @@ export class UserService {
             })
         );
     }
+
+    public deleteUser(id: number): Observable<any> {
+        this.loading.set(true);
+        return this.http.delete<User>(`/users/${id}`).pipe(
+            delay(1000),
+            retry(2),
+            tap(res => {
+                this.usersSubject$.next(this.usersSubject$.value.filter(user => user.id !== res.id));
+                this.localStorageService.set('users', res);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                console.error('Ошибка при удалении пользователя:', error);
+                return throwError(() => new Error('Не удалось удалить пользователя.'));
+            })
+        );
+    }
 }

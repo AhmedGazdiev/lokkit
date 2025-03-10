@@ -15,6 +15,24 @@ export class UserService {
     public loading = signal<boolean>(false);
     public readonly activeUser$ = this.users$.pipe(map(users => users[0]));
 
+    public createUser(newUser: Partial<User>): Observable<User> {
+        this.loading.set(true);
+        return this.http.post<User, Partial<User>>('/users', newUser).pipe(
+            delay(1000),
+            retry(2),
+            tap(res => {
+                this.usersSubject$.next([...this.usersSubject$.value, res]);
+                this.localStorageService.set('users', this.usersSubject$.value);
+                console.log('Пользователь создан успешно. =>', res);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                console.error('Ошибка при создании пользователя:', error);
+                return throwError(() => new Error('Не удалось создать пользователя.'));
+            })
+        );
+    }
+
     public getUsers(): Observable<User[]> {
         this.loading.set(true);
         return this.http.get<User[]>('/users').pipe(
@@ -32,9 +50,52 @@ export class UserService {
         );
     }
 
-    public getUserById(id: number): User | undefined {
-        return;
+    public getUserById(id: number): Observable<User> {
+        this.loading.set(true);
+        return this.http.get<User>(`/users/${id}`).pipe(
+            delay(1000),
+            retry(2),
+            // tap(res => res),
+            catchError(error => {
+                this.loading.set(false);
+                console.error('Ошибка при получении пользователей:', error);
+                return throwError(() => new Error('Не удалось получить пользователя.'));
+            }),
+            finalize(() => this.loading.set(false))
+        );
     }
 
-    public updateUser(id: number, newUser: User): void {}
+    public updateUser(id: number, updatedUser: Partial<User>): Observable<User> {
+        this.loading.set(true);
+        return this.http.put<User, Partial<User>>(`/users/${id}`, updatedUser).pipe(
+            delay(1000),
+            retry(2),
+            tap(res => {
+                this.usersSubject$.next(this.usersSubject$.value.map(user => (user.id === res.id ? res : user)));
+                this.localStorageService.set('users', this.usersSubject$.value);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                console.error('Ошибка при получении пользователей:', error);
+                return throwError(() => new Error('Не удалось получить пользователя.'));
+            })
+        );
+    }
+
+    public deleteUser(id: number): Observable<any> {
+        this.loading.set(true);
+        return this.http.delete<User>(`/users/${id}`).pipe(
+            delay(1000),
+            retry(2),
+            tap(res => {
+                this.usersSubject$.next(this.usersSubject$.value.filter(user => user.id !== res.id));
+                this.localStorageService.set('users', res);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                console.error('Ошибка при удалении пользователя:', error);
+                return throwError(() => new Error('Не удалось удалить пользователя.'));
+            })
+        );
+    }
 }

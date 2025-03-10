@@ -67,7 +67,7 @@ export class UserService {
 
     public updateUser(id: number, updatedUser: Partial<User>): Observable<User> {
         this.loading.set(true);
-        return this.http.put<User, Partial<User>>(`/users/${id}`, updatedUser).pipe(
+        return this.http.patch<User, Partial<User>>(`/users/${id}`, updatedUser).pipe(
             delay(1000),
             retry(2),
             tap(res => {

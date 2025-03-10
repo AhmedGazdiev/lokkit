@@ -32,8 +32,19 @@ export class UserService {
         );
     }
 
-    public getUserById(id: number): User | undefined {
-        return;
+    public getUserById(id: number): Observable<User> {
+        this.loading.set(true);
+        return this.http.get<User>(`/users/${id}`).pipe(
+            delay(1000),
+            retry(2),
+            // tap(res => res),
+            catchError(error => {
+                this.loading.set(false);
+                console.error('Ошибка при получении пользователей:', error);
+                return throwError(() => new Error('Не удалось получить пользователя.'));
+            }),
+            finalize(() => this.loading.set(false))
+        );
     }
 
     public updateUser(id: number, newUser: User): void {}

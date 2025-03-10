@@ -1,7 +1,6 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { IconComponent } from '@shared/components/icon/icon.component';
-import { UserService } from '@core/services/user.service';
 
 @Component({
     selector: 'app-profile',
@@ -9,12 +8,4 @@ import { UserService } from '@core/services/user.service';
     templateUrl: './profile.component.html',
     styleUrl: './profile.component.scss'
 })
-export class ProfileComponent implements OnInit {
-    public userService = inject(UserService);
-    private route = inject(ActivatedRoute);
-    public profileId: string | null = null;
-
-    ngOnInit(): void {
-        this.profileId = this.route.snapshot.paramMap.get('id');
-    }
-}
+export class ProfileComponent {}

@@ -15,6 +15,24 @@ export class UserService {
     public loading = signal<boolean>(false);
     public readonly activeUser$ = this.users$.pipe(map(users => users[0]));
 
+    public createUser(newUser: Partial<User>): Observable<User> {
+        this.loading.set(true);
+        return this.http.post<User, Partial<User>>('/users', newUser).pipe(
+            delay(1000),
+            retry(2),
+            tap(res => {
+                this.usersSubject$.next([...this.usersSubject$.value, res]);
+                this.localStorageService.set('users', this.usersSubject$.value);
+                console.log('Пользователь создан успешно. =>', res);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                console.error('Ошибка при создании пользователя:', error);
+                return throwError(() => new Error('Не удалось создать пользователя.'));
+            })
+        );
+    }
+
     public getUsers(): Observable<User[]> {
         this.loading.set(true);
         return this.http.get<User[]>('/users').pipe(

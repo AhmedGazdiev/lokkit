@@ -19,7 +19,7 @@
             "password": "abc123",
             "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_3.png",
             "gender": "male",
-            "role": "admin",
+            "role": "user",
             "joined": "2023-01-01T00:00:00Z"
         },
         {

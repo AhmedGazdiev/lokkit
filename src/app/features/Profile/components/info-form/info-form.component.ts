@@ -38,13 +38,9 @@ export class InfoFormComponent implements OnInit {
 
     public onSubmit() {
         if (this.profileInfoForm.valid) {
-            this.profileInfoForm.patchValue({
-                fullName: 'John Wick',
-                username: 'john_w',
-                city: 'Los-Angeles',
-                story: "I've killed all my enemies."
-            });
-
+            this.userService
+                .updateUser(this.activeUser()?.id as number, this.profileInfoForm.value as User)
+                .subscribe();
             console.log('Successfully updated profileInfo:', this.profileInfoForm.value);
         }
     }

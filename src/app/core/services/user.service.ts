@@ -71,14 +71,17 @@ export class UserService {
             delay(1000),
             retry(2),
             tap(res => {
-                this.usersSubject$.next(this.usersSubject$.value.map(user => (user.id === res.id ? res : user)));
+                const updatedUser = this.usersSubject$.value.map(user =>
+                    user.id === res.id ? { ...user, ...res } : user
+                );
+                this.usersSubject$.next(updatedUser);
                 this.localStorageService.set('users', this.usersSubject$.value);
             }),
             catchError(error => {
-                this.loading.set(false);
                 console.error('Ошибка при получении пользователей:', error);
                 return throwError(() => new Error('Не удалось получить пользователя.'));
-            })
+            }),
+            finalize(() => this.loading.set(false))
         );
     }
 

@@ -1,7 +1,7 @@
+import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DropDownItem } from './drop-down.type';
-import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-drop-down',
@@ -12,7 +12,4 @@ import { NgIf } from '@angular/common';
 export class DropDownComponent {
     @Input('appDropDown') dropDownItems!: DropDownItem[];
     showDropdown = false;
-    ngOnInit() {
-        console.log(this.dropDownItems);
-    }
 }

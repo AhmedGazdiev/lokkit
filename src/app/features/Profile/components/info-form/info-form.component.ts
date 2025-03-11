@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { User } from '@core/models/user';
+import { UserService } from '@core/services/user.service';
 import { InputComponent } from '@shared/components/input/input.component';
 
 @Component({
@@ -8,7 +10,25 @@ import { InputComponent } from '@shared/components/input/input.component';
     templateUrl: './info-form.component.html',
     styleUrl: './info-form.component.scss'
 })
-export class InfoFormComponent {
+export class InfoFormComponent implements OnInit {
+    private userService = inject(UserService);
+    activeUser = signal<User | null>(null);
+
+    constructor() {
+        this.userService.activeUser$.subscribe(user => {
+            this.activeUser.set(user);
+        });
+    }
+
+    ngOnInit(): void {
+        this.profileInfoForm.patchValue({
+            fullName: this.activeUser()?.fullName,
+            username: this.activeUser()?.username,
+            city: this.activeUser()?.city,
+            story: this.activeUser()?.story
+        });
+    }
+
     public profileInfoForm = new FormGroup({
         fullName: new FormControl('', [Validators.required, Validators.minLength(4)]),
         username: new FormControl('', [Validators.required]),
@@ -18,13 +38,9 @@ export class InfoFormComponent {
 
     public onSubmit() {
         if (this.profileInfoForm.valid) {
-            this.profileInfoForm.patchValue({
-                fullName: 'John Wick',
-                username: 'john_w',
-                city: 'Los-Angeles',
-                story: "I've killed all my enemies."
-            });
-
+            this.userService
+                .updateUser(this.activeUser()?.id as number, this.profileInfoForm.value as User)
+                .subscribe();
             console.log('Successfully updated profileInfo:', this.profileInfoForm.value);
         }
     }

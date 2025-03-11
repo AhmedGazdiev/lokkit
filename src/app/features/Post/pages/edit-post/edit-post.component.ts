@@ -1,5 +1,4 @@
-import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
 import { EditPostFormComponent } from '@features/post/components/edit-post-form/edit-post-form.component';
 
 @Component({
@@ -8,12 +7,4 @@ import { EditPostFormComponent } from '@features/post/components/edit-post-form/
     templateUrl: './edit-post.component.html',
     styleUrl: './edit-post.component.scss'
 })
-export class EditPostComponent {
-    private route = inject(ActivatedRoute);
-    public editId: string | null = null;
-
-    ngOnInit(): void {
-        this.editId = this.route.snapshot.paramMap.get('id');
-        console.log(this.editId);
-    }
-}
+export class EditPostComponent {}

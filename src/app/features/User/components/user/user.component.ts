@@ -10,9 +10,4 @@ import { User } from '@core/models/user';
 })
 export class UserComponent {
     @Input() user!: User;
-    @Output() update = new EventEmitter();
-
-    updateUser(id: number) {
-        this.update.emit(id);
-    }
 }

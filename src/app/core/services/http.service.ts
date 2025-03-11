@@ -27,6 +27,12 @@ export class HttpService {
         });
     }
 
+    public patch<T, D>(url: string, data: D): Observable<T> {
+        return this.http.patch<T>(`${this.URL}${url}`, JSON.stringify(data), {
+            headers: this.headers
+        });
+    }
+
     public delete<T>(url: string): Observable<T> {
         return this.http.delete<T>(`${this.URL}${url}`, {
             headers: this.headers

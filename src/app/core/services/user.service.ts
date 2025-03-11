@@ -58,8 +58,8 @@ export class UserService {
             // tap(res => res),
             catchError(error => {
                 this.loading.set(false);
-                console.error('Ошибка при получении пользователей:', error);
-                return throwError(() => new Error('Не удалось получить пользователя.'));
+                console.error('Ошибка при получении пользователя по id:', error);
+                return throwError(() => new Error('Не удалось получить пользователя по id.'));
             }),
             finalize(() => this.loading.set(false))
         );
@@ -78,8 +78,8 @@ export class UserService {
                 this.localStorageService.set('users', this.usersSubject$.value);
             }),
             catchError(error => {
-                console.error('Ошибка при получении пользователей:', error);
-                return throwError(() => new Error('Не удалось получить пользователя.'));
+                console.error('Ошибка при обновлении пользователей:', error);
+                return throwError(() => new Error('Не удалось обновить пользователя.'));
             }),
             finalize(() => this.loading.set(false))
         );

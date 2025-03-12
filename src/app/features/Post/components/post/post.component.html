@@ -1,14 +1,10 @@
 <article class="post_container box-shadow">
     <div class="post_top">
         <div class="post_top-info">
-            <img
-                src="https://images.unsplash.com/photo-1737543456099-9e88da04eaef?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="avatar"
-                class="post_avatar"
-            />
+            <img [src]="postAuthor.avatar" alt="avatar" class="post_avatar" />
             <div class="post_top-info-block">
-                <p class="post_top-info-block-name">{{ 'USERNAME' | username }}</p>
-                <span class="post_top-info-block-desc">USER DESCRIPTION</span>
+                <p class="post_top-info-block-name">{{ postAuthor.username | username }}</p>
+                <span class="post_top-info-block-desc">{{ postAuthor.story }}</span>
             </div>
         </div>
         <app-drop-down [appDropDown]="dropDownItems">

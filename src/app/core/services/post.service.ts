@@ -56,7 +56,22 @@ export class PostService {
         console.log('This post has been edited:', data);
     }
 
-    public deletePost() {
+    public deletePost(id: number): Observable<any> {
         console.log('this Post has been deleted');
+        this.loading.set(true);
+        return this.http.delete<Post>(`/posts/${id}`).pipe(
+            delay(500),
+            retry(2),
+            tap(res => {
+                this.postsSubject$.next(this.postsSubject$.value.filter(user => user.id !== res.id));
+                this.localStorageService.set('posts', res);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                console.error('Ошибка при удалении поста:', error);
+                return throwError(() => new Error('Не удалось удалить поста.'));
+            }),
+            finalize(() => this.loading.set(false))
+        );
     }
 }

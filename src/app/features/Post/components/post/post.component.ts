@@ -1,9 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
 import { Post } from '@core/models/post';
-import { User } from '@core/models/user';
 import { PostService } from '@core/services/post.service';
-import { UserService } from '@core/services/user.service';
 import { DropDownComponent } from '@shared/components/drop-down/drop-down.component';
 import { DropDownItem } from '@shared/components/drop-down/drop-down.type';
 import { IconComponent } from '@shared/components/icon/icon.component';
@@ -36,7 +34,7 @@ export class PostComponent implements OnInit {
             },
             {
                 label: 'Delete',
-                click: () => this.postService.deletePost()
+                click: () => this.postService.deletePost(this.post.id).subscribe()
             }
         ];
     }

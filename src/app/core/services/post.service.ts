@@ -36,7 +36,19 @@ export class PostService {
         );
     }
 
-    public getPostById(id: number) {}
+    public getPostById(id: number): Observable<Post> {
+        this.loading.set(true);
+        return this.http.get<Post>(`/posts/${id}`).pipe(
+            delay(1000),
+            retry(2),
+            catchError(error => {
+                this.loading.set(false);
+                console.error('Ошибка при получении пользователя по id:', error);
+                return throwError(() => new Error('Не удалось получить пользователя по id.'));
+            }),
+            finalize(() => this.loading.set(false))
+        );
+    }
 
     public likePost(id: number) {}
 

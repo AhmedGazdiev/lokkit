@@ -29,7 +29,8 @@ export class UserService {
                 this.loading.set(false);
                 console.error('Ошибка при создании пользователя:', error);
                 return throwError(() => new Error('Не удалось создать пользователя.'));
-            })
+            }),
+            finalize(() => this.loading.set(false))
         );
     }
 
@@ -43,6 +44,7 @@ export class UserService {
                 this.localStorageService.set('users', res);
             }),
             catchError(error => {
+                this.loading.set(false);
                 console.error('Ошибка при получении пользователей:', error);
                 return throwError(() => new Error('Не удалось получить пользователей.'));
             }),
@@ -55,7 +57,6 @@ export class UserService {
         return this.http.get<User>(`/users/${id}`).pipe(
             delay(1000),
             retry(2),
-            // tap(res => res),
             catchError(error => {
                 this.loading.set(false);
                 console.error('Ошибка при получении пользователя по id:', error);
@@ -78,6 +79,7 @@ export class UserService {
                 this.localStorageService.set('users', this.usersSubject$.value);
             }),
             catchError(error => {
+                this.loading.set(false);
                 console.error('Ошибка при обновлении пользователей:', error);
                 return throwError(() => new Error('Не удалось обновить пользователя.'));
             }),
@@ -98,7 +100,8 @@ export class UserService {
                 this.loading.set(false);
                 console.error('Ошибка при удалении пользователя:', error);
                 return throwError(() => new Error('Не удалось удалить пользователя.'));
-            })
+            }),
+            finalize(() => this.loading.set(false))
         );
     }
 }

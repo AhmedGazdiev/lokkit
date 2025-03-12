@@ -1,11 +1,18 @@
 export interface Post {
-    _id: number;
+    id: number;
     authorId: number;
     title: string;
     content: string;
-    image: string;
+    image?: string;
     likes: number;
-    comments: string[];
-    createdAt: string;
+    comments: Comment[];
+    date: Date;
     tags: string[];
+}
+
+export interface Comment {
+    id: number;
+    authorId: number;
+    content: string;
+    date: string;
 }

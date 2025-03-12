@@ -29,7 +29,7 @@
             <div class="post_main-icons-communicate">
                 <div class="post_main-icons-communicate-likes">
                     <span *appShowIfLiked="post.likes">{{ post.likes }} Likes</span>
-                    <button (click)="likePost(post._id)">
+                    <button (click)="likePost(post.id)">
                         <app-icon [icon]="'like'" />
                     </button>
                 </div>

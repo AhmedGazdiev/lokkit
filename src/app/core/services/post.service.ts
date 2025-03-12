@@ -52,12 +52,28 @@ export class PostService {
 
     public likePost(id: number) {}
 
-    public updatePost(data: any) {
-        console.log('This post has been edited:', data);
+    public updatePost(id: number, updatedPost: Partial<Post>): Observable<Post> {
+        this.loading.set(true);
+        return this.http.patch<Post, Partial<Post>>(`/posts/${id}`, updatedPost).pipe(
+            delay(1000),
+            retry(2),
+            tap(res => {
+                const updatedUser = this.postsSubject$.value.map(post =>
+                    post.id === res.id ? { ...post, ...res } : post
+                );
+                this.postsSubject$.next(updatedUser);
+                this.localStorageService.set('users', this.postsSubject$.value);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                console.error('Ошибка при обновлении поста:', error);
+                return throwError(() => new Error('Не удалось обновить пост.'));
+            }),
+            finalize(() => this.loading.set(false))
+        );
     }
 
     public deletePost(id: number): Observable<any> {
-        console.log('this Post has been deleted');
         this.loading.set(true);
         return this.http.delete<Post>(`/posts/${id}`).pipe(
             delay(500),
@@ -69,7 +85,7 @@ export class PostService {
             catchError(error => {
                 this.loading.set(false);
                 console.error('Ошибка при удалении поста:', error);
-                return throwError(() => new Error('Не удалось удалить поста.'));
+                return throwError(() => new Error('Не удалось удалить пост.'));
             }),
             finalize(() => this.loading.set(false))
         );

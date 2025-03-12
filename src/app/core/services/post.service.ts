@@ -1,8 +1,8 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { Post } from '@core/models/post';
+import { BehaviorSubject, catchError, delay, finalize, Observable, retry, tap, throwError } from 'rxjs';
 import { HttpService } from './http.service';
 import { LocalStorageService } from './local-storage.service';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -18,8 +18,22 @@ export class PostService {
         console.log(data);
     }
 
-    public getPosts() {
-        return this.posts$;
+    public getPosts(): Observable<Post[]> {
+        this.loading.set(true);
+        return this.http.get<Post[]>('/posts').pipe(
+            delay(1000),
+            retry(2),
+            tap(res => {
+                this.postsSubject$.next([...res]);
+                this.localStorageService.set('posts', res);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                console.error('Ошибка при получении пользователей:', error);
+                return throwError(() => new Error('Не удалось получить пользователей.'));
+            }),
+            finalize(() => this.loading.set(false))
+        );
     }
 
     public getPostById(id: number) {}

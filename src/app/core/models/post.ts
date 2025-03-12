@@ -1,6 +1,8 @@
+import { User } from './user';
+
 export interface Post {
     id: number;
-    authorId: number;
+    author: User;
     title: string;
     content: string;
     image?: string;
@@ -12,7 +14,7 @@ export interface Post {
 
 export interface Comment {
     id: number;
-    authorId: number;
+    author: User;
     content: string;
     date: string;
 }

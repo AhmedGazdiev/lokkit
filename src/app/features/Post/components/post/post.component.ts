@@ -21,8 +21,6 @@ export class PostComponent implements OnInit {
     @Input() post!: Post;
     @Output() likeFn = new EventEmitter();
     private postService = inject(PostService);
-    private userService = inject(UserService);
-    public postAuthor!: User;
 
     public dropDownItems: DropDownItem[] = [];
 
@@ -41,8 +39,6 @@ export class PostComponent implements OnInit {
                 click: () => this.postService.deletePost()
             }
         ];
-
-        this.userService.getUserById(this.post.authorId).subscribe(res => (this.postAuthor = res));
     }
 
     likePost(id: any) {

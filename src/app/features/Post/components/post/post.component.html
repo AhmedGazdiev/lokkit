@@ -1,10 +1,10 @@
 <article class="post_container box-shadow">
     <div class="post_top">
         <div class="post_top-info">
-            <img [src]="postAuthor.avatar" alt="avatar" class="post_avatar" />
+            <img [src]="post.author.avatar" alt="avatar" class="post_avatar" />
             <div class="post_top-info-block">
-                <p class="post_top-info-block-name">{{ postAuthor.username | username }}</p>
-                <span class="post_top-info-block-desc">{{ postAuthor.story }}</span>
+                <p class="post_top-info-block-name">{{ post.author.username | username }}</p>
+                <span class="post_top-info-block-desc">{{ post.author.story }}</span>
             </div>
         </div>
         <app-drop-down [appDropDown]="dropDownItems">
@@ -45,8 +45,8 @@
         <div class="post_main-comments" *ngIf="showComments">
             @for (comment of post.comments; track $index) {
                 <div class="post_main-comments-item box-shadow">
-                    <p class="post_main-comments-item-name">comment authorName</p>
-                    <p class="post_main-comments-item-content">{{ comment }}</p>
+                    <p class="post_main-comments-item-name">{{ comment.author.username | username }}</p>
+                    <p class="post_main-comments-item-content">{{ comment.content }}</p>
                 </div>
             }
         </div>

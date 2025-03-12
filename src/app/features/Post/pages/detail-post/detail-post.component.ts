@@ -1,7 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from '@core/services/post.service';
-import { Post } from '@core/models/post';
 
 @Component({
     selector: 'app-detail-post',
@@ -12,7 +11,7 @@ import { Post } from '@core/models/post';
 export class DetailPostComponent implements OnInit {
     private postService = inject(PostService);
     private route = inject(ActivatedRoute);
-    public post!: Post | undefined;
+    public post!: any;
     id: string | null = null;
 
     ngOnInit(): void {

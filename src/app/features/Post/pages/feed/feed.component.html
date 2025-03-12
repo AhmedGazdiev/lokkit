@@ -1,7 +1,11 @@
 <div class="feed_container">
     <div class="feed_posts">
-        @for (post of postService.posts; track post._id) {
-            <app-post [post]="post" (likeFn)="like($event)" />
+        @if (posts$ | async; as posts) {
+            @for (post of posts; track post._id) {
+                <app-post [post]="post" (likeFn)="like($event)" />
+            }
+        } @else {
+            <p>No posts found</p>
         }
     </div>
     <app-suggestions />

@@ -21,7 +21,7 @@ export class PostService {
     public getPosts(): Observable<Post[]> {
         this.loading.set(true);
         return this.http.get<Post[]>('/posts').pipe(
-            delay(1000),
+            delay(500),
             retry(2),
             tap(res => {
                 this.postsSubject$.next([...res]);
@@ -39,7 +39,7 @@ export class PostService {
     public getPostById(id: number): Observable<Post> {
         this.loading.set(true);
         return this.http.get<Post>(`/posts/${id}`).pipe(
-            delay(1000),
+            delay(500),
             retry(2),
             catchError(error => {
                 this.loading.set(false);

@@ -8,7 +8,7 @@
             <app-icon [icon]="'email'" />
             <input class="input" type="email" id="email" placeholder="Email" formControlName="email" />
         </label>
-        @if (loginForm.controls['email'].invalid && loginForm.controls['email'].touched) {
+        @if (loginForm.controls['email'].invalid && loginForm.controls['email'].dirty) {
             @if (loginForm.get(['email'])?.errors?.['required']) {
                 <span class="form_error"> The email is required. </span>
             }
@@ -20,7 +20,7 @@
             <app-icon [icon]="'unlock'" />
             <input class="input" type="password" id="password" placeholder="Password" formControlName="password" />
         </label>
-        @if (loginForm.controls['password'].invalid && loginForm.controls['password'].touched) {
+        @if (loginForm.controls['password'].invalid && loginForm.controls['password'].dirty) {
             @if (loginForm.get(['password'])?.errors?.['required']) {
                 <span class="form_error"> The password is required. </span>
             }

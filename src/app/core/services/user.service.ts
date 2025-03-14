@@ -18,7 +18,7 @@ export class UserService {
     public createUser(newUser: Partial<User>): Observable<User> {
         this.loading.set(true);
         return this.http.post<User, Partial<User>>('/users', newUser).pipe(
-            delay(1000),
+            delay(500),
             retry(2),
             tap(res => {
                 this.usersSubject$.next([...this.usersSubject$.value, res]);
@@ -37,7 +37,7 @@ export class UserService {
     public getUsers(): Observable<User[]> {
         this.loading.set(true);
         return this.http.get<User[]>('/users').pipe(
-            delay(1000),
+            delay(500),
             retry(2),
             tap(res => {
                 this.usersSubject$.next([...res]);
@@ -55,7 +55,7 @@ export class UserService {
     public getUserById(id: number): Observable<User> {
         this.loading.set(true);
         return this.http.get<User>(`/users/${id}`).pipe(
-            delay(1000),
+            delay(500),
             retry(2),
             catchError(error => {
                 this.loading.set(false);
@@ -69,7 +69,7 @@ export class UserService {
     public updateUser(id: number, updatedUser: Partial<User>): Observable<User> {
         this.loading.set(true);
         return this.http.patch<User, Partial<User>>(`/users/${id}`, updatedUser).pipe(
-            delay(1000),
+            delay(500),
             retry(2),
             tap(res => {
                 const updatedUser = this.usersSubject$.value.map(user =>
@@ -90,7 +90,7 @@ export class UserService {
     public deleteUser(id: number): Observable<any> {
         this.loading.set(true);
         return this.http.delete<User>(`/users/${id}`).pipe(
-            delay(1000),
+            delay(500),
             retry(2),
             tap(res => {
                 this.usersSubject$.next(this.usersSubject$.value.filter(user => user.id !== res.id));

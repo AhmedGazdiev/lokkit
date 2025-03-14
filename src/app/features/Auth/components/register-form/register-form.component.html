@@ -8,7 +8,7 @@
             <app-icon [icon]="'email'" />
             <input class="input" type="email" id="email" placeholder="Email" formControlName="email" />
         </label>
-        @if (registerForm.controls['email'].invalid && registerForm.controls['email'].touched) {
+        @if (registerForm.controls['email'].invalid && registerForm.controls['email'].dirty) {
             @if (registerForm.get(['email'])?.errors?.['required']) {
                 <span class="form_error"> The email is required. </span>
             }
@@ -20,7 +20,7 @@
             <app-icon [icon]="'user'" />
             <input class="input" type="text" id="username" placeholder="Username" formControlName="username" />
         </label>
-        @if (registerForm.controls['username'].invalid && registerForm.controls['username'].touched) {
+        @if (registerForm.controls['username'].invalid && registerForm.controls['username'].dirty) {
             @if (registerForm.get(['username'])?.errors?.['required']) {
                 <span class="form_error"> The username is required. </span>
             }
@@ -32,7 +32,7 @@
             <app-icon [icon]="'unlock'" />
             <input class="input" type="password" id="password" placeholder="Password" formControlName="password" />
         </label>
-        @if (registerForm.controls['password'].invalid && registerForm.controls['password'].touched) {
+        @if (registerForm.controls['password'].invalid && registerForm.controls['password'].dirty) {
             @if (registerForm.get(['password'])?.errors?.['required']) {
                 <span class="form_error"> The password is required. </span>
             }
@@ -50,7 +50,7 @@
                 formControlName="confirmPassword"
             />
         </label>
-        @if (registerForm.errors?.['passwordMismatch'] && registerForm.controls['confirmPassword'].touched) {
+        @if (registerForm.errors?.['passwordMismatch'] && registerForm.controls['confirmPassword'].dirty) {
             @if (registerForm.get(['confirmPassword'])?.errors?.['required']) {
                 <span class="form_error"> The confirmPassword is required. </span>
             }

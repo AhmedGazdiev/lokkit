@@ -1,7 +1,7 @@
 <div class="feed_container">
     <div class="feed_posts">
         @if (posts$ | async; as posts) {
-            @for (post of posts; track post._id) {
+            @for (post of posts; track post.id) {
                 <app-post [post]="post" (likeFn)="like($event)" />
             }
         } @else {

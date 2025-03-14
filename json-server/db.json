@@ -147,34 +147,84 @@
   "posts": [
     {
       "id": 123,
-      "authorId": 123047568,
-      "title": "First Post",
-      "content": "This is the content of the first post.",
-      "image": "https://plus.unsplash.com/premium_photo-1723860011127-5029e9b914be?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "author": {
+        "id": 123047568,
+        "fullName": "Ahmed Gazdiev",
+        "username": "ahm_gazdiev",
+        "email": "ahm.gazdiev@example.com",
+        "password": "abc123",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_23.png",
+        "gender": "male",
+        "role": "admin",
+        "joined": "2023-01-01T00:00:00Z",
+        "city": "Venna",
+        "story": "I love coding and exploring new technologies."
+      },
+      "title": "Angular",
+      "content": "Angular - это лучший фреймворк для создания одностраничных веб-приложений. Single Page Application.",
+      "image": "",
       "likes": 10,
       "comments": [
         {
           "id": 1,
-          "authorId": 123047568,
+          "author": {
+            "id": 123047568,
+            "fullName": "Ahmed Gazdiev",
+            "username": "ahm_gazdiev",
+            "email": "ahm.gazdiev@example.com",
+            "password": "abc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_23.png",
+            "gender": "male",
+            "role": "admin",
+            "joined": "2023-01-01T00:00:00Z",
+            "city": "Venna",
+            "story": "I love coding and exploring new technologies."
+          },
           "content": "Great post!",
           "date": "2023-01-02T00:00:00Z"
         },
         {
           "id": 2,
-          "authorId": 1257564,
+          "author": {
+            "id": 1257564,
+            "fullName": "John Doe",
+            "username": "johndoe",
+            "email": "john@example.com",
+            "password": "abc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_3.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-01-01T00:00:00Z",
+            "city": "New York",
+            "story": "I enjoy traveling and trying new cuisines."
+          },
           "content": "I agree!",
           "date": "2023-01-03T00:00:00Z"
         }
       ],
       "date": "2023-01-01T00:00:00Z",
       "tags": [
-        "first",
-        "post"
+        "frontend",
+        "javascript",
+        "typescript",
+        "angular"
       ]
     },
     {
       "id": 234,
-      "authorId": 123047568,
+      "author": {
+        "id": 123047568,
+        "fullName": "Ahmed Gazdiev",
+        "username": "ahm_gazdiev",
+        "email": "ahm.gazdiev@example.com",
+        "password": "abc123",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_23.png",
+        "gender": "male",
+        "role": "admin",
+        "joined": "2023-01-01T00:00:00Z",
+        "city": "Venna",
+        "story": "I love coding and exploring new technologies."
+      },
       "title": "Second Post",
       "content": "This is the content of the second post.",
       "image": "https://images.unsplash.com/photo-1726137569872-28e3f796d4a2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -182,7 +232,19 @@
       "comments": [
         {
           "id": 3,
-          "authorId": 123047568,
+          "author": {
+            "id": 123047568,
+            "fullName": "Ahmed Gazdiev",
+            "username": "ahm_gazdiev",
+            "email": "ahm.gazdiev@example.com",
+            "password": "abc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_23.png",
+            "gender": "male",
+            "role": "admin",
+            "joined": "2023-01-01T00:00:00Z",
+            "city": "Venna",
+            "story": "I love coding and exploring new technologies."
+          },
           "content": "Nice one!",
           "date": "2023-02-02T00:00:00Z"
         }
@@ -195,7 +257,19 @@
     },
     {
       "id": 345,
-      "authorId": 123047568,
+      "author": {
+        "id": 123047568,
+        "fullName": "Ahmed Gazdiev",
+        "username": "ahm_gazdiev",
+        "email": "ahm.gazdiev@example.com",
+        "password": "abc123",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_23.png",
+        "gender": "male",
+        "role": "admin",
+        "joined": "2023-01-01T00:00:00Z",
+        "city": "Venna",
+        "story": "I love coding and exploring new technologies."
+      },
       "title": "Third Post",
       "content": "This is the content of the third post.",
       "image": "https://images.unsplash.com/photo-1740664865425-1232db85683f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -203,13 +277,37 @@
       "comments": [
         {
           "id": 4,
-          "authorId": 123047568,
+          "author": {
+            "id": 123047568,
+            "fullName": "Ahmed Gazdiev",
+            "username": "ahm_gazdiev",
+            "email": "ahm.gazdiev@example.com",
+            "password": "abc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_23.png",
+            "gender": "male",
+            "role": "admin",
+            "joined": "2023-01-01T00:00:00Z",
+            "city": "Venna",
+            "story": "I love coding and exploring new technologies."
+          },
           "content": "Awesome!",
           "date": "2023-03-02T00:00:00Z"
         },
         {
           "id": 5,
-          "authorId": 1257564,
+          "author": {
+            "id": 1257564,
+            "fullName": "John Doe",
+            "username": "johndoe",
+            "email": "john@example.com",
+            "password": "abc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_3.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-01-01T00:00:00Z",
+            "city": "New York",
+            "story": "I enjoy traveling and trying new cuisines."
+          },
           "content": "Well done!",
           "date": "2023-03-03T00:00:00Z"
         }
@@ -222,14 +320,38 @@
     },
     {
       "id": 456,
-      "authorId": 908708708707,
+      "author": {
+        "id": 908708708707,
+        "fullName": "Henry Wilson",
+        "username": "henryw",
+        "email": "henry@example.com",
+        "password": "asd789",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_9.png",
+        "gender": "male",
+        "role": "user",
+        "joined": "2023-09-01T00:00:00Z",
+        "city": "Chicago",
+        "story": "I am a sports fan and love watching basketball."
+      },
       "title": "Fourth Post",
       "content": "This is the content of the fourth post.",
       "likes": 15,
       "comments": [
         {
           "id": 6,
-          "authorId": 123047568,
+          "author": {
+            "id": 123047568,
+            "fullName": "Ahmed Gazdiev",
+            "username": "ahm_gazdiev",
+            "email": "ahm.gazdiev@example.com",
+            "password": "abc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_23.png",
+            "gender": "male",
+            "role": "admin",
+            "joined": "2023-01-01T00:00:00Z",
+            "city": "Venna",
+            "story": "I love coding and exploring new technologies."
+          },
           "content": "Interesting!",
           "date": "2023-04-02T00:00:00Z"
         }
@@ -242,7 +364,19 @@
     },
     {
       "id": 567,
-      "authorId": 908708708707,
+      "author": {
+        "id": 908708708707,
+        "fullName": "Henry Wilson",
+        "username": "henryw",
+        "email": "henry@example.com",
+        "password": "asd789",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_9.png",
+        "gender": "male",
+        "role": "user",
+        "joined": "2023-09-01T00:00:00Z",
+        "city": "Chicago",
+        "story": "I am a sports fan and love watching basketball."
+      },
       "title": "Fifth Post",
       "content": "This is the content of the fifth post.",
       "image": "https://images.unsplash.com/photo-1740916856932-7b02aeca973b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -250,13 +384,37 @@
       "comments": [
         {
           "id": 7,
-          "authorId": 123047568,
+          "author": {
+            "id": 123047568,
+            "fullName": "Ahmed Gazdiev",
+            "username": "ahm_gazdiev",
+            "email": "ahm.gazdiev@example.com",
+            "password": "abc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_23.png",
+            "gender": "male",
+            "role": "admin",
+            "joined": "2023-01-01T00:00:00Z",
+            "city": "Venna",
+            "story": "I love coding and exploring new technologies."
+          },
           "content": "Great job!",
           "date": "2023-05-02T00:00:00Z"
         },
         {
           "id": 8,
-          "authorId": 1257564,
+          "author": {
+            "id": 1257564,
+            "fullName": "John Doe",
+            "username": "johndoe",
+            "email": "john@example.com",
+            "password": "abc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_3.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-01-01T00:00:00Z",
+            "city": "New York",
+            "story": "I enjoy traveling and trying new cuisines."
+          },
           "content": "I like it!",
           "date": "2023-05-03T00:00:00Z"
         }
@@ -269,14 +427,38 @@
     },
     {
       "id": 678,
-      "authorId": 1257564,
+      "author": {
+        "id": 1257564,
+        "fullName": "John Doe",
+        "username": "johndoe",
+        "email": "john@example.com",
+        "password": "abc123",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_3.png",
+        "gender": "male",
+        "role": "user",
+        "joined": "2023-01-01T00:00:00Z",
+        "city": "New York",
+        "story": "I enjoy traveling and trying new cuisines."
+      },
       "title": "Sixth Post",
       "content": "This is the content of the sixth post.",
       "likes": 30,
       "comments": [
         {
           "id": 9,
-          "authorId": 1257564,
+          "author": {
+            "id": 1257564,
+            "fullName": "John Doe",
+            "username": "johndoe",
+            "email": "john@example.com",
+            "password": "abc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_3.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-01-01T00:00:00Z",
+            "city": "New York",
+            "story": "I enjoy traveling and trying new cuisines."
+          },
           "content": "Well written!",
           "date": "2023-06-02T00:00:00Z"
         }
@@ -289,7 +471,19 @@
     },
     {
       "id": 789,
-      "authorId": 475768355462,
+      "author": {
+        "id": 475768355462,
+        "fullName": "Jane Smith",
+        "username": "janesmith",
+        "email": "jane@example.com",
+        "password": "qwe456",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_2.png",
+        "gender": "female",
+        "role": "user",
+        "joined": "2023-02-01T00:00:00Z",
+        "city": "London",
+        "story": "I am passionate about art and photography."
+      },
       "title": "Seventh Post",
       "content": "This is the content of the seventh post.",
       "image": "https://plus.unsplash.com/premium_photo-1740911423360-eba86ab4e743?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -297,13 +491,37 @@
       "comments": [
         {
           "id": 10,
-          "authorId": 1257564,
+          "author": {
+            "id": 1257564,
+            "fullName": "John Doe",
+            "username": "johndoe",
+            "email": "john@example.com",
+            "password": "abc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_3.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-01-01T00:00:00Z",
+            "city": "New York",
+            "story": "I enjoy traveling and trying new cuisines."
+          },
           "content": "Amazing!",
           "date": "2023-07-02T00:00:00Z"
         },
         {
           "id": 11,
-          "authorId": 475768355462,
+          "author": {
+            "id": 475768355462,
+            "fullName": "Jane Smith",
+            "username": "janesmith",
+            "email": "jane@example.com",
+            "password": "qwe456",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_2.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-02-01T00:00:00Z",
+            "city": "London",
+            "story": "I am passionate about art and photography."
+          },
           "content": "Keep it up!",
           "date": "2023-07-03T00:00:00Z"
         }
@@ -316,7 +534,19 @@
     },
     {
       "id": 8910,
-      "authorId": 475768355462,
+      "author": {
+        "id": 475768355462,
+        "fullName": "Jane Smith",
+        "username": "janesmith",
+        "email": "jane@example.com",
+        "password": "qwe456",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_2.png",
+        "gender": "female",
+        "role": "user",
+        "joined": "2023-02-01T00:00:00Z",
+        "city": "London",
+        "story": "I am passionate about art and photography."
+      },
       "title": "Eighth Post",
       "content": "This is the content of the eighth post.",
       "image": "https://images.unsplash.com/photo-1740380871934-774af43b4e2f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -324,7 +554,19 @@
       "comments": [
         {
           "id": 12,
-          "authorId": 475768355462,
+          "author": {
+            "id": 475768355462,
+            "fullName": "Jane Smith",
+            "username": "janesmith",
+            "email": "jane@example.com",
+            "password": "qwe456",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_2.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-02-01T00:00:00Z",
+            "city": "London",
+            "story": "I am passionate about art and photography."
+          },
           "content": "Fantastic!",
           "date": "2023-08-02T00:00:00Z"
         }
@@ -337,7 +579,19 @@
     },
     {
       "id": 91011,
-      "authorId": 475768355462,
+      "author": {
+        "id": 475768355462,
+        "fullName": "Jane Smith",
+        "username": "janesmith",
+        "email": "jane@example.com",
+        "password": "qwe456",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_2.png",
+        "gender": "female",
+        "role": "user",
+        "joined": "2023-02-01T00:00:00Z",
+        "city": "London",
+        "story": "I am passionate about art and photography."
+      },
       "title": "Ninth Post",
       "content": "This is the content of the ninth post.",
       "image": "https://images.unsplash.com/photo-1740905546458-2b0199785aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -345,13 +599,37 @@
       "comments": [
         {
           "id": 13,
-          "authorId": 475768355462,
+          "author": {
+            "id": 475768355462,
+            "fullName": "Jane Smith",
+            "username": "janesmith",
+            "email": "jane@example.com",
+            "password": "qwe456",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_2.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-02-01T00:00:00Z",
+            "city": "London",
+            "story": "I am passionate about art and photography."
+          },
           "content": "Excellent!",
           "date": "2023-09-02T00:00:00Z"
         },
         {
           "id": 14,
-          "authorId": 885746363,
+          "author": {
+            "id": 885746363,
+            "fullName": "Alice Johnson",
+            "username": "alicej",
+            "email": "alice@example.com",
+            "password": "zxc789",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-03-01T00:00:00Z",
+            "city": "Paris",
+            "story": "I love reading books and writing poetry."
+          },
           "content": "Well done!",
           "date": "2023-09-03T00:00:00Z"
         }
@@ -364,14 +642,38 @@
     },
     {
       "id": 101112,
-      "authorId": 885746363,
+      "author": {
+        "id": 885746363,
+        "fullName": "Alice Johnson",
+        "username": "alicej",
+        "email": "alice@example.com",
+        "password": "zxc789",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
+        "gender": "female",
+        "role": "user",
+        "joined": "2023-03-01T00:00:00Z",
+        "city": "Paris",
+        "story": "I love reading books and writing poetry."
+      },
       "title": "Tenth Post",
       "content": "This is the content of the tenth post.",
       "likes": 50,
       "comments": [
         {
           "id": 15,
-          "authorId": 475768355462,
+          "author": {
+            "id": 475768355462,
+            "fullName": "Jane Smith",
+            "username": "janesmith",
+            "email": "jane@example.com",
+            "password": "qwe456",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_2.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-02-01T00:00:00Z",
+            "city": "London",
+            "story": "I am passionate about art and photography."
+          },
           "content": "Great post!",
           "date": "2023-10-02T00:00:00Z"
         }
@@ -384,7 +686,19 @@
     },
     {
       "id": 111213,
-      "authorId": 885746363,
+      "author": {
+        "id": 885746363,
+        "fullName": "Alice Johnson",
+        "username": "alicej",
+        "email": "alice@example.com",
+        "password": "zxc789",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
+        "gender": "female",
+        "role": "user",
+        "joined": "2023-03-01T00:00:00Z",
+        "city": "Paris",
+        "story": "I love reading books and writing poetry."
+      },
       "title": "Eleventh Post",
       "content": "This is the content of the eleventh post.",
       "image": "https://plus.unsplash.com/premium_photo-1701012307643-f8a3f968b2cc?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -392,13 +706,37 @@
       "comments": [
         {
           "id": 16,
-          "authorId": 475768355462,
+          "author": {
+            "id": 475768355462,
+            "fullName": "Jane Smith",
+            "username": "janesmith",
+            "email": "jane@example.com",
+            "password": "qwe456",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_2.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-02-01T00:00:00Z",
+            "city": "London",
+            "story": "I am passionate about art and photography."
+          },
           "content": "Awesome!",
           "date": "2023-11-02T00:00:00Z"
         },
         {
           "id": 17,
-          "authorId": 885746363,
+          "author": {
+            "id": 885746363,
+            "fullName": "Alice Johnson",
+            "username": "alicej",
+            "email": "alice@example.com",
+            "password": "zxc789",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-03-01T00:00:00Z",
+            "city": "Paris",
+            "story": "I love reading books and writing poetry."
+          },
           "content": "I like it!",
           "date": "2023-11-03T00:00:00Z"
         }
@@ -411,14 +749,38 @@
     },
     {
       "id": 121314,
-      "authorId": 885746363,
+      "author": {
+        "id": 885746363,
+        "fullName": "Alice Johnson",
+        "username": "alicej",
+        "email": "alice@example.com",
+        "password": "zxc789",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
+        "gender": "female",
+        "role": "user",
+        "joined": "2023-03-01T00:00:00Z",
+        "city": "Paris",
+        "story": "I love reading books and writing poetry."
+      },
       "title": "Twelfth Post",
       "content": "This is the content of the twelfth post.",
       "likes": 60,
       "comments": [
         {
           "id": 18,
-          "authorId": 475768355462,
+          "author": {
+            "id": 475768355462,
+            "fullName": "Jane Smith",
+            "username": "janesmith",
+            "email": "jane@example.com",
+            "password": "qwe456",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_2.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-02-01T00:00:00Z",
+            "city": "London",
+            "story": "I am passionate about art and photography."
+          },
           "content": "Well written!",
           "date": "2023-12-02T00:00:00Z"
         }
@@ -431,7 +793,19 @@
     },
     {
       "id": 131415,
-      "authorId": 443657654734,
+      "author": {
+        "id": 443657654734,
+        "fullName": "Bob Brown",
+        "username": "bobb",
+        "email": "bob@example.com",
+        "password": "rty123",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_14.png",
+        "gender": "male",
+        "role": "user",
+        "joined": "2023-04-01T00:00:00Z",
+        "city": "Berlin",
+        "story": "I am a fitness enthusiast and love outdoor activities."
+      },
       "title": "Thirteenth Post",
       "content": "This is the content of the thirteenth post.",
       "image": "https://images.unsplash.com/photo-1735615479428-1e0e932daf62?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -439,13 +813,37 @@
       "comments": [
         {
           "id": 19,
-          "authorId": 5,
+          "author": {
+            "id": 443657654734,
+            "fullName": "Bob Brown",
+            "username": "bobb",
+            "email": "bob@example.com",
+            "password": "rty123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_14.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-04-01T00:00:00Z",
+            "city": "Berlin",
+            "story": "I am a fitness enthusiast and love outdoor activities."
+          },
           "content": "Amazing!",
           "date": "2024-01-02T00:00:00Z"
         },
         {
           "id": 20,
-          "authorId": 885746363,
+          "author": {
+            "id": 885746363,
+            "fullName": "Alice Johnson",
+            "username": "alicej",
+            "email": "alice@example.com",
+            "password": "zxc789",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-03-01T00:00:00Z",
+            "city": "Paris",
+            "story": "I love reading books and writing poetry."
+          },
           "content": "Keep it up!",
           "date": "2024-01-03T00:00:00Z"
         }
@@ -458,14 +856,38 @@
     },
     {
       "id": 141516,
-      "authorId": 443657654734,
+      "author": {
+        "id": 443657654734,
+        "fullName": "Bob Brown",
+        "username": "bobb",
+        "email": "bob@example.com",
+        "password": "rty123",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_14.png",
+        "gender": "male",
+        "role": "user",
+        "joined": "2023-04-01T00:00:00Z",
+        "city": "Berlin",
+        "story": "I am a fitness enthusiast and love outdoor activities."
+      },
       "title": "Fourteenth Post",
       "content": "This is the content of the fourteenth post.",
       "likes": 70,
       "comments": [
         {
           "id": 21,
-          "authorId": 885746363,
+          "author": {
+            "id": 885746363,
+            "fullName": "Alice Johnson",
+            "username": "alicej",
+            "email": "alice@example.com",
+            "password": "zxc789",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-03-01T00:00:00Z",
+            "city": "Paris",
+            "story": "I love reading books and writing poetry."
+          },
           "content": "Fantastic!",
           "date": "2024-02-02T00:00:00Z"
         }
@@ -478,7 +900,19 @@
     },
     {
       "id": 151617,
-      "authorId": 443657654734,
+      "author": {
+        "id": 443657654734,
+        "fullName": "Bob Brown",
+        "username": "bobb",
+        "email": "bob@example.com",
+        "password": "rty123",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_14.png",
+        "gender": "male",
+        "role": "user",
+        "joined": "2023-04-01T00:00:00Z",
+        "city": "Berlin",
+        "story": "I am a fitness enthusiast and love outdoor activities."
+      },
       "title": "Fifteenth Post",
       "content": "This is the content of the fifteenth post.",
       "image": "https://plus.unsplash.com/premium_photo-1734543932038-6bb3d024f5a0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -486,13 +920,37 @@
       "comments": [
         {
           "id": 22,
-          "authorId": 885746363,
+          "author": {
+            "id": 885746363,
+            "fullName": "Alice Johnson",
+            "username": "alicej",
+            "email": "alice@example.com",
+            "password": "zxc789",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-03-01T00:00:00Z",
+            "city": "Paris",
+            "story": "I love reading books and writing poetry."
+          },
           "content": "Excellent!",
           "date": "2024-03-02T00:00:00Z"
         },
         {
           "id": 23,
-          "authorId": 443657654734,
+          "author": {
+            "id": 443657654734,
+            "fullName": "Bob Brown",
+            "username": "bobb",
+            "email": "bob@example.com",
+            "password": "rty123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_14.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-04-01T00:00:00Z",
+            "city": "Berlin",
+            "story": "I am a fitness enthusiast and love outdoor activities."
+          },
           "content": "Well done!",
           "date": "2024-03-03T00:00:00Z"
         }
@@ -505,14 +963,38 @@
     },
     {
       "id": 161718,
-      "authorId": 65464747458,
+      "author": {
+        "id": 6743645745,
+        "fullName": "Eve White",
+        "username": "evew",
+        "email": "eve@example.com",
+        "password": "vbn789",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_12.png",
+        "gender": "female",
+        "role": "user",
+        "joined": "2023-06-01T00:00:00Z",
+        "city": "Sydney",
+        "story": "I enjoy hiking and exploring nature."
+      },
       "title": "Sixteenth Post",
       "content": "This is the content of the sixteenth post.",
       "likes": 80,
       "comments": [
         {
           "id": 24,
-          "authorId": 885746363,
+          "author": {
+            "id": 885746363,
+            "fullName": "Alice Johnson",
+            "username": "alicej",
+            "email": "alice@example.com",
+            "password": "zxc789",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-03-01T00:00:00Z",
+            "city": "Paris",
+            "story": "I love reading books and writing poetry."
+          },
           "content": "Great post!",
           "date": "2024-04-02T00:00:00Z"
         }
@@ -525,7 +1007,19 @@
     },
     {
       "id": 171819,
-      "authorId": 6743645745,
+      "author": {
+        "id": 6743645745,
+        "fullName": "Eve White",
+        "username": "evew",
+        "email": "eve@example.com",
+        "password": "vbn789",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_12.png",
+        "gender": "female",
+        "role": "user",
+        "joined": "2023-06-01T00:00:00Z",
+        "city": "Sydney",
+        "story": "I enjoy hiking and exploring nature."
+      },
       "title": "Seventeenth Post",
       "content": "This is the content of the seventeenth post.",
       "image": "https://plus.unsplash.com/premium_photo-1739226531311-a684a10ac16e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -533,13 +1027,37 @@
       "comments": [
         {
           "id": 25,
-          "authorId": 885746363,
+          "author": {
+            "id": 885746363,
+            "fullName": "Alice Johnson",
+            "username": "alicej",
+            "email": "alice@example.com",
+            "password": "zxc789",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-03-01T00:00:00Z",
+            "city": "Paris",
+            "story": "I love reading books and writing poetry."
+          },
           "content": "Awesome!",
           "date": "2024-05-02T00:00:00Z"
         },
         {
           "id": 26,
-          "authorId": 443657654734,
+          "author": {
+            "id": 443657654734,
+            "fullName": "Bob Brown",
+            "username": "bobb",
+            "email": "bob@example.com",
+            "password": "rty123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_14.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-04-01T00:00:00Z",
+            "city": "Berlin",
+            "story": "I am a fitness enthusiast and love outdoor activities."
+          },
           "content": "I like it!",
           "date": "2024-05-03T00:00:00Z"
         }
@@ -552,14 +1070,38 @@
     },
     {
       "id": 181920,
-      "authorId": 566352345346,
+      "author": {
+        "id": 566352345346,
+        "fullName": "Charlie Davis",
+        "username": "charlied",
+        "email": "charlie@example.com",
+        "password": "fgh456",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_26.png",
+        "gender": "male",
+        "role": "user",
+        "joined": "2023-05-01T00:00:00Z",
+        "city": "Tokyo",
+        "story": "I am a tech geek and love building gadgets."
+      },
       "title": "Eighteenth Post",
       "content": "This is the content of the eighteenth post.",
       "likes": 90,
       "comments": [
         {
           "id": 27,
-          "authorId": 885746363,
+          "author": {
+            "id": 885746363,
+            "fullName": "Alice Johnson",
+            "username": "alicej",
+            "email": "alice@example.com",
+            "password": "zxc789",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-03-01T00:00:00Z",
+            "city": "Paris",
+            "story": "I love reading books and writing poetry."
+          },
           "content": "Well written!",
           "date": "2024-06-02T00:00:00Z"
         }
@@ -572,7 +1114,19 @@
     },
     {
       "id": 192021,
-      "authorId": 885746363,
+      "author": {
+        "id": 885746363,
+        "fullName": "Alice Johnson",
+        "username": "alicej",
+        "email": "alice@example.com",
+        "password": "zxc789",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
+        "gender": "female",
+        "role": "user",
+        "joined": "2023-03-01T00:00:00Z",
+        "city": "Paris",
+        "story": "I love reading books and writing poetry."
+      },
       "title": "Nineteenth Post",
       "content": "This is the content of the nineteenth post.",
       "image": "https://images.unsplash.com/photo-1726056652641-de93ec003289?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -580,13 +1134,37 @@
       "comments": [
         {
           "id": 28,
-          "authorId": 885746363,
+          "author": {
+            "id": 885746363,
+            "fullName": "Alice Johnson",
+            "username": "alicej",
+            "email": "alice@example.com",
+            "password": "zxc789",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-03-01T00:00:00Z",
+            "city": "Paris",
+            "story": "I love reading books and writing poetry."
+          },
           "content": "Amazing!",
           "date": "2024-07-02T00:00:00Z"
         },
         {
           "id": 29,
-          "authorId": 443657654734,
+          "author": {
+            "id": 443657654734,
+            "fullName": "Bob Brown",
+            "username": "bobb",
+            "email": "bob@example.com",
+            "password": "rty123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_14.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-04-01T00:00:00Z",
+            "city": "Berlin",
+            "story": "I am a fitness enthusiast and love outdoor activities."
+          },
           "content": "Keep it up!",
           "date": "2024-07-03T00:00:00Z"
         }
@@ -599,7 +1177,19 @@
     },
     {
       "id": 202122,
-      "authorId": 885746363,
+      "author": {
+        "id": 885746363,
+        "fullName": "Alice Johnson",
+        "username": "alicej",
+        "email": "alice@example.com",
+        "password": "zxc789",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
+        "gender": "female",
+        "role": "user",
+        "joined": "2023-03-01T00:00:00Z",
+        "city": "Paris",
+        "story": "I love reading books and writing poetry."
+      },
       "title": "Twentieth Post",
       "content": "This is the content of the twentieth post.",
       "image": "https://plus.unsplash.com/premium_photo-1672498213874-6532cb5703b2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -607,7 +1197,19 @@
       "comments": [
         {
           "id": 30,
-          "authorId": 443657654734,
+          "author": {
+            "id": 443657654734,
+            "fullName": "Bob Brown",
+            "username": "bobb",
+            "email": "bob@example.com",
+            "password": "rty123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_14.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-04-01T00:00:00Z",
+            "city": "Berlin",
+            "story": "I am a fitness enthusiast and love outdoor activities."
+          },
           "content": "Fantastic!",
           "date": "2024-08-02T00:00:00Z"
         }
@@ -620,7 +1222,19 @@
     },
     {
       "id": 212223,
-      "authorId": 885746363,
+      "author": {
+        "id": 885746363,
+        "fullName": "Alice Johnson",
+        "username": "alicej",
+        "email": "alice@example.com",
+        "password": "zxc789",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_25.png",
+        "gender": "female",
+        "role": "user",
+        "joined": "2023-03-01T00:00:00Z",
+        "city": "Paris",
+        "story": "I love reading books and writing poetry."
+      },
       "title": "Twenty-First Post",
       "content": "This is the content of the twenty-first post.",
       "image": "https://plus.unsplash.com/premium_photo-1676117275133-56553ab7bd58?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -628,13 +1242,37 @@
       "comments": [
         {
           "id": 31,
-          "authorId": 443657654734,
+          "author": {
+            "id": 443657654734,
+            "fullName": "Bob Brown",
+            "username": "bobb",
+            "email": "bob@example.com",
+            "password": "rty123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_14.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-04-01T00:00:00Z",
+            "city": "Berlin",
+            "story": "I am a fitness enthusiast and love outdoor activities."
+          },
           "content": "Great post!",
           "date": "2024-09-02T00:00:00Z"
         },
         {
           "id": 32,
-          "authorId": 13466885680,
+          "author": {
+            "id": 13466885680,
+            "fullName": "Ivy Moore",
+            "username": "ivym",
+            "email": "ivy@example.com",
+            "password": "yxc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_24.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-10-01T00:00:00Z",
+            "city": "San Francisco",
+            "story": "I am a startup enthusiast and love building new products."
+          },
           "content": "I like it!",
           "date": "2024-09-03T00:00:00Z"
         }
@@ -647,7 +1285,19 @@
     },
     {
       "id": 222324,
-      "authorId": 475768355462,
+      "author": {
+        "id": 475768355462,
+        "fullName": "Jane Smith",
+        "username": "janesmith",
+        "email": "jane@example.com",
+        "password": "qwe456",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_2.png",
+        "gender": "female",
+        "role": "user",
+        "joined": "2023-02-01T00:00:00Z",
+        "city": "London",
+        "story": "I am passionate about art and photography."
+      },
       "title": "Twenty-Second Post",
       "content": "This is the content of the twenty-second post.",
       "image": "https://images.unsplash.com/photo-1740838535478-8f67b29f1c00?q=80&w=2104&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -655,7 +1305,19 @@
       "comments": [
         {
           "id": 33,
-          "authorId": 13466885680,
+          "author": {
+            "id": 13466885680,
+            "fullName": "Ivy Moore",
+            "username": "ivym",
+            "email": "ivy@example.com",
+            "password": "yxc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_24.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-10-01T00:00:00Z",
+            "city": "San Francisco",
+            "story": "I am a startup enthusiast and love building new products."
+          },
           "content": "Well written!",
           "date": "2024-10-02T00:00:00Z"
         }
@@ -668,7 +1330,19 @@
     },
     {
       "id": 232425,
-      "authorId": 475768355462,
+      "author": {
+        "id": 475768355462,
+        "fullName": "Jane Smith",
+        "username": "janesmith",
+        "email": "jane@example.com",
+        "password": "qwe456",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_2.png",
+        "gender": "female",
+        "role": "user",
+        "joined": "2023-02-01T00:00:00Z",
+        "city": "London",
+        "story": "I am passionate about art and photography."
+      },
       "title": "Twenty-Third Post",
       "content": "This is the content of the twenty-third post.",
       "image": "https://images.unsplash.com/photo-1736329279938-372e9e471795?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -676,13 +1350,37 @@
       "comments": [
         {
           "id": 34,
-          "authorId": 13466885680,
+          "author": {
+            "id": 13466885680,
+            "fullName": "Ivy Moore",
+            "username": "ivym",
+            "email": "ivy@example.com",
+            "password": "yxc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_24.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-10-01T00:00:00Z",
+            "city": "San Francisco",
+            "story": "I am a startup enthusiast and love building new products."
+          },
           "content": "Amazing!",
           "date": "2024-11-02T00:00:00Z"
         },
         {
           "id": 35,
-          "authorId": 908708708707,
+          "author": {
+            "id": 908708708707,
+            "fullName": "Henry Wilson",
+            "username": "henryw",
+            "email": "henry@example.com",
+            "password": "asd789",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_9.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-09-01T00:00:00Z",
+            "city": "Chicago",
+            "story": "I am a sports fan and love watching basketball."
+          },
           "content": "Keep it up!",
           "date": "2024-11-03T00:00:00Z"
         }
@@ -695,7 +1393,19 @@
     },
     {
       "id": 242526,
-      "authorId": 13466885680,
+      "author": {
+        "id": 13466885680,
+        "fullName": "Ivy Moore",
+        "username": "ivym",
+        "email": "ivy@example.com",
+        "password": "yxc123",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_24.png",
+        "gender": "female",
+        "role": "user",
+        "joined": "2023-10-01T00:00:00Z",
+        "city": "San Francisco",
+        "story": "I am a startup enthusiast and love building new products."
+      },
       "title": "Twenty-Fourth Post",
       "content": "This is the content of the twenty-fourth post.",
       "image": "https://plus.unsplash.com/premium_photo-1675847898176-824143229880?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -703,7 +1413,19 @@
       "comments": [
         {
           "id": 36,
-          "authorId": 13466885680,
+          "author": {
+            "id": 13466885680,
+            "fullName": "Ivy Moore",
+            "username": "ivym",
+            "email": "ivy@example.com",
+            "password": "yxc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_24.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-10-01T00:00:00Z",
+            "city": "San Francisco",
+            "story": "I am a startup enthusiast and love building new products."
+          },
           "content": "Fantastic!",
           "date": "2024-12-02T00:00:00Z"
         }
@@ -716,7 +1438,19 @@
     },
     {
       "id": 252627,
-      "authorId": 1257564,
+      "author": {
+        "id": 1257564,
+        "fullName": "John Doe",
+        "username": "johndoe",
+        "email": "john@example.com",
+        "password": "abc123",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_3.png",
+        "gender": "male",
+        "role": "user",
+        "joined": "2023-01-01T00:00:00Z",
+        "city": "New York",
+        "story": "I enjoy traveling and trying new cuisines."
+      },
       "title": "Twenty-Fifth Post",
       "content": "This is the content of the twenty-fifth post.",
       "image": "https://images.unsplash.com/photo-1740382281576-95db2cf42d72?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -724,13 +1458,37 @@
       "comments": [
         {
           "id": 37,
-          "authorId": 13466885680,
+          "author": {
+            "id": 13466885680,
+            "fullName": "Ivy Moore",
+            "username": "ivym",
+            "email": "ivy@example.com",
+            "password": "yxc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_24.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-10-01T00:00:00Z",
+            "city": "San Francisco",
+            "story": "I am a startup enthusiast and love building new products."
+          },
           "content": "Excellent!",
           "date": "2025-01-02T00:00:00Z"
         },
         {
           "id": 38,
-          "authorId": 908708708707,
+          "author": {
+            "id": 908708708707,
+            "fullName": "Henry Wilson",
+            "username": "henryw",
+            "email": "henry@example.com",
+            "password": "asd789",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_9.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-09-01T00:00:00Z",
+            "city": "Chicago",
+            "story": "I am a sports fan and love watching basketball."
+          },
           "content": "Well done!",
           "date": "2025-01-03T00:00:00Z"
         }
@@ -743,7 +1501,19 @@
     },
     {
       "id": 262728,
-      "authorId": 1257564,
+      "author": {
+        "id": 1257564,
+        "fullName": "John Doe",
+        "username": "johndoe",
+        "email": "john@example.com",
+        "password": "abc123",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_3.png",
+        "gender": "male",
+        "role": "user",
+        "joined": "2023-01-01T00:00:00Z",
+        "city": "New York",
+        "story": "I enjoy traveling and trying new cuisines."
+      },
       "title": "Twenty-Sixth Post",
       "content": "This is the content of the twenty-sixth post.",
       "image": "https://images.unsplash.com/photo-1474511320723-9a56873867b5?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -751,7 +1521,19 @@
       "comments": [
         {
           "id": 39,
-          "authorId": 13466885680,
+          "author": {
+            "id": 13466885680,
+            "fullName": "Ivy Moore",
+            "username": "ivym",
+            "email": "ivy@example.com",
+            "password": "yxc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_24.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-10-01T00:00:00Z",
+            "city": "San Francisco",
+            "story": "I am a startup enthusiast and love building new products."
+          },
           "content": "Great post!",
           "date": "2025-02-02T00:00:00Z"
         }
@@ -764,7 +1546,19 @@
     },
     {
       "id": 272829,
-      "authorId": 13466885680,
+      "author": {
+        "id": 13466885680,
+        "fullName": "Ivy Moore",
+        "username": "ivym",
+        "email": "ivy@example.com",
+        "password": "yxc123",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_24.png",
+        "gender": "female",
+        "role": "user",
+        "joined": "2023-10-01T00:00:00Z",
+        "city": "San Francisco",
+        "story": "I am a startup enthusiast and love building new products."
+      },
       "title": "Twenty-Seventh Post",
       "content": "This is the content of the twenty-seventh post.",
       "image": "https://images.unsplash.com/photo-1735090086720-1dd19b7e9b18?q=80&w=2054&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -772,13 +1566,37 @@
       "comments": [
         {
           "id": 40,
-          "authorId": 13466885680,
+          "author": {
+            "id": 13466885680,
+            "fullName": "Ivy Moore",
+            "username": "ivym",
+            "email": "ivy@example.com",
+            "password": "yxc123",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_24.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-10-01T00:00:00Z",
+            "city": "San Francisco",
+            "story": "I am a startup enthusiast and love building new products."
+          },
           "content": "Awesome!",
           "date": "2025-03-02T00:00:00Z"
         },
         {
           "id": 41,
-          "authorId": 908708708707,
+          "author": {
+            "id": 908708708707,
+            "fullName": "Henry Wilson",
+            "username": "henryw",
+            "email": "henry@example.com",
+            "password": "asd789",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_9.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-09-01T00:00:00Z",
+            "city": "Chicago",
+            "story": "I am a sports fan and love watching basketball."
+          },
           "content": "I like it!",
           "date": "2025-03-03T00:00:00Z"
         }
@@ -791,14 +1609,38 @@
     },
     {
       "id": 282930,
-      "authorId": 123047568,
+      "author": {
+        "id": 123047568,
+        "fullName": "Ahmed Gazdiev",
+        "username": "ahm_gazdiev",
+        "email": "ahm.gazdiev@example.com",
+        "password": "abc123",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_23.png",
+        "gender": "male",
+        "role": "admin",
+        "joined": "2023-01-01T00:00:00Z",
+        "city": "Venna",
+        "story": "I love coding and exploring new technologies."
+      },
       "title": "Twenty-Eighth Post",
       "content": "This is the content of the twenty-eighth post.",
       "likes": 140,
       "comments": [
         {
           "id": 42,
-          "authorId": 908708708707,
+          "author": {
+            "id": 908708708707,
+            "fullName": "Henry Wilson",
+            "username": "henryw",
+            "email": "henry@example.com",
+            "password": "asd789",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_9.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-09-01T00:00:00Z",
+            "city": "Chicago",
+            "story": "I am a sports fan and love watching basketball."
+          },
           "content": "Well written!",
           "date": "2025-04-02T00:00:00Z"
         }
@@ -811,7 +1653,19 @@
     },
     {
       "id": 293031,
-      "authorId": 123047568,
+      "author": {
+        "id": 123047568,
+        "fullName": "Ahmed Gazdiev",
+        "username": "ahm_gazdiev",
+        "email": "ahm.gazdiev@example.com",
+        "password": "abc123",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_23.png",
+        "gender": "male",
+        "role": "admin",
+        "joined": "2023-01-01T00:00:00Z",
+        "city": "Venna",
+        "story": "I love coding and exploring new technologies."
+      },
       "title": "Twenty-Ninth Post",
       "content": "This is the content of the twenty-ninth post.",
       "image": "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -819,13 +1673,37 @@
       "comments": [
         {
           "id": 43,
-          "authorId": 908708708707,
+          "author": {
+            "id": 908708708707,
+            "fullName": "Henry Wilson",
+            "username": "henryw",
+            "email": "henry@example.com",
+            "password": "asd789",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_9.png",
+            "gender": "male",
+            "role": "user",
+            "joined": "2023-09-01T00:00:00Z",
+            "city": "Chicago",
+            "story": "I am a sports fan and love watching basketball."
+          },
           "content": "Amazing!",
           "date": "2025-05-02T00:00:00Z"
         },
         {
           "id": 44,
-          "authorId": 65464747458,
+          "author": {
+            "id": 65464747458,
+            "fullName": "Grace Lee",
+            "username": "gracel",
+            "email": "grace@example.com",
+            "password": "jkl456",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_31.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-08-01T00:00:00Z",
+            "city": "Seoul",
+            "story": "I am a foodie and love cooking new recipes."
+          },
           "content": "Keep it up!",
           "date": "2025-05-03T00:00:00Z"
         }
@@ -838,7 +1716,19 @@
     },
     {
       "id": 303132,
-      "authorId": 123047568,
+      "author": {
+        "id": 123047568,
+        "fullName": "Ahmed Gazdiev",
+        "username": "ahm_gazdiev",
+        "email": "ahm.gazdiev@example.com",
+        "password": "abc123",
+        "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_23.png",
+        "gender": "male",
+        "role": "admin",
+        "joined": "2023-01-01T00:00:00Z",
+        "city": "Venna",
+        "story": "I love coding and exploring new technologies."
+      },
       "title": "Thirtieth Post",
       "content": "This is the content of the thirtieth post.",
       "image": "https://plus.unsplash.com/premium_photo-1720020552784-f675b06605f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -846,7 +1736,19 @@
       "comments": [
         {
           "id": 45,
-          "authorId": 65464747458,
+          "author": {
+            "id": 65464747458,
+            "fullName": "Grace Lee",
+            "username": "gracel",
+            "email": "grace@example.com",
+            "password": "jkl456",
+            "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_31.png",
+            "gender": "female",
+            "role": "user",
+            "joined": "2023-08-01T00:00:00Z",
+            "city": "Seoul",
+            "story": "I am a foodie and love cooking new recipes."
+          },
           "content": "Fantastic!",
           "date": "2025-06-02T00:00:00Z"
         }

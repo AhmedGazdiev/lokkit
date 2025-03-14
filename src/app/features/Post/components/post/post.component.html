@@ -1,14 +1,10 @@
 <article class="post_container box-shadow">
     <div class="post_top">
         <div class="post_top-info">
-            <img
-                src="https://images.unsplash.com/photo-1737543456099-9e88da04eaef?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="avatar"
-                class="post_avatar"
-            />
+            <img [src]="post.author.avatar" alt="avatar" class="post_avatar" />
             <div class="post_top-info-block">
-                <p class="post_top-info-block-name">{{ 'USERNAME' | username }}</p>
-                <span class="post_top-info-block-desc">USER DESCRIPTION</span>
+                <p class="post_top-info-block-name">{{ post.author.username | username }}</p>
+                <span class="post_top-info-block-desc">{{ post.author.story }}</span>
             </div>
         </div>
         <app-drop-down [appDropDown]="dropDownItems">
@@ -17,10 +13,13 @@
     </div>
     <div class="post_main">
         <div class="post_main-text">
-            {{ post.content | cutText }}
-            @for (tag of post.tags; track $index) {
-                <span class="post_main-text-span">#{{ tag }}</span>
-            }
+            <h3 class="post_main-text_title">{{ post.title }}</h3>
+            <p>
+                {{ post.content | cutText }}
+                @for (tag of post.tags; track $index) {
+                    <span class="post_main-text-span">#{{ tag }}</span>
+                }
+            </p>
         </div>
         @if (post.image) {
             <img class="post_main-image" src="{{ post.image }}" alt="post image" />
@@ -29,7 +28,7 @@
             <div class="post_main-icons-communicate">
                 <div class="post_main-icons-communicate-likes">
                     <span *appShowIfLiked="post.likes">{{ post.likes }} Likes</span>
-                    <button (click)="likePost(post._id)">
+                    <button (click)="likePost(post.id)">
                         <app-icon [icon]="'like'" />
                     </button>
                 </div>
@@ -49,8 +48,8 @@
         <div class="post_main-comments" *ngIf="showComments">
             @for (comment of post.comments; track $index) {
                 <div class="post_main-comments-item box-shadow">
-                    <p class="post_main-comments-item-name">comment authorName</p>
-                    <p class="post_main-comments-item-content">{{ comment }}</p>
+                    <p class="post_main-comments-item-name">{{ comment.author.username | username }}</p>
+                    <p class="post_main-comments-item-content">{{ comment.content }}</p>
                 </div>
             }
         </div>

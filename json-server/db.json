@@ -160,9 +160,9 @@
         "city": "Venna",
         "story": "I love coding and exploring new technologies."
       },
-      "title": "First Post",
-      "content": "This is the content of the first post.",
-      "image": "https://plus.unsplash.com/premium_photo-1723860011127-5029e9b914be?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "title": "Angular",
+      "content": "Angular - это лучший фреймворк для создания одностраничных веб-приложений. Single Page Application.",
+      "image": "",
       "likes": 10,
       "comments": [
         {
@@ -204,8 +204,10 @@
       ],
       "date": "2023-01-01T00:00:00Z",
       "tags": [
-        "first",
-        "post"
+        "frontend",
+        "javascript",
+        "typescript",
+        "angular"
       ]
     },
     {

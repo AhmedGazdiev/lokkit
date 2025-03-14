@@ -13,10 +13,13 @@
     </div>
     <div class="post_main">
         <div class="post_main-text">
-            {{ post.content | cutText }}
-            @for (tag of post.tags; track $index) {
-                <span class="post_main-text-span">#{{ tag }}</span>
-            }
+            <h3 class="post_main-text_title">{{ post.title }}</h3>
+            <p>
+                {{ post.content | cutText }}
+                @for (tag of post.tags; track $index) {
+                    <span class="post_main-text-span">#{{ tag }}</span>
+                }
+            </p>
         </div>
         @if (post.image) {
             <img class="post_main-image" src="{{ post.image }}" alt="post image" />

@@ -54,7 +54,7 @@ export class EditPostFormComponent implements OnInit {
 
     onSubmit() {
         if (this.editPostForm.valid) {
-            this.postService.updatePost(Number(this.postId), this.editPostForm.value as Partial<Post>);
+            this.postService.updatePost(Number(this.postId), this.editPostForm.value as Partial<Post>).subscribe();
         }
     }
 }

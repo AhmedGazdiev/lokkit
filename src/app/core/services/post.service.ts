@@ -1,5 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { Post } from '@core/models/post';
+import { User } from '@core/models/user';
+import { UserService } from '@core/services/user.service';
 import { BehaviorSubject, catchError, delay, finalize, Observable, retry, tap, throwError } from 'rxjs';
 import { HttpService } from './http.service';
 import { LocalStorageService } from './local-storage.service';
@@ -9,13 +11,44 @@ import { LocalStorageService } from './local-storage.service';
 })
 export class PostService {
     private readonly http = inject(HttpService);
+    private readonly userService = inject(UserService);
     private readonly localStorageService = inject(LocalStorageService);
     private postsSubject$ = new BehaviorSubject<Post[]>([]);
     public readonly posts$ = this.postsSubject$.asObservable();
     public loading = signal<boolean>(false);
+    activeUser = signal<User | null>(null);
 
-    public createPost(data: any) {
-        console.log(data);
+    constructor() {
+        this.userService.activeUser$.subscribe(user => {
+            this.activeUser.set(user);
+        });
+    }
+
+    public createPost(newPost: Partial<Post>): Observable<Post> {
+        this.loading.set(true);
+        return this.http.post<Post, Partial<Post>>('/posts', newPost).pipe(
+            delay(1000),
+            retry(2),
+            tap(res => {
+                this.postsSubject$.next([
+                    ...this.postsSubject$.value,
+                    {
+                        ...res,
+                        author: this.activeUser() as User,
+                        likes: 0,
+                        comments: [],
+                        date: new Date('2023-10-01T10:00:00Z')
+                    }
+                ]);
+                this.localStorageService.set('posts', this.postsSubject$.value);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                console.error('Ошибка при создании пользователя:', error);
+                return throwError(() => new Error('Не удалось создать пользователя.'));
+            }),
+            finalize(() => this.loading.set(false))
+        );
     }
 
     public getPosts(): Observable<Post[]> {

@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { HeaderComponent, SidebarComponent } from '@shared/components';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [RouterOutlet, SidebarComponent, HeaderComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
-  title = 'lokkit';
-}
+export class AppComponent {}

@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RegisterFormComponent } from '../../components/register-form/register-form.component';
 
 @Component({
   selector: 'register',
-  imports: [],
+  imports: [RegisterFormComponent],
   templateUrl: './register.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

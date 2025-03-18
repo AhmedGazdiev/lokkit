@@ -1,8 +1,11 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
+import { Router } from '@angular/router';
+import { User } from '@core/models/user';
+import { AuthService } from '@core/services';
 import { confirmPassword, email, maxLength, minLength, required } from '@shared/validators';
 
 @Component({
@@ -12,6 +15,9 @@ import { confirmPassword, email, maxLength, minLength, required } from '@shared/
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegisterFormComponent {
+    private authService = inject(AuthService);
+    private router = inject(Router);
+
     public registerForm = new FormGroup(
         {
             fullname: new FormControl('', [required, minLength(6)]),
@@ -41,7 +47,8 @@ export class RegisterFormComponent {
 
     onSubmit() {
         if (this.registerForm.valid) {
-            console.log(this.registerForm.value);
+            this.authService.register(this.registerForm.value as User).subscribe();
+            this.router.navigate(['/login']);
         }
     }
 }

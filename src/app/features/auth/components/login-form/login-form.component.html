@@ -8,10 +8,29 @@
         <mat-form-field class="w-full">
             <mat-label>Email</mat-label>
             <input matInput formControlName="email" />
+            @if (loginForm.invalid && emailControl?.dirty) {
+                @if (emailControl?.errors?.['email']) {
+                    <span class="text-red-500">
+                        {{ emailControl?.errors?.['email'] }}
+                    </span>
+                }
+            }
         </mat-form-field>
         <mat-form-field class="w-full">
             <mat-label>Password</mat-label>
             <input matInput formControlName="password" />
+            @if (loginForm.invalid && emailControl?.dirty) {
+                @if (passwordControl?.errors?.['required']) {
+                    <span class="text-red-500">
+                        {{ passwordControl?.errors?.['required'] }}
+                    </span>
+                }
+                @if (passwordControl?.errors?.['minLength']) {
+                    <span class="text-red-500">
+                        {{ passwordControl?.errors?.['minLength'] }}
+                    </span>
+                }
+            }
         </mat-form-field>
         <button class="w-full" type="submit" mat-flat-button [disabled]="loginForm.invalid">Login</button>
     </form>

@@ -83,6 +83,11 @@
                         {{ confirmPasswordControl?.errors?.['required'] }}
                     </span>
                 }
+                @if (registerForm.errors?.['notMatch']) {
+                    <span class="text-red-500">
+                        {{ registerForm.errors?.['notMatch'] }}
+                    </span>
+                }
             }
         </mat-form-field>
         <button class="w-full" type="submit" mat-flat-button [disabled]="registerForm.invalid">Register</button>

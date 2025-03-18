@@ -50,4 +50,20 @@ export class AuthService {
             finalize(() => this.loading.set(false))
         );
     }
+
+    public getToken(): Observable<Partial<LoginResponse>> {
+        return this.http.post<LoginResponse, User>('/refresh_token').pipe(
+            delay(1000),
+            tap(res => {
+                this.storage.set('token', res.token);
+                this.authData.set(res.user);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                console.log('failed to login', error);
+                return throwError(() => new Error('failed to login'));
+            }),
+            finalize(() => this.loading.set(false))
+        );
+    }
 }

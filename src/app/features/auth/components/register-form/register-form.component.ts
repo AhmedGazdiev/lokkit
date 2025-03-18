@@ -3,8 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
-import { required } from '@shared/validators';
-import { minLength } from '@shared/validators';
+import { maxLength, minLength, required } from '@shared/validators';
 
 @Component({
     selector: 'register-form',
@@ -17,7 +16,7 @@ export class RegisterFormComponent {
         fullname: new FormControl('', [required, minLength(6)]),
         username: new FormControl('', [required, minLength(3)]),
         email: new FormControl('', required),
-        password: new FormControl('', [required, minLength(6)]),
+        password: new FormControl('', [required, minLength(6), maxLength(16)]),
         confirmPassword: new FormControl('', required)
     });
 

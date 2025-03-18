@@ -10,22 +10,52 @@
     <mat-form-field class="w-full">
       <mat-label>Full Name</mat-label>
       <input matInput formControlName="fullname" />
+      @if (registerForm.invalid && fullnameControl?.dirty) { @if
+      (fullnameControl?.errors?.['required']) {
+      <span class="text-red-500">
+        {{fullnameControl?.errors?.['required']}}
+      </span>
+      } }
     </mat-form-field>
     <mat-form-field class="w-full">
       <mat-label>Username</mat-label>
       <input matInput formControlName="username" />
+      @if (registerForm.invalid && usernameControl?.dirty) { @if
+      (usernameControl?.errors?.['required']) {
+      <span class="text-red-500">
+        {{usernameControl?.errors?.['required']}}
+      </span>
+      } }
     </mat-form-field>
     <mat-form-field class="w-full">
       <mat-label>Email</mat-label>
       <input matInput formControlName="email" />
+      @if (registerForm.invalid && emailControl?.dirty) { @if
+      (emailControl?.errors?.['required']) {
+      <span class="text-red-500">
+        {{emailControl?.errors?.['required']}}
+      </span>
+      } }
     </mat-form-field>
     <mat-form-field class="w-full">
       <mat-label>Password</mat-label>
       <input matInput formControlName="password" />
+      @if (registerForm.invalid && passwordControl?.dirty) { @if
+      (passwordControl?.errors?.['required']) {
+      <span class="text-red-500">
+        {{passwordControl?.errors?.['required']}}
+      </span>
+      } }
     </mat-form-field>
     <mat-form-field class="w-full">
       <mat-label>Cnfirm Password</mat-label>
       <input matInput formControlName="confirmPassword" />
+      @if (registerForm.invalid && confirmPasswordControl?.dirty) { @if
+      (confirmPasswordControl?.errors?.['required']) {
+      <span class="text-red-500">
+        {{confirmPasswordControl?.errors?.['required']}}
+      </span>
+      } }
     </mat-form-field>
     <button
       class="w-full"

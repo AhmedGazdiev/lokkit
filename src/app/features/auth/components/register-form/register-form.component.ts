@@ -4,6 +4,7 @@ import { MatButton } from '@angular/material/button';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { required } from '@shared/validators';
+import { minLength } from '@shared/validators';
 
 @Component({
     selector: 'register-form',
@@ -13,10 +14,10 @@ import { required } from '@shared/validators';
 })
 export class RegisterFormComponent {
     public registerForm = new FormGroup({
-        fullname: new FormControl('', required),
-        username: new FormControl('', required),
+        fullname: new FormControl('', [required, minLength(6)]),
+        username: new FormControl('', [required, minLength(3)]),
         email: new FormControl('', required),
-        password: new FormControl('', required),
+        password: new FormControl('', [required, minLength(6)]),
         confirmPassword: new FormControl('', required)
     });
 

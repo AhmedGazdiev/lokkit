@@ -14,6 +14,11 @@
                         {{ fullnameControl?.errors?.['required'] }}
                     </span>
                 }
+                @if (fullnameControl?.errors?.['minLength']) {
+                    <span class="text-red-500">
+                        {{ fullnameControl?.errors?.['minLength'] }}
+                    </span>
+                }
             }
         </mat-form-field>
         <mat-form-field class="w-full">
@@ -23,6 +28,11 @@
                 @if (usernameControl?.errors?.['required']) {
                     <span class="text-red-500">
                         {{ usernameControl?.errors?.['required'] }}
+                    </span>
+                }
+                @if (usernameControl?.errors?.['minLength']) {
+                    <span class="text-red-500">
+                        {{ usernameControl?.errors?.['minLength'] }}
                     </span>
                 }
             }
@@ -45,6 +55,11 @@
                 @if (passwordControl?.errors?.['required']) {
                     <span class="text-red-500">
                         {{ passwordControl?.errors?.['required'] }}
+                    </span>
+                }
+                @if (passwordControl?.errors?.['minLength']) {
+                    <span class="text-red-500">
+                        {{ passwordControl?.errors?.['minLength'] }}
                     </span>
                 }
             }

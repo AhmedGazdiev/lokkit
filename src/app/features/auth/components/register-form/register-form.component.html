@@ -46,6 +46,11 @@
                         {{ emailControl?.errors?.['required'] }}
                     </span>
                 }
+                @if (emailControl?.errors?.['email']) {
+                    <span class="text-red-500">
+                        {{ emailControl?.errors?.['email'] }}
+                    </span>
+                }
             }
         </mat-form-field>
         <mat-form-field class="w-full">

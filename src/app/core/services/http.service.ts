@@ -17,7 +17,8 @@ export class HttpService {
 
     public post<T, D>(url: string, data?: D): Observable<T> {
         return this.http.post<T>(`${this.URL}${url}`, JSON.stringify(data), {
-            headers: this.headers
+            headers: this.headers,
+            withCredentials: true
         });
     }
 

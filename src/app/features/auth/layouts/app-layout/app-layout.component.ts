@@ -4,9 +4,9 @@ import { HeaderComponent } from '../../../../shared/components/header/header.com
 import { SidebarComponent } from '../../../../shared/components/sidebar/sidebar.component';
 
 @Component({
-  selector: 'app-layout',
-  imports: [RouterOutlet, HeaderComponent, SidebarComponent],
-  templateUrl: './app-layout.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-layout',
+    imports: [RouterOutlet, HeaderComponent, SidebarComponent],
+    templateUrl: './app-layout.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppLayoutComponent {}

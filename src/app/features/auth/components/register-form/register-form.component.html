@@ -1,69 +1,65 @@
-<div
-  class="w-sm w-full flex flex-col items-center justify-center rounded-xl border border-gray-300 p-[22px]"
->
-  <h1 class="text-2xl mb-[22px]">Register Form</h1>
-  <form
-    class="w-full flex flex-col items-center justify-center gap-[10px]"
-    [formGroup]="registerForm"
-    (ngSubmit)="onSubmit()"
-  >
-    <mat-form-field class="w-full">
-      <mat-label>Full Name</mat-label>
-      <input matInput formControlName="fullname" />
-      @if (registerForm.invalid && fullnameControl?.dirty) { @if
-      (fullnameControl?.errors?.['required']) {
-      <span class="text-red-500">
-        {{fullnameControl?.errors?.['required']}}
-      </span>
-      } }
-    </mat-form-field>
-    <mat-form-field class="w-full">
-      <mat-label>Username</mat-label>
-      <input matInput formControlName="username" />
-      @if (registerForm.invalid && usernameControl?.dirty) { @if
-      (usernameControl?.errors?.['required']) {
-      <span class="text-red-500">
-        {{usernameControl?.errors?.['required']}}
-      </span>
-      } }
-    </mat-form-field>
-    <mat-form-field class="w-full">
-      <mat-label>Email</mat-label>
-      <input matInput formControlName="email" />
-      @if (registerForm.invalid && emailControl?.dirty) { @if
-      (emailControl?.errors?.['required']) {
-      <span class="text-red-500">
-        {{emailControl?.errors?.['required']}}
-      </span>
-      } }
-    </mat-form-field>
-    <mat-form-field class="w-full">
-      <mat-label>Password</mat-label>
-      <input matInput formControlName="password" />
-      @if (registerForm.invalid && passwordControl?.dirty) { @if
-      (passwordControl?.errors?.['required']) {
-      <span class="text-red-500">
-        {{passwordControl?.errors?.['required']}}
-      </span>
-      } }
-    </mat-form-field>
-    <mat-form-field class="w-full">
-      <mat-label>Cnfirm Password</mat-label>
-      <input matInput formControlName="confirmPassword" />
-      @if (registerForm.invalid && confirmPasswordControl?.dirty) { @if
-      (confirmPasswordControl?.errors?.['required']) {
-      <span class="text-red-500">
-        {{confirmPasswordControl?.errors?.['required']}}
-      </span>
-      } }
-    </mat-form-field>
-    <button
-      class="w-full"
-      type="submit"
-      mat-flat-button
-      [disabled]="registerForm.invalid"
+<div class="w-sm w-full flex flex-col items-center justify-center rounded-xl border border-gray-300 p-[22px]">
+    <h1 class="text-2xl mb-[22px]">Register Form</h1>
+    <form
+        class="w-full flex flex-col items-center justify-center gap-[10px]"
+        [formGroup]="registerForm"
+        (ngSubmit)="onSubmit()"
     >
-      Register
-    </button>
-  </form>
+        <mat-form-field class="w-full">
+            <mat-label>Full Name</mat-label>
+            <input matInput formControlName="fullname" />
+            @if (registerForm.invalid && fullnameControl?.dirty) {
+                @if (fullnameControl?.errors?.['required']) {
+                    <span class="text-red-500">
+                        {{ fullnameControl?.errors?.['required'] }}
+                    </span>
+                }
+            }
+        </mat-form-field>
+        <mat-form-field class="w-full">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" />
+            @if (registerForm.invalid && usernameControl?.dirty) {
+                @if (usernameControl?.errors?.['required']) {
+                    <span class="text-red-500">
+                        {{ usernameControl?.errors?.['required'] }}
+                    </span>
+                }
+            }
+        </mat-form-field>
+        <mat-form-field class="w-full">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" />
+            @if (registerForm.invalid && emailControl?.dirty) {
+                @if (emailControl?.errors?.['required']) {
+                    <span class="text-red-500">
+                        {{ emailControl?.errors?.['required'] }}
+                    </span>
+                }
+            }
+        </mat-form-field>
+        <mat-form-field class="w-full">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" />
+            @if (registerForm.invalid && passwordControl?.dirty) {
+                @if (passwordControl?.errors?.['required']) {
+                    <span class="text-red-500">
+                        {{ passwordControl?.errors?.['required'] }}
+                    </span>
+                }
+            }
+        </mat-form-field>
+        <mat-form-field class="w-full">
+            <mat-label>Cnfirm Password</mat-label>
+            <input matInput formControlName="confirmPassword" />
+            @if (registerForm.invalid && confirmPasswordControl?.dirty) {
+                @if (confirmPasswordControl?.errors?.['required']) {
+                    <span class="text-red-500">
+                        {{ confirmPasswordControl?.errors?.['required'] }}
+                    </span>
+                }
+            }
+        </mat-form-field>
+        <button class="w-full" type="submit" mat-flat-button [disabled]="registerForm.invalid">Register</button>
+    </form>
 </div>

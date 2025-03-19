@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
             },
             {
                 label: 'Settings',
-                link: '/settings'
+                link: `/profile/${this.authService.authData.value?._id}/settings`
             },
             {
                 label: 'Logout',

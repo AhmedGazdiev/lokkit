@@ -1,1 +1,36 @@
-<div class="sticky top-0 left-0 w-3xs h-screen p-[20px] border border-black">sidebar</div>
+<aside
+    class="sticky top-0 left-0 w-3xs h-screen p-[20px] bg-white box-shadow flex flex-col items-start justify-between"
+>
+    <div class="sidebar_search">
+        <img class="mb-[46px]" src="./assets/images/logo.png" alt="" />
+        <mat-form-field class="w-full">
+            <mat-label>Search</mat-label>
+            <input matInput />
+        </mat-form-field>
+        <div class="flex flex-col gap-[32px]">
+            @for (item of itemsList; track $index) {
+                <a
+                    [routerLink]="item.link"
+                    class="flex items-center gap-2 text-base leading-tight tracking-tighter transition-color duration-500 hover:text-purple-700"
+                >
+                    <icon [icon]="item.icon" />
+                    {{ item.title }}
+                </a>
+            }
+        </div>
+    </div>
+    <div class="w-full flex items-center justify-between">
+        <div class="flex gap-[8px] items-center">
+            <img class="w-[48px] h-[48px] rounded-[50%]" [src]="authService.authData.value?.avatar" alt="user image" />
+            <div class="flex flex-col">
+                <span class="text-sm leading-tight tracking-tighter">{{ authService.authData.value?.fullname }}</span>
+                <span class="text-xs font-medium leading-snug tracking-tight text-gray-500">{{
+                    authService.authData.value?.role
+                }}</span>
+            </div>
+        </div>
+        <button (click)="logout()" class="cursor-pointer">
+            <icon [icon]="'logout'" />
+        </button>
+    </div>
+</aside>

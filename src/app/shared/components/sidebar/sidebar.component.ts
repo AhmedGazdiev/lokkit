@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
-import { AuthService } from '@core/services';
-import { IconComponent } from '../icon/icon.component';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '@core/services';
 import { iconTypes } from '@shared/types';
+import { IconComponent } from '../icon/icon.component';
 
 interface ItemsList {
     title: string;
@@ -14,7 +15,7 @@ interface ItemsList {
 
 @Component({
     selector: 'sidebar',
-    imports: [IconComponent, MatFormField, MatLabel, MatInput, RouterLink],
+    imports: [IconComponent, MatFormField, MatLabel, MatInput, RouterLink, CommonModule],
     templateUrl: './sidebar.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })

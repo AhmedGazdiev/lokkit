@@ -3,7 +3,6 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
-import { Router } from '@angular/router';
 import { User } from '@core/models/user';
 import { AuthService } from '@core/services';
 import { confirmPassword, email, maxLength, minLength, required } from '@shared/validators';
@@ -16,7 +15,6 @@ import { confirmPassword, email, maxLength, minLength, required } from '@shared/
 })
 export class RegisterFormComponent {
     private authService = inject(AuthService);
-    private router = inject(Router);
 
     public registerForm = new FormGroup(
         {
@@ -48,7 +46,6 @@ export class RegisterFormComponent {
     onSubmit() {
         if (this.registerForm.valid) {
             this.authService.register(this.registerForm.value as User).subscribe();
-            this.router.navigate(['/login']);
         }
     }
 }

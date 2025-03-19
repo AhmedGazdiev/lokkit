@@ -3,7 +3,6 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
-import { Router } from '@angular/router';
 import { User } from '@core/models/user';
 import { AuthService } from '@core/services';
 import { email, maxLength, minLength, required } from '@shared/validators';
@@ -17,7 +16,6 @@ import { email, maxLength, minLength, required } from '@shared/validators';
 export class LoginFormComponent {
     private fb = inject(FormBuilder);
     private authService = inject(AuthService);
-    private router = inject(Router);
 
     public loginForm = this.fb.group({
         email: this.fb.control('', [required, email]),
@@ -34,7 +32,6 @@ export class LoginFormComponent {
     onSubmit() {
         if (this.loginForm.valid) {
             this.authService.login(this.loginForm.value as User).subscribe();
-            this.router.navigate(['/feed']);
         }
     }
 }

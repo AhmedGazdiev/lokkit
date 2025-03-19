@@ -1,8 +1,8 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginResponse, RegisterResponse } from '@core/models/auth';
 import { User } from '@core/models/user';
-import { catchError, delay, finalize, Observable, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, delay, finalize, Observable, tap, throwError } from 'rxjs';
 import { HttpService } from './http.service';
 import { LocalStorageService } from './local-storage.service';
 
@@ -12,58 +12,54 @@ import { LocalStorageService } from './local-storage.service';
 export class AuthService {
     private http = inject(HttpService);
     private storage = inject(LocalStorageService);
-    private loading = signal<boolean>(false);
-    public token = signal<string | null>(null);
-    public authData = signal<User | null>(null);
+    private loading = new BehaviorSubject<boolean>(false);
+    public authData = new BehaviorSubject<User | null>(null);
     private snackbar = inject(MatSnackBar);
 
     public register(data: User): Observable<RegisterResponse> {
-        this.loading.set(true);
+        this.loading.next(true);
         return this.http.post<RegisterResponse, User>('/register', data).pipe(
             delay(1000),
             tap(res => {
                 this.snackbar.open(res.msg);
             }),
             catchError(error => {
-                this.loading.set(false);
-                console.log('failed to register', error);
-                return throwError(() => new Error('failed to register'));
+                this.loading.next(false);
+                return throwError(() => new Error('failed to register', error));
             }),
-            finalize(() => this.loading.set(false))
+            finalize(() => this.loading.next(false))
         );
     }
 
     public login(data: User): Observable<LoginResponse> {
+        this.loading.next(true);
         return this.http.post<LoginResponse, User>('/login', data).pipe(
             delay(1000),
             tap(res => {
                 this.storage.set('token', res.token);
-                this.token.set(res.token);
-                this.authData.set(res.user);
+                this.authData.next(res.user);
                 this.snackbar.open(res.msg);
             }),
             catchError(error => {
-                this.loading.set(false);
-                console.log('failed to login', error);
-                return throwError(() => new Error('failed to login'));
+                this.loading.next(false);
+                return throwError(() => new Error("couldn't log in", error));
             }),
-            finalize(() => this.loading.set(false))
+            finalize(() => this.loading.next(false))
         );
     }
 
     public getToken(): Observable<Partial<LoginResponse>> {
+        this.loading.next(true);
         return this.http.post<LoginResponse, User>('/refresh_token').pipe(
-            delay(1000),
             tap(res => {
                 this.storage.set('token', res.token);
-                this.authData.set(res.user);
+                this.authData.next(res.user);
             }),
             catchError(error => {
-                this.loading.set(false);
-                console.log('failed to login', error);
-                return throwError(() => new Error('failed to login'));
+                this.loading.next(false);
+                return throwError(() => new Error("couldn't get a token", error));
             }),
-            finalize(() => this.loading.set(false))
+            finalize(() => this.loading.next(false))
         );
     }
 }

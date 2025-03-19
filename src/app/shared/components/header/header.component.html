@@ -1,1 +1,26 @@
-<div class="w-full p-[20px] border border-black">header</div>
+<header class="w-full bg-white box-shadow flex items-center justify-between p-[20px]">
+    <!--  -->
+    <mat-form-field class="w-[280px] mb-[-20px]">
+        <mat-label>Search for friends, groups, pages</mat-label>
+        <input matInput />
+    </mat-form-field>
+    <div class="flex items-center justify-beetween gap-[100px]">
+        <div class="flex items-center justify-beetween gap-[20px]">
+            <button mat-flat-button>create post</button>
+            <div class="flex items-center gap-[12px]">
+                <button mat-raised-button>
+                    <icon [icon]="'helpSupportDark'" />
+                </button>
+                <button mat-raised-button>
+                    <icon [icon]="'notifications'" />
+                </button>
+                <button mat-raised-button>
+                    <icon [icon]="'settingsDark'" />
+                </button>
+            </div>
+        </div>
+        <drop-down [appDropDown]="dropDownItems">
+            <img class="w-[48px] h-[48px] rounded-[50%]" [src]="authService.authData.value?.avatar" alt="avatar" />
+        </drop-down>
+    </div>
+</header>

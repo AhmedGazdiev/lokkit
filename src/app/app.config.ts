@@ -3,8 +3,7 @@ import { provideRouter } from '@angular/router';
 
 import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptorsFromDi } from '@angular/common/http';
 import { API_URL } from '@core/api.token';
-import { authInterceptor, LogginingInterceptor } from '@core/interceptors';
-import { ErrorsInterceptor } from '@core/interceptors/errors.interceptor';
+import { authInterceptor, ErrorsInterceptor, LogginingInterceptor } from '@core/interceptors';
 import { environment } from '@environments/environment.dev';
 import { routes } from './app.routes';
 

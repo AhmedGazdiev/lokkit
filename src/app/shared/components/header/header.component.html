@@ -20,7 +20,7 @@
             </div>
         </div>
         <drop-down [appDropDown]="dropDownItems">
-            <img class="w-[48px] h-[48px] rounded-[50%]" [src]="authService.authData.value?.avatar" alt="avatar" />
+            <img class="w-[48px] h-[48px] rounded-[50%]" [src]="authService.authData()?.avatar" alt="avatar" />
         </drop-down>
     </div>
 </header>

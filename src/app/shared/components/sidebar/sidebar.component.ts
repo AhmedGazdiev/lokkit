@@ -51,7 +51,7 @@ export class SidebarComponent {
         {
             title: 'Settings',
             icon: 'settingsLight',
-            link: `/profile/${this.authService.authData.value?._id}/settings`
+            link: `/profile/${this.authService.authData()?._id}/settings`
         },
         {
             title: 'Help & Support',

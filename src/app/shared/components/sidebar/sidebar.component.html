@@ -21,11 +21,11 @@
     </div>
     <div class="w-full flex items-center justify-between">
         <div class="flex gap-[8px] items-center">
-            <img class="w-[48px] h-[48px] rounded-[50%]" [src]="authService.authData.value?.avatar" alt="user image" />
+            <img class="w-[48px] h-[48px] rounded-[50%]" [src]="authService.authData()?.avatar" alt="user image" />
             <div class="flex flex-col">
-                <span class="text-sm leading-tight tracking-tighter">{{ authService.authData.value?.fullname }}</span>
+                <span class="text-sm leading-tight tracking-tighter">{{ authService.authData()?.fullname }}</span>
                 <span class="text-xs font-medium leading-snug tracking-tight text-gray-500">{{
-                    authService.authData.value?.role
+                    authService.authData()?.role
                 }}</span>
             </div>
         </div>

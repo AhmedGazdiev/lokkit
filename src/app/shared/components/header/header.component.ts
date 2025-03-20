@@ -22,11 +22,11 @@ export class HeaderComponent implements OnInit {
         this.dropDownItems = [
             {
                 label: 'Profile',
-                link: `/profile/${this.authService.authData.value?._id}`
+                link: `/profile/${this.authService.authData()?._id}`
             },
             {
                 label: 'Settings',
-                link: `/profile/${this.authService.authData.value?._id}/settings`
+                link: `/profile/${this.authService.authData()?._id}/settings`
             },
             {
                 label: 'Logout',

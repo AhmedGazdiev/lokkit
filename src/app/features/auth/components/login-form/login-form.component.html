@@ -32,6 +32,10 @@
                 }
             }
         </mat-form-field>
+        <div class="w-full flex items-center justify-between">
+            <span class="text-start">Don't have an account?</span>
+            <a routerLink="/register" class="text-blue-700 cursor-pointer">Register</a>
+        </div>
         <button class="w-full" type="submit" mat-flat-button [disabled]="loginForm.invalid">Login</button>
     </form>
 </div>

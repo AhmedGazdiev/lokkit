@@ -3,13 +3,14 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
+import { RouterLink } from '@angular/router';
 import { User } from '@core/models/user';
 import { AuthService } from '@core/services';
 import { confirmPassword, email, maxLength, minLength, required } from '@shared/validators';
 
 @Component({
     selector: 'register-form',
-    imports: [MatInput, MatFormField, MatLabel, MatButton, ReactiveFormsModule],
+    imports: [MatInput, MatFormField, MatLabel, MatButton, ReactiveFormsModule, RouterLink],
     templateUrl: './register-form.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })

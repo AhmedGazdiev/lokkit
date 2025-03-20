@@ -19,7 +19,7 @@ export const routes: Routes = [
         component: AppLayoutComponent,
         canActivate: [authGuard],
         children: [
-            { path: 'feed', component: FeedComponent },
+            { path: 'feed', title: 'Feed Posts', component: FeedComponent },
             { path: '', redirectTo: 'feed', pathMatch: 'full' }
         ]
     }

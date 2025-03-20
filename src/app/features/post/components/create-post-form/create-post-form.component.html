@@ -1,23 +1,17 @@
 <div class="bg-white border border-gray-300 rounded-2xl p-5 w-[696px] flex flex-col gap-6">
     <h3 class="text-xl font-medium leading-normal tracking-tighter">Create a new Post</h3>
-    <form class="flex flex-col gap-4">
+    <form class="flex flex-col gap-4" [formGroup]="createPostForm" (ngSubmit)="onSubmit()">
         <label
             for="file"
             class="w-full h-[165px] bg-[#e0e2ec] hover:bg-[#D0D2DB] border border-gray-300 rounded flex items-center justify-center cursor-pointer p-3 pl-4"
         >
-            <input class="hidden" type="file" id="file" />
+            <input class="hidden" type="file" id="file" formArrayName="images" multiple />
             <icon [icon]="'plusGrey'" />
         </label>
         <mat-form-field class="w-full">
             <mat-label>Search for friends, groups, pages</mat-label>
-            <input matInput />
+            <textarea matInput formControlName="content"></textarea>
         </mat-form-field>
-        <mat-form-field class="w-full">
-            <mat-label>Search for friends, groups, pages</mat-label>
-            <textarea matInput></textarea>
-        </mat-form-field>
-
-        <button class="max-w-[100px]" type="button" mat-flat-button>add tag</button>
-        <button type="submit" mat-flat-button>create post</button>
+        <button type="submit" mat-flat-button [disabled]="createPostForm.invalid">create post</button>
     </form>
 </div>

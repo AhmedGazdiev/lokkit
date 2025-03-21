@@ -5,9 +5,24 @@
             for="file"
             class="w-full h-[165px] bg-[#e0e2ec] hover:bg-[#D0D2DB] border border-gray-300 rounded flex items-center justify-center cursor-pointer p-3 pl-4"
         >
-            <input class="hidden" type="file" id="file" formArrayName="images" multiple />
+            <input
+                class="hidden"
+                type="file"
+                id="file"
+                formArrayName="images"
+                (change)="changeImages($event)"
+                multiple
+            />
             <icon [icon]="'plusGrey'" />
         </label>
+        <div class="flex items-center flex-wrap gap-1">
+            @for (image of images.controls; track $index) {
+                <div class="relative">
+                    <img [src]="fileUrl($index)" alt="image" class="max-w-[70px]" />
+                    <span class="absolute top-1/2 left-1/2" (click)="removeImage($index)">&times;</span>
+                </div>
+            }
+        </div>
         <mat-form-field class="w-full">
             <mat-label>Search for friends, groups, pages</mat-label>
             <textarea matInput formControlName="content"></textarea>

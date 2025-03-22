@@ -1,3 +1,10 @@
 <div class="h-[100vh]">
     <p>feed works!</p>
+    @if (posts$ | async; as posts) {
+        @for (post of posts; track post._id) {
+            <p class="border mb-[20px]">{{ post.content }}</p>
+        }
+    } @else {
+        <p>Posts not found.</p>
+    }
 </div>

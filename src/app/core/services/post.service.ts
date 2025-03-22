@@ -22,7 +22,6 @@ export class PostService {
     private uplImg = inject(UploadImagesService);
 
     public createPost(data: Post) {
-        this.uplImg.uploadImages(data.images);
         return from(this.uplImg.uploadImages(data.images)).pipe(
             switchMap(images => {
                 return this.http.post<PostResponse, Post>('/posts', { ...data, images });

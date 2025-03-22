@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginResponse, LogoutResponse, RegisterResponse } from '@core/models/auth';
@@ -14,7 +14,7 @@ export class AuthService {
     private http = inject(HttpService);
     private storage = inject(LocalStorageService);
     private loading = new BehaviorSubject<boolean>(false);
-    public authData = new BehaviorSubject<User | null>(null);
+    public authData = signal<User | null>(null);
     private snackbar = inject(MatSnackBar);
     private router = inject(Router);
 
@@ -40,7 +40,7 @@ export class AuthService {
             delay(1000),
             tap(res => {
                 this.storage.set('token', res.token);
-                this.authData.next(res.user);
+                this.authData.set(res.user);
                 this.router.navigate(['/feed']);
                 this.snackbar.open(res.msg);
             }),
@@ -57,7 +57,7 @@ export class AuthService {
         return this.http.post<LoginResponse, User>('/refresh_token').pipe(
             tap(res => {
                 this.storage.set('token', res.token);
-                this.authData.next(res.user);
+                this.authData.set(res.user);
             }),
             catchError(error => {
                 this.loading.next(false);
@@ -72,7 +72,7 @@ export class AuthService {
         return this.http.post<LogoutResponse, any>('/logout').pipe(
             delay(1000),
             tap(res => {
-                this.authData.next(null);
+                this.authData.set(null);
                 this.storage.remove('token');
                 this.router.navigate(['/login']);
                 this.snackbar.open(res.msg);

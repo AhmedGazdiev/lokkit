@@ -20,6 +20,7 @@ export const routes: Routes = [
         canActivate: [authGuard],
         children: [
             { path: 'feed', title: 'Feed Posts', component: FeedComponent },
+            { path: 'post', loadChildren: () => import('@features/post').then(p => p.POST_ROUTES) },
             { path: '', redirectTo: 'feed', pathMatch: 'full' }
         ]
     }

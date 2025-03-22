@@ -6,7 +6,7 @@
     </mat-form-field>
     <div class="flex items-center justify-beetween gap-[100px]">
         <div class="flex items-center justify-beetween gap-[20px]">
-            <button mat-flat-button>create post</button>
+            <button mat-flat-button routerLink="/post/create">create post</button>
             <div class="flex items-center gap-[12px]">
                 <button mat-raised-button>
                     <icon [icon]="'helpSupportDark'" />
@@ -20,7 +20,7 @@
             </div>
         </div>
         <drop-down [appDropDown]="dropDownItems">
-            <img class="w-[48px] h-[48px] rounded-[50%]" [src]="authService.authData.value?.avatar" alt="avatar" />
+            <img class="w-[48px] h-[48px] rounded-[50%]" [src]="authService.authData()?.avatar" alt="avatar" />
         </drop-down>
     </div>
 </header>

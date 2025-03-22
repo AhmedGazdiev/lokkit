@@ -53,4 +53,16 @@ export class PostService {
             finalize(() => this.loading$.next(false))
         );
     }
+
+    public getPostById(_id: string): Observable<Post> {
+        this.loading$.next(true);
+        return this.http.get<Post>(`/post/${_id}`).pipe(
+            delay(1000),
+            catchError(error => {
+                this.loading$.next(false);
+                return throwError(() => new Error("Couldn't get post", error));
+            }),
+            finalize(() => this.loading$.next(false))
+        );
+    }
 }

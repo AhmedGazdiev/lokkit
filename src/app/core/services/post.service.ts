@@ -2,10 +2,11 @@ import { inject, Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Post, PostResponse } from '@core/models/post';
-import { BehaviorSubject, catchError, delay, finalize, Observable, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, delay, finalize, from, Observable, switchMap, tap, throwError } from 'rxjs';
 import { GetPostsResponse } from './../models/post';
 import { HttpService } from './http.service';
 import { LocalStorageService } from './local-storage.service';
+import { UploadImagesService } from './upload-images.service';
 
 @Injectable({
     providedIn: 'root'
@@ -18,10 +19,14 @@ export class PostService {
     public readonly posts$ = this.postsSubject$.asObservable();
     private snackbar = inject(MatSnackBar);
     private router = inject(Router);
+    private uplImg = inject(UploadImagesService);
 
-    public createPost(data: Post): Observable<PostResponse> {
-        this.loading$.next(true);
-        return this.http.post<PostResponse, Post>('/posts', data).pipe(
+    public createPost(data: Post) {
+        this.uplImg.uploadImages(data.images);
+        return from(this.uplImg.uploadImages(data.images)).pipe(
+            switchMap(images => {
+                return this.http.post<PostResponse, Post>('/posts', { ...data, images });
+            }),
             delay(1000),
             tap(res => {
                 this.postsSubject$.next([...this.postsSubject$.value, res.post]);
@@ -31,7 +36,7 @@ export class PostService {
             }),
             catchError(error => {
                 this.loading$.next(false);
-                return throwError(() => new Error("Couldn't create a post.", error));
+                return throwError(() => new Error("Couldn't create post.", error));
             }),
             finalize(() => this.loading$.next(false))
         );

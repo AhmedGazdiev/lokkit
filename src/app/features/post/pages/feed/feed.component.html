@@ -3,6 +3,7 @@
     @if (posts$ | async; as posts) {
         @for (post of posts; track post._id) {
             <p class="border mb-[20px]">{{ post.content }}</p>
+            <img [src]="post.images[0].url" alt="img" />
         }
     } @else {
         <p>Posts not found.</p>

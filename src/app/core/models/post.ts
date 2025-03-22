@@ -1,7 +1,8 @@
+import { ImageUpload } from '@core/services/upload-images.service';
 import { User } from './user';
 
 export interface Post {
-    images: any[];
+    images: ImageUpload[];
     likes: [];
     comments: [];
     _id: string;

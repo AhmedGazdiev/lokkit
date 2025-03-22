@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Post, PostResponse } from '@core/models/post';
 import { BehaviorSubject, catchError, delay, finalize, Observable, tap, throwError } from 'rxjs';
+import { GetPostsResponse } from './../models/post';
 import { HttpService } from './http.service';
 import { LocalStorageService } from './local-storage.service';
 
@@ -12,14 +13,14 @@ import { LocalStorageService } from './local-storage.service';
 export class PostService {
     private http = inject(HttpService);
     private storage = inject(LocalStorageService);
-    private loading = new BehaviorSubject<boolean>(false);
+    private loading$ = new BehaviorSubject<boolean>(false);
     private postsSubject$ = new BehaviorSubject<Post[]>([]);
     public readonly posts$ = this.postsSubject$.asObservable();
     private snackbar = inject(MatSnackBar);
     private router = inject(Router);
 
     public createPost(data: Post): Observable<PostResponse> {
-        this.loading.next(true);
+        this.loading$.next(true);
         return this.http.post<PostResponse, Post>('/posts', data).pipe(
             delay(1000),
             tap(res => {
@@ -29,10 +30,27 @@ export class PostService {
                 this.router.navigate(['/feed']);
             }),
             catchError(error => {
-                this.loading.next(false);
+                this.loading$.next(false);
                 return throwError(() => new Error("Couldn't create a post.", error));
             }),
-            finalize(() => this.loading.next(false))
+            finalize(() => this.loading$.next(false))
+        );
+    }
+
+    public getPosts(): Observable<GetPostsResponse> {
+        this.loading$.next(true);
+        return this.http.get<GetPostsResponse>('/posts').pipe(
+            delay(1000),
+            tap(res => {
+                this.postsSubject$.next([...res.posts]);
+                this.storage.set('posts', res.posts);
+                this.snackbar.open(res.msg);
+            }),
+            catchError(error => {
+                this.loading$.next(false);
+                return throwError(() => new Error("Couldn't get posts", error));
+            }),
+            finalize(() => this.loading$.next(false))
         );
     }
 }

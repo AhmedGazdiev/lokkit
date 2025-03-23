@@ -5,7 +5,7 @@ import { MatInput } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '@core/services';
-import { DropDownItem } from '@shared/drop-down.type';
+import { MenuItem } from '@shared/menu-item.type';
 import { IconComponent } from '../icon/icon.component';
 
 @Component({
@@ -16,10 +16,10 @@ import { IconComponent } from '../icon/icon.component';
 })
 export class HeaderComponent implements OnInit {
     public authService = inject(AuthService);
-    public dropDownItems: DropDownItem[] = [];
+    public menuItems: MenuItem[] = [];
 
     ngOnInit(): void {
-        this.dropDownItems = [
+        this.menuItems = [
             {
                 label: 'Profile',
                 link: `/profile/${this.authService.authData()?._id}`

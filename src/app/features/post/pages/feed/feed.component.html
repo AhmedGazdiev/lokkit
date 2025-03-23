@@ -1,11 +1,7 @@
-<div class="min-h-[100vh]">
-    <p>feed works!</p>
+<div class="min-h-[100vh] flex flex-col gap-[24px] mb-[40px]">
     @if (posts$ | async; as posts) {
         @for (post of posts; track post._id) {
-            <div class="border mb-[20px]">
-                <p>{{ post.content }}</p>
-                <img [src]="post.images[0].url" alt="img" />
-            </div>
+            <post [post]="post" />
         }
     } @else {
         <p>Posts not found.</p>

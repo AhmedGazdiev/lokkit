@@ -7,7 +7,18 @@
                 <p class="text-gray-500">{{ post().user.story }}</p>
             </div>
         </div>
-        <icon class="cursor-pointer" [icon]="'dotsVertical'" />
+        <button [matMenuTriggerFor]="menu">
+            <icon class="cursor-pointer" [icon]="'dotsVertical'" />
+        </button>
+        <mat-menu #menu="matMenu">
+            @for (item of menuItems; track $index) {
+                @if (item.link) {
+                    <a [routerLink]="item.link" mat-menu-item>{{ item.label }}</a>
+                } @else {
+                    <button mat-menu-item (click)="item.click?.()">{{ item.label }}</button>
+                }
+            }
+        </mat-menu>
     </div>
     <div class="p-[20px] flex flex-col items-start gap-5">
         <p class="text-base font-medium leading-snug">{{ post().content }}</p>

@@ -1,0 +1,12 @@
+<div class="w-[600px] relative">
+    <button (click)="prev()" class="bg-white rounded-[50%] cursor-pointer absolute top-1/2 left-[10px]">
+        <icon [icon]="'arrowLeft'" />
+    </button>
+
+    <img class="w-[600px] max-h-[400px] object-cover rounded" [src]="images[current].url" />
+    <button (click)="next()" class="bg-white rounded-[50%] cursor-pointer absolute top-1/2 right-[10px]">
+        <icon [icon]="'arrowRight'" />
+    </button>
+</div>
+
+<!--  -->

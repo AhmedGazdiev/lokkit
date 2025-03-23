@@ -1,10 +1,11 @@
 import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { PostService } from '@core/services/post.service';
+import { PostComponent } from '../../components/post/post.component';
 
 @Component({
     selector: 'feed',
-    imports: [AsyncPipe],
+    imports: [AsyncPipe, PostComponent],
     templateUrl: './feed.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })

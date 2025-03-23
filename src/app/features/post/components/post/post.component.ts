@@ -2,10 +2,9 @@ import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { Post } from '@core/models/post';
-import { CarouselComponent } from '@shared/components';
+import { CarouselComponent, IconComponent } from '@shared/components';
 import { ShowIfLikedDirective } from '@shared/directives';
 import { UsernamePipe } from '@shared/pipes';
-import { IconComponent } from '../../../../shared/components/icon/icon.component';
 
 @Component({
     selector: 'post',

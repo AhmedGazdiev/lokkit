@@ -20,7 +20,11 @@
             </div>
         </div>
         <button [matMenuTriggerFor]="menu">
-            <img class="w-[48px] h-[48px] rounded-[50%]" [src]="authService.authData()?.avatar" alt="avatar" />
+            <img
+                class="w-[48px] h-[48px] rounded-[50%] cursor-pointer"
+                [src]="authService.authData()?.avatar"
+                alt="avatar"
+            />
         </button>
         <mat-menu #menu="matMenu">
             @for (item of menuItems; track $index) {

@@ -1,5 +1,4 @@
-<div class="min-h-[100vh]">
-    <p>feed works!</p>
+<div class="min-h-[100vh] flex flex-col gap-[24px] mb-[40px]">
     @if (posts$ | async; as posts) {
         @for (post of posts; track post._id) {
             <post [post]="post" />

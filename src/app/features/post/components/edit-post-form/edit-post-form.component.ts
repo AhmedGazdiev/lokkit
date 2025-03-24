@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
+import { ActivatedRoute } from '@angular/router';
 import { PostService } from '@core/services/post.service';
 import { IconComponent } from '@shared/components';
 import { maxLength, minLength, required } from '@shared/validators';
@@ -13,9 +14,15 @@ import { maxLength, minLength, required } from '@shared/validators';
     templateUrl: './edit-post-form.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EditPostFormComponent {
+export class EditPostFormComponent implements OnInit {
     private fb = inject(FormBuilder);
     private postService = inject(PostService);
+    private route = inject(ActivatedRoute);
+    private id = this.route.snapshot.paramMap.get('id');
+
+    ngOnInit(): void {
+        console.log(this.id);
+    }
 
     public editPostForm = this.fb.group({
         content: this.fb.control('', [required, minLength(20), maxLength(200)]),

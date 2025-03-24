@@ -16,6 +16,6 @@ export class DetailPostComponent implements OnInit {
     public post = signal<Post | null>(null);
 
     ngOnInit(): void {
-        this.postService.getPostById(String(this.id)).subscribe(res => this.post.set(res));
+        this.postService.getPostById(String(this.id)).subscribe(res => this.post.set(res.post));
     }
 }

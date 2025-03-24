@@ -23,8 +23,6 @@ export class EditPostFormComponent implements OnInit {
     private post = signal<Post | null>(null);
 
     ngOnInit(): void {
-        console.log(this.id);
-
         this.postService.getPostById(String(this.id)).subscribe(res => this.post.set(res));
     }
 

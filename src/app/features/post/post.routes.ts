@@ -6,5 +6,5 @@ import { EditPostComponent } from './pages/edit-post/edit-post.component';
 export const POST_ROUTES: Routes = [
     { path: 'create', title: 'Create Post', component: CreatePostComponent },
     { path: ':id/detail', title: 'Detail Post', component: DetailPostComponent },
-    { path: ':id/edit', title: 'Detail Post', component: EditPostComponent }
+    { path: ':id/edit', title: 'Edit Post', component: EditPostComponent }
 ];

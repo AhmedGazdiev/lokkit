@@ -43,7 +43,6 @@ export class CreatePostFormComponent {
             files.forEach(file => {
                 this.images.push(this.fb.control(file));
             });
-            console.log(files);
         }
     }
 

@@ -17,6 +17,8 @@ export class PostService {
     private loading = signal<boolean>(false);
     private postsSubject$ = new BehaviorSubject<Post[]>([]);
     public readonly posts$ = this.postsSubject$.asObservable();
+    private _post = signal<Post | null>(null);
+    public readonly post = this._post.asReadonly();
     private snackbar = inject(MatSnackBar);
     private router = inject(Router);
     private uplImg = inject(UploadImagesService);
@@ -57,12 +59,35 @@ export class PostService {
         );
     }
 
-    public getPostById(_id: string): Observable<Post> {
+    public getPostById(_id: string): Observable<PostResponse> {
         this.loading.set(true);
-        return this.http.get<Post>(`/post/${_id}`).pipe(
+        return this.http.get<PostResponse>(`/post/${_id}`).pipe(
+            tap(res => this._post.set(res.post)),
+            catchError(error => {
+                return throwError(() => new Error("Couldn't get post", error));
+            }),
+            finalize(() => this.loading.set(false))
+        );
+    }
+
+    public editPost(_id: string, data: Post): Observable<PostResponse> {
+        console.log(_id, data);
+        return from(this.uplImg.uploadImages(data.images)).pipe(
+            switchMap(images => {
+                return this.http.patch<PostResponse, Post>(`/post/${_id}`, { ...data, images });
+            }),
+            delay(1000),
+            tap(res => {
+                this.postsSubject$.next(
+                    this.postsSubject$.value.map(post => (post._id === res.post._id ? res.post : post))
+                );
+                this.storage.set('posts', [...this.postsSubject$.value, res.post]);
+                this.snackbar.open(res.msg);
+                this.router.navigate(['/feed']);
+            }),
             catchError(error => {
                 this.loading.set(false);
-                return throwError(() => new Error("Couldn't get post", error));
+                return throwError(() => new Error("Couldn't create post.", error));
             }),
             finalize(() => this.loading.set(false))
         );

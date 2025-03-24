@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
@@ -20,10 +20,28 @@ export class EditPostFormComponent implements OnInit {
     private postService = inject(PostService);
     private route = inject(ActivatedRoute);
     private id = this.route.snapshot.paramMap.get('id');
-    private post = signal<Post | null>(null);
+    private post = this.postService.post;
+    private ef = effect(() => {
+        const post = this.post();
+
+        if (!post) {
+            return;
+        }
+        console.log(post);
+
+        this.editPostForm.patchValue({
+            content: post.content
+        });
+
+        this.images.clear();
+
+        post.images.forEach(file => {
+            this.images.push(this.fb.control(file.url));
+        });
+    });
 
     ngOnInit(): void {
-        this.postService.getPostById(String(this.id)).subscribe(res => this.post.set(res));
+        this.postService.getPostById(this.id as string).subscribe();
     }
 
     public editPostForm = this.fb.group({
@@ -41,7 +59,12 @@ export class EditPostFormComponent implements OnInit {
 
     public fileUrl(index: number) {
         const file = this.images.at(index).value;
-        return URL.createObjectURL(file);
+        if (file instanceof File) {
+            return URL.createObjectURL(file);
+        } else if (typeof file === 'string') {
+            return file;
+        }
+        return '';
     }
 
     public changeImages(event: Event) {
@@ -57,7 +80,7 @@ export class EditPostFormComponent implements OnInit {
 
     public onSubmit() {
         if (this.editPostForm.valid) {
-            console.log(this.editPostForm.value);
+            this.postService.editPost(this.post()?._id as string, this.editPostForm.value as Post).subscribe();
         }
     }
 }

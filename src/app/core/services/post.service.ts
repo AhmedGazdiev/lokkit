@@ -67,4 +67,18 @@ export class PostService {
             finalize(() => this.loading.set(false))
         );
     }
+
+    public deletePost(_id: string): Observable<PostResponse> {
+        this.loading.set(true);
+        return this.http.delete<PostResponse>(`/post/${_id}`).pipe(
+            tap(res => {
+                this.snackbar.open(res.msg);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                return throwError(() => new Error("Couldn't delete post", error));
+            }),
+            finalize(() => this.loading.set(false))
+        );
+    }
 }

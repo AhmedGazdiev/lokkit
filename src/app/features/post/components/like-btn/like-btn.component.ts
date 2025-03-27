@@ -15,5 +15,7 @@ export class LikeBtnComponent {
     like() {
         this.postService.likePost(this.id()).subscribe();
     }
-    unlike() {}
+    unlike() {
+        this.postService.unlikePost(this.id()).subscribe();
+    }
 }

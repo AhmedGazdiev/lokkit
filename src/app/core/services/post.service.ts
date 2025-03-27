@@ -110,6 +110,22 @@ export class PostService {
         );
     }
 
+    public unlikePost(_id: string): Observable<{ msg: string }> {
+        this.loading.set(true);
+        // @ts-ignore
+        return this.http.patch<{ msg: string }, string>(`/post/${_id}/unlike`).pipe(
+            tap(res => {
+                this._isLike.set(false);
+                this.snackbar.open(res.msg);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                return throwError(() => new Error("Couldn't like post.", error));
+            }),
+            finalize(() => this.loading.set(false))
+        );
+    }
+
     public deletePost(_id: string): Observable<PostResponse> {
         this.loading.set(true);
         return this.http.delete<PostResponse>(`/post/${_id}`).pipe(

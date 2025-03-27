@@ -22,7 +22,6 @@ export class PostService {
     private snackbar = inject(MatSnackBar);
     private router = inject(Router);
     private uplImg = inject(UploadImagesService);
-    public _isLike = signal<boolean>(false);
 
     public createPost(data: Post) {
         return from(this.uplImg.uploadImages(data.images)).pipe(
@@ -99,7 +98,6 @@ export class PostService {
         // @ts-ignore
         return this.http.patch<{ msg: string }, string>(`/post/${_id}/like`).pipe(
             tap(res => {
-                this._isLike.set(true);
                 this.snackbar.open(res.msg);
             }),
             catchError(error => {
@@ -115,7 +113,6 @@ export class PostService {
         // @ts-ignore
         return this.http.patch<{ msg: string }, string>(`/post/${_id}/unlike`).pipe(
             tap(res => {
-                this._isLike.set(false);
                 this.snackbar.open(res.msg);
             }),
             catchError(error => {

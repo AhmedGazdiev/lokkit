@@ -130,6 +130,7 @@ export class PostService {
         this.loading.set(true);
         return this.http.delete<PostResponse>(`/post/${_id}`).pipe(
             tap(res => {
+                this.postsSubject$.next(this.postsSubject$.value.filter(post => post._id !== _id));
                 this.snackbar.open(res.msg);
             }),
             catchError(error => {

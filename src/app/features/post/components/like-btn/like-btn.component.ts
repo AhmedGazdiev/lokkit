@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
+import { PostService } from '@core/services/post.service';
 import { IconComponent } from '@shared/components';
 
 @Component({
@@ -9,9 +10,10 @@ import { IconComponent } from '@shared/components';
 })
 export class LikeBtnComponent {
     public readonly id = input.required<string>();
+    public readonly postService = inject(PostService);
 
-    like() {}
-    unlike() {
-        console.log('id', this.id());
+    like() {
+        this.postService.likePost(this.id()).subscribe();
     }
+    unlike() {}
 }

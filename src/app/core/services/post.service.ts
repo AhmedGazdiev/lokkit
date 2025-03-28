@@ -2,8 +2,10 @@ import { inject, Injectable, signal } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Post, PostResponse } from '@core/models/post';
+import { User } from '@core/models/user';
 import { BehaviorSubject, catchError, delay, finalize, from, Observable, switchMap, tap, throwError } from 'rxjs';
 import { GetPostsResponse } from './../models/post';
+import { AuthService } from './auth.service';
 import { HttpService } from './http.service';
 import { LocalStorageService } from './local-storage.service';
 import { UploadImagesService } from './upload-images.service';
@@ -22,6 +24,7 @@ export class PostService {
     private snackbar = inject(MatSnackBar);
     private router = inject(Router);
     private uplImg = inject(UploadImagesService);
+    public readonly authService = inject(AuthService);
 
     public createPost(data: Post) {
         return from(this.uplImg.uploadImages(data.images)).pipe(
@@ -96,9 +99,19 @@ export class PostService {
     public likePost(_id: string): Observable<{ msg: string }> {
         this.loading.set(true);
         // @ts-ignore
-        return this.http.patch<{ msg: string }, string>(`/post/${_id}/like`).pipe(
+        return this.http.patch<{ msg: string }, any>(`/post/${_id}/like`).pipe(
             tap(res => {
                 this.snackbar.open(res.msg);
+                this.postsSubject$.next(
+                    this.postsSubject$.value.map(post =>
+                        post._id === _id
+                            ? {
+                                  ...post,
+                                  likes: [...post.likes, this.authService.authData() as User]
+                              }
+                            : post
+                    )
+                );
             }),
             catchError(error => {
                 this.loading.set(false);
@@ -108,12 +121,17 @@ export class PostService {
         );
     }
 
-    public unlikePost(_id: string): Observable<{ msg: string }> {
+    public unlikePost(post: Post): Observable<{ msg: string }> {
         this.loading.set(true);
         // @ts-ignore
-        return this.http.patch<{ msg: string }, string>(`/post/${_id}/unlike`).pipe(
+        return this.http.patch<{ msg: string }, Post>(`/post/${post._id}/unlike`).pipe(
             tap(res => {
                 this.snackbar.open(res.msg);
+                const newPost = {
+                    ...post,
+                    likes: post.likes.filter(like => like._id !== (this.authService.authData() as User)._id)
+                };
+                this.postsSubject$.next(this.postsSubject$.value.map(p => (p._id === post._id ? newPost : post)));
             }),
             catchError(error => {
                 this.loading.set(false);

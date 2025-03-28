@@ -1,0 +1,9 @@
+@if (_isLike()) {
+    <button (click)="unlike()">
+        <icon class="cursor-pointer" [icon]="'likeActive'" />
+    </button>
+} @else {
+    <button (click)="like()">
+        <icon class="cursor-pointer" [icon]="'like'" />
+    </button>
+}

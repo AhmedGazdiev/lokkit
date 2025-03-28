@@ -9,6 +9,7 @@ import { CarouselComponent, IconComponent } from '@shared/components';
 import { ShowIfLikedDirective } from '@shared/directives';
 import { MenuItem } from '@shared/menu-item.type';
 import { UsernamePipe } from '@shared/pipes';
+import { LikeBtnComponent } from '../like-btn/like-btn.component';
 
 @Component({
     selector: 'post',
@@ -21,7 +22,8 @@ import { UsernamePipe } from '@shared/pipes';
         MatLabel,
         MatInput,
         MatMenuModule,
-        RouterLink
+        RouterLink,
+        LikeBtnComponent
     ],
     templateUrl: './post.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -52,5 +54,9 @@ export class PostComponent implements OnInit {
                 click: () => this.postService.deletePost(this.post()._id).subscribe()
             }
         ];
+    }
+
+    likePost() {
+        console.log('like');
     }
 }

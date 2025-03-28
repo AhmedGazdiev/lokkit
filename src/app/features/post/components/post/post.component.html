@@ -26,7 +26,7 @@
         <div class="w-full flex items-center justify-between">
             <div class="flex items-center gap-[12px]">
                 <div class="flex items-cnter gap-[8px]">
-                    <icon class="cursor-pointer" [icon]="'like'" />
+                    <like-btn [post]="post()" />
                     <span *showIfLiked="post().likes.length">{{ post().likes.length }} Likes</span>
                 </div>
                 <div class="flex items-cnter gap-[8px] cursor-pointer select-none" (click)="toggleComments()">

@@ -1,4 +1,5 @@
 import { ImageUpload } from '@core/services/upload-images.service';
+import { Comment } from './comment';
 import { User } from './user';
 
 export interface Post {
@@ -11,19 +12,6 @@ export interface Post {
     createdAt: string;
     updatedAt: string;
     __v: 0;
-}
-
-interface Comment {
-    _id: string;
-    content: string;
-    tag?: any;
-    reply?: string;
-    likes: string[];
-    user: User;
-    postId: string;
-    postUserId: string;
-    createdAt: string;
-    updatedAt: string;
 }
 
 export interface PostResponse {

@@ -55,12 +55,5 @@
             </div>
         }
     </div>
-    <div class="border-t border-gray-300 flex items-center gap-5 p-[20px]">
-        <img class="w-[48px] h-[48px] rounded-[50%]" [src]="post().user.avatar" alt="avatar" />
-        <mat-form-field class="w-full mb-[-20px]">
-            <mat-label>Add Comment...</mat-label>
-            <input matInput />
-        </mat-form-field>
-        <icon class="p-[8px] border border-purple-800 rounded-[50%]" [icon]="'send'" />
-    </div>
+    <comment-form [post]="post()" [reply]="post().user._id" />
 </article>

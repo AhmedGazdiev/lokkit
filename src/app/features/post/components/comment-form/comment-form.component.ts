@@ -5,7 +5,7 @@ import { MatInput } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { Comment } from '@core/models/comment';
 import { Post } from '@core/models/post';
-import { AuthService } from '@core/services';
+import { PostService } from '@core/services/post.service';
 import { maxLength, required } from '@shared/validators';
 import { IconComponent } from '../../../../shared/components/icon/icon.component';
 
@@ -19,7 +19,7 @@ export class CommentFormComponent {
     public readonly post = input.required<Post>();
     public readonly reply = input.required<string>();
     private readonly fb = inject(FormBuilder);
-    private readonly authService = inject(AuthService);
+    private readonly postService = inject(PostService);
 
     public commentForm = this.fb.group({
         content: this.fb.control('', [required, maxLength(200)])
@@ -33,11 +33,13 @@ export class CommentFormComponent {
         const data: Partial<Comment> = {
             postId: this.post()._id,
             content: this.content?.value,
-            tag: this.authService.authData(),
             reply: this.reply(),
             postUserId: this.post().user._id
         };
 
         console.log(data);
+        if (this.commentForm.valid) {
+            this.postService.createComment(data).subscribe();
+        }
     }
 }

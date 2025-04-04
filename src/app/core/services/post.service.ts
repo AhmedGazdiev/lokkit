@@ -1,6 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Comment, CommentResponse } from '@core/models/comment';
 import { Post, PostResponse } from '@core/models/post';
 import { User } from '@core/models/user';
 import { BehaviorSubject, catchError, delay, finalize, from, Observable, switchMap, tap, throwError } from 'rxjs';
@@ -136,6 +137,17 @@ export class PostService {
             catchError(error => {
                 this.loading.set(false);
                 return throwError(() => new Error("Couldn't like post.", error));
+            }),
+            finalize(() => this.loading.set(false))
+        );
+    }
+
+    createComment(data: Partial<Comment>): Observable<CommentResponse> {
+        this.loading.set(true);
+        return this.http.post<CommentResponse, Partial<Comment>>('/comment', data).pipe(
+            catchError(error => {
+                this.loading.set(false);
+                return throwError(() => new Error("Couldn't create post comment.", error));
             }),
             finalize(() => this.loading.set(false))
         );

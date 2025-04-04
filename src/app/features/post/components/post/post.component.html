@@ -42,17 +42,15 @@
             <icon [icon]="'bookmark'" />
         </div>
         @if (_showComments()) {
-            <div class="w-full rounded border border-gray-300 p-[14px] flex items-start justify-between">
-                <div class="flex items-center gap-[8px]">
-                    <img
-                        class="w-[30px] h-[30px] rounded-[50%]"
-                        src="https://cdn.jsdelivr.net/gh/alohe/memojis/png/vibrent_3.png"
-                        alt="avatar"
-                    />
-                    <span class="font-medium">{{ 'author' | username }}</span>
+            @for (comment of post().comments; track comment._id) {
+                <div class="w-full rounded border border-gray-300 p-[14px] flex items-start justify-between">
+                    <div class="flex items-center gap-[8px]">
+                        <img class="w-[30px] h-[30px] rounded-[50%]" [src]="comment.user.avatar" alt="avatar" />
+                        <span class="font-medium">{{ comment.user.username | username }}</span>
+                    </div>
+                    <p class="max-w-[400px]">{{ comment.content }}</p>
                 </div>
-                <p class="max-w-[400px]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, recusandae?</p>
-            </div>
+            }
         }
     </div>
     <comment-form [post]="post()" [reply]="post().user._id" />

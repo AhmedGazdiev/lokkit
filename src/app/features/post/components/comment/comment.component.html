@@ -1,0 +1,7 @@
+<div class="w-full rounded border border-gray-300 p-[14px] flex items-start justify-between">
+    <div class="flex items-center gap-[8px]">
+        <img class="w-[30px] h-[30px] rounded-[50%]" [src]="comment().user.avatar" alt="avatar" />
+        <span class="font-medium">{{ comment().user.username | username }}</span>
+    </div>
+    <p class="max-w-[400px]">{{ comment().content }}</p>
+</div>

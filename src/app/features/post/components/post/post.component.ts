@@ -8,6 +8,7 @@ import { ShowIfLikedDirective } from '@shared/directives';
 import { MenuItem } from '@shared/menu-item.type';
 import { UsernamePipe } from '@shared/pipes';
 import { CommentFormComponent } from '../comment-form/comment-form.component';
+import { CommentComponent } from '../comment/comment.component';
 import { LikeBtnComponent } from '../like-btn/like-btn.component';
 
 @Component({
@@ -20,7 +21,8 @@ import { LikeBtnComponent } from '../like-btn/like-btn.component';
         MatMenuModule,
         RouterLink,
         LikeBtnComponent,
-        CommentFormComponent
+        CommentFormComponent,
+        CommentComponent
     ],
     templateUrl: './post.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush

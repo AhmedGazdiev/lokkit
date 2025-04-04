@@ -142,9 +142,15 @@ export class PostService {
         );
     }
 
-    createComment(data: Partial<Comment>): Observable<CommentResponse> {
+    createComment(data: Partial<Comment>, post: Post): Observable<CommentResponse> {
         this.loading.set(true);
         return this.http.post<CommentResponse, Partial<Comment>>('/comment', data).pipe(
+            tap(res => {
+                const newPost = { ...post, comments: [...post.comments, res.comment] };
+                this.postsSubject$.next(
+                    this.postsSubject$.value.map(post => (post._id === newPost._id ? newPost : post))
+                );
+            }),
             catchError(error => {
                 this.loading.set(false);
                 return throwError(() => new Error("Couldn't create post comment.", error));

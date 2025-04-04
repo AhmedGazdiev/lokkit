@@ -41,11 +41,13 @@
             </div>
             <icon [icon]="'bookmark'" />
         </div>
-        @if (_showComments()) {
-            @for (comment of post().comments; track comment._id) {
-                <comment [comment]="comment" />
+        <div class="max-h-[400px] overflow-auto flex flex-col items-start gap-5">
+            @if (_showComments()) {
+                @for (comment of post().comments; track comment._id) {
+                    <comment [comment]="comment" />
+                }
             }
-        }
+        </div>
     </div>
     <comment-form [post]="post()" [reply]="post().user._id" />
 </article>

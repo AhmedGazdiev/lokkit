@@ -39,7 +39,7 @@ export class CommentFormComponent {
 
         console.log(data);
         if (this.commentForm.valid) {
-            this.postService.createComment(data).subscribe();
+            this.postService.createComment(data, this.post()).subscribe();
         }
     }
 }

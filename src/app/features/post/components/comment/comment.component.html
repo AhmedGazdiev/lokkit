@@ -1,0 +1,15 @@
+<div class="w-full rounded border border-gray-300 p-[14px] flex items-start justify-between gap-5 relative">
+    <div class="flex items-center gap-[8px]">
+        <img class="w-[30px] h-[30px] rounded-[50%]" [src]="comment().user.avatar" alt="avatar" />
+        <span class="font-medium">{{ comment().user.username | username }}</span>
+    </div>
+    <p class="max-w-[370px]">{{ comment().content }}</p>
+    <button [matMenuTriggerFor]="menu">
+        <icon class="cursor-pointer absolute top-[10px] right-[5px]" [icon]="'dotsVertical'" />
+    </button>
+    <mat-menu #menu="matMenu">
+        @for (item of commentMenuItems; track $index) {
+            <button mat-menu-item (click)="item.click?.()">{{ item.label }}</button>
+        }
+    </mat-menu>
+</div>

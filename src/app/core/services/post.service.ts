@@ -159,6 +159,26 @@ export class PostService {
         );
     }
 
+    deleteComment(_id: string): Observable<{ msg: string }> {
+        this.loading.set(true);
+        return this.http.delete<{ msg: string }>(`/comment/${_id}`).pipe(
+            tap(res => {
+                this.snackbar.open(res.msg);
+                this.postsSubject$.next(
+                    this.postsSubject$.value.map(post => ({
+                        ...post,
+                        comments: post.comments.filter(comment => comment._id !== _id)
+                    }))
+                );
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                return throwError(() => new Error("Couldn't create post comment.", error));
+            }),
+            finalize(() => this.loading.set(false))
+        );
+    }
+
     public deletePost(_id: string): Observable<PostResponse> {
         this.loading.set(true);
         return this.http.delete<PostResponse>(`/post/${_id}`).pipe(

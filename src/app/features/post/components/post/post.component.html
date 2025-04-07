@@ -41,26 +41,13 @@
             </div>
             <icon [icon]="'bookmark'" />
         </div>
-        @if (_showComments()) {
-            <div class="w-full rounded border border-gray-300 p-[14px] flex items-start justify-between">
-                <div class="flex items-center gap-[8px]">
-                    <img
-                        class="w-[30px] h-[30px] rounded-[50%]"
-                        src="https://cdn.jsdelivr.net/gh/alohe/memojis/png/vibrent_3.png"
-                        alt="avatar"
-                    />
-                    <span class="font-medium">{{ 'author' | username }}</span>
-                </div>
-                <p class="max-w-[400px]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, recusandae?</p>
-            </div>
-        }
+        <div class="max-h-[400px] overflow-auto flex flex-col items-start gap-5">
+            @if (_showComments()) {
+                @for (comment of post().comments; track comment._id) {
+                    <comment [comment]="comment" />
+                }
+            }
+        </div>
     </div>
-    <div class="border-t border-gray-300 flex items-center gap-5 p-[20px]">
-        <img class="w-[48px] h-[48px] rounded-[50%]" [src]="post().user.avatar" alt="avatar" />
-        <mat-form-field class="w-full mb-[-20px]">
-            <mat-label>Add Comment...</mat-label>
-            <input matInput />
-        </mat-form-field>
-        <icon class="p-[8px] border border-purple-800 rounded-[50%]" [icon]="'send'" />
-    </div>
+    <comment-form [post]="post()" [reply]="post().user._id" />
 </article>

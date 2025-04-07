@@ -1,6 +1,4 @@
 import { ChangeDetectionStrategy, Component, inject, input, OnInit, signal } from '@angular/core';
-import { MatFormField, MatLabel } from '@angular/material/form-field';
-import { MatInput } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterLink } from '@angular/router';
 import { Post } from '@core/models/post';
@@ -9,6 +7,8 @@ import { CarouselComponent, IconComponent } from '@shared/components';
 import { ShowIfLikedDirective } from '@shared/directives';
 import { MenuItem } from '@shared/menu-item.type';
 import { UsernamePipe } from '@shared/pipes';
+import { CommentFormComponent } from '../comment-form/comment-form.component';
+import { CommentComponent } from '../comment/comment.component';
 import { LikeBtnComponent } from '../like-btn/like-btn.component';
 
 @Component({
@@ -18,12 +18,11 @@ import { LikeBtnComponent } from '../like-btn/like-btn.component';
         IconComponent,
         UsernamePipe,
         ShowIfLikedDirective,
-        MatFormField,
-        MatLabel,
-        MatInput,
         MatMenuModule,
         RouterLink,
-        LikeBtnComponent
+        LikeBtnComponent,
+        CommentFormComponent,
+        CommentComponent
     ],
     templateUrl: './post.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -54,9 +53,5 @@ export class PostComponent implements OnInit {
                 click: () => this.postService.deletePost(this.post()._id).subscribe()
             }
         ];
-    }
-
-    likePost() {
-        console.log('like');
     }
 }

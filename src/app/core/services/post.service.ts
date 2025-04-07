@@ -1,6 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Comment, CommentResponse } from '@core/models/comment';
 import { Post, PostResponse } from '@core/models/post';
 import { User } from '@core/models/user';
 import { BehaviorSubject, catchError, delay, finalize, from, Observable, switchMap, tap, throwError } from 'rxjs';
@@ -136,6 +137,43 @@ export class PostService {
             catchError(error => {
                 this.loading.set(false);
                 return throwError(() => new Error("Couldn't like post.", error));
+            }),
+            finalize(() => this.loading.set(false))
+        );
+    }
+
+    createComment(data: Partial<Comment>, post: Post): Observable<CommentResponse> {
+        this.loading.set(true);
+        return this.http.post<CommentResponse, Partial<Comment>>('/comment', data).pipe(
+            tap(res => {
+                const newPost = { ...post, comments: [...post.comments, res.comment] };
+                this.postsSubject$.next(
+                    this.postsSubject$.value.map(post => (post._id === newPost._id ? newPost : post))
+                );
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                return throwError(() => new Error("Couldn't create post comment.", error));
+            }),
+            finalize(() => this.loading.set(false))
+        );
+    }
+
+    deleteComment(_id: string): Observable<{ msg: string }> {
+        this.loading.set(true);
+        return this.http.delete<{ msg: string }>(`/comment/${_id}`).pipe(
+            tap(res => {
+                this.snackbar.open(res.msg);
+                this.postsSubject$.next(
+                    this.postsSubject$.value.map(post => ({
+                        ...post,
+                        comments: post.comments.filter(comment => comment._id !== _id)
+                    }))
+                );
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                return throwError(() => new Error("Couldn't create post comment.", error));
             }),
             finalize(() => this.loading.set(false))
         );

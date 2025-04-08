@@ -73,6 +73,17 @@ export class PostService {
         );
     }
 
+    public getUserPosts(_id: string): Observable<Partial<GetPostsResponse>> {
+        this.loading.set(true);
+        return this.http.get<Partial<GetPostsResponse>>(`/user_posts/${_id}`).pipe(
+            catchError(error => {
+                this.loading.set(false);
+                return throwError(() => new Error("Couldn't get user posts.", error));
+            }),
+            finalize(() => this.loading.set(false))
+        );
+    }
+
     public editPost(_id: string, data: Post): Observable<PostResponse> {
         console.log(_id, data);
         return from(this.uplImg.uploadImages(data.images)).pipe(

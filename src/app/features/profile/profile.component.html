@@ -32,7 +32,7 @@
     </div>
 
     <div class="mt-[100px]">
-        <nav mat-tab-nav-bar>
+        <nav mat-tab-nav-bar [tabPanel]="tabPanel">
             @for (tab of tabs; track $index) {
                 <a
                     mat-tab-link
@@ -45,6 +45,8 @@
                 </a>
             }
         </nav>
-        <router-outlet />
+        <mat-tab-nav-panel #tabPanel>
+            <router-outlet></router-outlet>
+        </mat-tab-nav-panel>
     </div>
 </div>

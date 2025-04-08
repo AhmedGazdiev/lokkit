@@ -1,21 +1,34 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { AsyncPipe, NgIf } from '@angular/common';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { RouterLink } from '@angular/router';
-import { User } from '@core/models/user';
-import { AuthService } from '@core/services';
+import { RegisterRequest } from '@core/models/auth';
 import { confirmPassword, email, maxLength, minLength, required } from '@shared/validators';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'register-form',
-    imports: [MatInput, MatFormField, MatLabel, MatButton, ReactiveFormsModule, RouterLink],
+    imports: [
+        MatInput,
+        MatFormField,
+        MatLabel,
+        MatButton,
+        ReactiveFormsModule,
+        RouterLink,
+        MatProgressBarModule,
+        NgIf,
+        AsyncPipe
+    ],
     templateUrl: './register-form.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegisterFormComponent {
-    private authService = inject(AuthService);
+    @Input() isLoading!: Observable<boolean>;
+    @Output() register = new EventEmitter<RegisterRequest>();
 
     public registerForm = new FormGroup(
         {
@@ -46,7 +59,7 @@ export class RegisterFormComponent {
 
     onSubmit() {
         if (this.registerForm.valid) {
-            this.authService.register(this.registerForm.value as User).subscribe();
+            this.register.emit(this.registerForm.value as RegisterRequest);
         }
     }
 }

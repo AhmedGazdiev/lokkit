@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { LoginRequest } from '@core/models/auth';
+import { AuthService } from '@core/services';
 import { LoginFormComponent } from '../../components/login-form/login-form.component';
 
 @Component({
@@ -7,4 +9,11 @@ import { LoginFormComponent } from '../../components/login-form/login-form.compo
     templateUrl: './login.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginComponent {}
+export class LoginComponent {
+    private readonly authService = inject(AuthService);
+    public authLoading = this.authService.loading$;
+
+    onLogin(data: LoginRequest) {
+        this.authService.login(data).subscribe();
+    }
+}

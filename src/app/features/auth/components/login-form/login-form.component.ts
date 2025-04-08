@@ -1,22 +1,34 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { RouterLink } from '@angular/router';
-import { User } from '@core/models/user';
-import { AuthService } from '@core/services';
+import { LoginRequest } from '@core/models/auth';
 import { email, maxLength, minLength, required } from '@shared/validators';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'login-form',
-    imports: [MatInput, MatFormField, MatLabel, MatButton, ReactiveFormsModule, RouterLink],
+    imports: [
+        MatInput,
+        MatFormField,
+        MatLabel,
+        MatButton,
+        ReactiveFormsModule,
+        RouterLink,
+        MatProgressBarModule,
+        AsyncPipe
+    ],
     templateUrl: './login-form.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginFormComponent {
+    @Input() isLoading!: Observable<boolean>;
+    @Output() login = new EventEmitter<LoginRequest>();
     private fb = inject(FormBuilder);
-    private authService = inject(AuthService);
 
     public loginForm = this.fb.group({
         email: this.fb.control('', [required, email]),
@@ -32,7 +44,7 @@ export class LoginFormComponent {
 
     onSubmit() {
         if (this.loginForm.valid) {
-            this.authService.login(this.loginForm.value as User).subscribe();
+            this.login.emit(this.loginForm.value as LoginRequest);
         }
     }
 }

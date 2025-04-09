@@ -1,9 +1,9 @@
 <div>
     <div class="flex items-start gap-[32px]">
-        <img class="rounded-[50%] mr-[100px]" [src]="data?.avatar" alt="" />
+        <img class="rounded-[50%] mr-[100px]" [src]="userData()?.avatar" alt="" />
         <div class="flex flex-col items-start gap-5">
             <div class="flex items-center gap-5">
-                <h3 class="text-2xl font-medium">{{ `${data?.username}` | username }}</h3>
+                <h3 class="text-2xl font-medium">{{ `${userData()?.username}` | username }}</h3>
                 @if (ifAuth()) {
                     <button mat-flat-button class="w-[120px]">Edit</button>
                 } @else {
@@ -17,16 +17,16 @@
                     <p>posts</p>
                 </div>
                 <div class="flex items-center gap-2">
-                    <p class="font-medium text-xl">{{ data?.followers?.length }}</p>
+                    <p class="font-medium text-xl">{{ userData()?.followers?.length }}</p>
                     <p>followers</p>
                 </div>
                 <div class="flex items-center gap-2">
-                    <p class="font-medium text-xl">{{ data?.following?.length }}</p>
+                    <p class="font-medium text-xl">{{ userData()?.following?.length }}</p>
                     <p>following</p>
                 </div>
             </div>
             <div class="info">
-                <p class="font-medium text-xl">{{ data?.fullname }}</p>
+                <p class="font-medium text-xl">{{ userData()?.fullname }}</p>
             </div>
         </div>
     </div>

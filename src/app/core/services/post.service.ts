@@ -127,6 +127,25 @@ export class PostService {
         );
     }
 
+    public unSavePost(_id: string): Observable<{ msg: string }> {
+        // @ts-ignore
+        return this.http.patch<{ msg: string }>(`/unSavePost/${_id}`).pipe(
+            tap(res => {
+                const data = this.authService.authData();
+                this.authService.authData.set({
+                    ...data,
+                    saved: data?.saved.filter(i => i !== _id)
+                } as User);
+                this.snackbar.open(res.msg);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                return throwError(() => new Error("Couldn't save post.", error));
+            }),
+            finalize(() => this.loading.set(false))
+        );
+    }
+
     public likePost(_id: string): Observable<{ msg: string }> {
         this.loading.set(true);
         // @ts-ignore

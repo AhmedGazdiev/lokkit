@@ -29,5 +29,7 @@ export class SaveBtnComponent {
     public save() {
         this.postService.savePost(this.post()._id).subscribe();
     }
-    public unSave() {}
+    public unSave() {
+        this.postService.unSavePost(this.post()._id).subscribe();
+    }
 }

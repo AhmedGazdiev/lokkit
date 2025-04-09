@@ -1,1 +1,11 @@
-<p>posts works!</p>
+<div class="m-5 flex justify-center gap-5 flex-wrap">
+    @for (post of _posts(); track post._id) {
+        <a [routerLink]="['/post', post._id, 'detail']" class="relative w-[300px] h-[300px] overflow-hidden rounded">
+            <img
+                class="w-full h-full object-cover transition-all duration-500 hover:scale-110 hover:opacity-90"
+                [src]="post.images[0].url"
+                alt="img"
+            />
+        </a>
+    }
+</div>

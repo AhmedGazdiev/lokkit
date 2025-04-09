@@ -19,15 +19,16 @@ export class ProfileComponent implements OnInit, OnDestroy {
     public readonly authService = inject(AuthService);
     public readonly postService = inject(PostService);
     private readonly route = inject(ActivatedRoute);
-    public id: string | null = null;
+    public id!: string;
     public _postsLength = signal<number | null>(null);
     private destroy$ = new Subject<void>();
     public tabs!: MenuItem[];
 
     ngOnInit(): void {
-        this.id = this.route.snapshot.paramMap.get('id');
+        this.id = this.route.snapshot.paramMap.get('id') as string;
+
         this.postService
-            .getUserPosts(String(this.id))
+            .getUserPosts(this.id)
             .pipe(takeUntil(this.destroy$))
             .subscribe(res => this._postsLength.set(Number(res.result)));
 

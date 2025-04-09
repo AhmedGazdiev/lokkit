@@ -4,6 +4,7 @@ export type iconTypes =
     | 'attach'
     | 'bigLogo'
     | 'bookmark'
+    | 'bookmarkActive'
     | 'chat'
     | 'creditCard'
     | 'cube'

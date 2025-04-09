@@ -10,7 +10,7 @@ export interface User {
     mobile: string;
     password: string;
     role: string;
-    saved: string[];
+    saved: any[];
     story: string;
     updatedAt: string;
     username: string;

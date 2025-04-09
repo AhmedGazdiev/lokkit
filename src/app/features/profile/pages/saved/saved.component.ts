@@ -1,4 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { AuthService } from '@core/services';
+import { UserService } from '@core/services/user.service';
 
 @Component({
     selector: 'saved',
@@ -6,4 +9,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     templateUrl: './saved.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SavedComponent {}
+export class SavedComponent {
+    public readonly authService = inject(AuthService);
+    public readonly userService = inject(UserService);
+    public userData = toSignal(this.userService.user$, { initialValue: null });
+}

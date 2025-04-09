@@ -42,7 +42,7 @@
                     <span>Share</span>
                 </div>
             </div>
-            <icon [icon]="'bookmark'" />
+            <save-btn [post]="post()" />
         </div>
         <div class="max-h-[400px] overflow-auto flex flex-col items-start gap-5">
             @if (_showComments()) {

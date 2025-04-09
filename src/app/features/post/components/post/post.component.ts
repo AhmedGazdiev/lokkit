@@ -10,6 +10,7 @@ import { UsernamePipe } from '@shared/pipes';
 import { CommentFormComponent } from '../comment-form/comment-form.component';
 import { CommentComponent } from '../comment/comment.component';
 import { LikeBtnComponent } from '../like-btn/like-btn.component';
+import { SaveBtnComponent } from '../save-btn/save-btn.component';
 
 @Component({
     selector: 'post',
@@ -22,7 +23,8 @@ import { LikeBtnComponent } from '../like-btn/like-btn.component';
         RouterLink,
         LikeBtnComponent,
         CommentFormComponent,
-        CommentComponent
+        CommentComponent,
+        SaveBtnComponent
     ],
     templateUrl: './post.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush

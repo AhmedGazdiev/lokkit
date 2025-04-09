@@ -1,0 +1,9 @@
+@if (_isSave()) {
+    <button (click)="unSave()" class="cursor-pointer">
+        <icon [icon]="'bookmarkActive'" />
+    </button>
+} @else {
+    <button (click)="save()" class="cursor-pointer">
+        <icon [icon]="'bookmark'" />
+    </button>
+}

@@ -108,6 +108,44 @@ export class PostService {
         );
     }
 
+    public savePost(_id: string): Observable<{ msg: string }> {
+        // @ts-ignore
+        return this.http.patch<{ msg: string }>(`/savePost/${_id}`).pipe(
+            tap(res => {
+                const data = this.authService.authData();
+                this.authService.authData.set({
+                    ...data,
+                    saved: [...(data?.saved || []), _id]
+                } as User);
+                this.snackbar.open(res.msg);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                return throwError(() => new Error("Couldn't save post.", error));
+            }),
+            finalize(() => this.loading.set(false))
+        );
+    }
+
+    public unSavePost(_id: string): Observable<{ msg: string }> {
+        // @ts-ignore
+        return this.http.patch<{ msg: string }>(`/unSavePost/${_id}`).pipe(
+            tap(res => {
+                const data = this.authService.authData();
+                this.authService.authData.set({
+                    ...data,
+                    saved: data?.saved.filter(i => i !== _id)
+                } as User);
+                this.snackbar.open(res.msg);
+            }),
+            catchError(error => {
+                this.loading.set(false);
+                return throwError(() => new Error("Couldn't save post.", error));
+            }),
+            finalize(() => this.loading.set(false))
+        );
+    }
+
     public likePost(_id: string): Observable<{ msg: string }> {
         this.loading.set(true);
         // @ts-ignore
@@ -153,7 +191,7 @@ export class PostService {
         );
     }
 
-    createComment(data: Partial<Comment>, post: Post): Observable<CommentResponse> {
+    public createComment(data: Partial<Comment>, post: Post): Observable<CommentResponse> {
         this.loading.set(true);
         return this.http.post<CommentResponse, Partial<Comment>>('/comment', data).pipe(
             tap(res => {
@@ -170,7 +208,7 @@ export class PostService {
         );
     }
 
-    deleteComment(_id: string): Observable<{ msg: string }> {
+    public deleteComment(_id: string): Observable<{ msg: string }> {
         this.loading.set(true);
         return this.http.delete<{ msg: string }>(`/comment/${_id}`).pipe(
             tap(res => {

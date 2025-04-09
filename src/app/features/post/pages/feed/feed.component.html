@@ -1,9 +1,20 @@
-<div class="min-h-[100vh] flex flex-col gap-[24px] mb-[40px]">
-    @if (posts$ | async; as posts) {
-        @for (post of posts; track post._id) {
-            <post [post]="post" />
+<div class="min-h-[100vh] flex items-start justify-around">
+    <div class="flex flex-col gap-[24px]">
+        @if (posts$ | async; as posts) {
+            @for (post of posts; track post._id) {
+                <post [post]="post" />
+            }
+        } @else {
+            <p>Posts not found.</p>
         }
-    } @else {
-        <p>Posts not found.</p>
-    }
+    </div>
+    <div class="flex flex-col gap-5">
+        @if (suggests$ | async; as suggests) {
+            @for (suggest of suggests; track suggest._id) {
+                <suggest-user [suggest]="suggest" />
+            }
+        } @else {
+            <p>Posts not found.</p>
+        }
+    </div>
 </div>

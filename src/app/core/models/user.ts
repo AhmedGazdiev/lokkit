@@ -18,3 +18,8 @@ export interface User {
     __v: number;
     _id: string;
 }
+
+export interface GetUsersResponse {
+    users: User[];
+    result: number;
+}

@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { AuthService } from '@core/services';
 
 @Component({
     selector: 'saved',
@@ -6,4 +7,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     templateUrl: './saved.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SavedComponent {}
+export class SavedComponent {
+    public readonly authService = inject(AuthService);
+}

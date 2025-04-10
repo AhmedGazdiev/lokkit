@@ -1,6 +1,6 @@
 export interface User {
     address: string;
-    avatar: string;
+    avatar: any;
     createdAt: string;
     email: string;
     followers: User[];

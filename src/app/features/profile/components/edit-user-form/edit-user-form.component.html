@@ -1,5 +1,15 @@
-<div class="w-[500px] p-5 flex flex-col justify-between gap-5">
+<div class="w-[500px] p-5 flex flex-col justify-between gap-5 bg-white">
     <h3 class="text-2xl font-medium">Edit User</h3>
+    <div class="flex flex-col items-center gap-2">
+        <label
+            for="avatarFile"
+            class="rounded-[50%] relative flex items-center justify-center rounded-full cursor-pointer hover:after:opacity-100 after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:opacity-0 after:bg-white/55 after:z-10 after:rounded-inherit after:transition-all after:duration-200"
+        >
+            <img class="w-[150px] h-[150px] rounded-[50%] object-cover" [src]="ifAvatar()" alt="avatar" />
+            <input class="hidden border border-black" type="file" id="avatarFile" (change)="changeAvatar($event)" />
+        </label>
+        <button mat-flat-button (click)="removeAvatar()">Remove Avatar</button>
+    </div>
     <form class="w-full" [formGroup]="editUserForm" (ngSubmit)="onSubmit()">
         <mat-form-field class="w-full">
             <mat-label>Full Name</mat-label>
@@ -21,6 +31,6 @@
             <mat-label>Story</mat-label>
             <input matInput formControlName="story" />
         </mat-form-field>
-        <button class="w-full" type="submit" mat-flat-button>Edit</button>
+        <button class="w-full" type="submit" [disabled]="editUserForm.invalid" mat-flat-button>Edit</button>
     </form>
 </div>

@@ -4,7 +4,9 @@ import { MatButton } from '@angular/material/button';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
+import { User } from '@core/models/user';
 import { AuthService } from '@core/services';
+import { UserService } from '@core/services/user.service';
 import { maxLength, minLength } from '@shared/validators';
 
 @Component({
@@ -16,6 +18,7 @@ import { maxLength, minLength } from '@shared/validators';
 export class EditUserFormComponent {
     private readonly dialog = inject(MatDialogRef<EditUserFormComponent>);
     private readonly fb = inject(FormBuilder);
+    private readonly userService = inject(UserService);
     public readonly auth = inject(AuthService).authData;
     public _avatar = signal<any | null>(null);
 
@@ -47,7 +50,7 @@ export class EditUserFormComponent {
 
     onSubmit(): void {
         if (this.editUserForm.valid) {
-            console.log(this.editUserForm.value, this._avatar());
+            this.userService.editUser(this.editUserForm.value as Partial<User>, this._avatar()).subscribe();
             this.dialog.close();
         }
     }

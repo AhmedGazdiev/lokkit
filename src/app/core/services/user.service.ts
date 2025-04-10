@@ -2,7 +2,7 @@ import { inject, Injectable, signal } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { GetUsersResponse, User } from '@core/models/user';
-import { BehaviorSubject, catchError, finalize, Observable, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, finalize, from, Observable, switchMap, tap, throwError } from 'rxjs';
 import { AuthService } from './auth.service';
 import { HttpService } from './http.service';
 import { UploadImagesService } from './upload-images.service';
@@ -12,7 +12,7 @@ import { UploadImagesService } from './upload-images.service';
 })
 export class UserService {
     private http = inject(HttpService);
-    public readonly authService = inject(AuthService);
+    public readonly authService = inject(AuthService).authData;
     private snackbar = inject(MatSnackBar);
     private uplImg = inject(UploadImagesService);
     private router = inject(Router);
@@ -53,7 +53,7 @@ export class UserService {
     }
 
     public follow(user: User): Observable<{ newUser: User }> {
-        const auth = this.authService.authData;
+        const auth = this.authService;
         this._loading.set(true);
         // @ts-ignore
         return this.http.patch<{ newUser: User }>(`/user/${user?._id}/follow`).pipe(
@@ -76,7 +76,7 @@ export class UserService {
     }
 
     public unFollow(user: User): Observable<{ newUser: User }> {
-        const auth = this.authService.authData;
+        const auth = this.authService;
         this._loading.set(true);
         // @ts-ignore
         return this.http.patch<{ newUser: User }>(`/user/${user?._id}/unfollow`).pipe(
@@ -93,6 +93,35 @@ export class UserService {
             }),
             catchError(error => {
                 return throwError(() => new Error("Couldn't unFollow user", error));
+            }),
+            finalize(() => this._loading.set(false))
+        );
+    }
+
+    public editUser(data: Partial<User>, avatar: File) {
+        const auth = this.authService;
+        return from(this.uplImg.uploadImages([avatar])).pipe(
+            switchMap(uploadedAvatars => {
+                const avatar = uploadedAvatars[0];
+                return this.http
+                    .patch<{ msg: string }, Partial<User>>('/user', {
+                        ...data,
+                        avatar: avatar.url
+                    })
+                    .pipe(
+                        tap(res => {
+                            auth.set({
+                                ...auth(),
+                                ...data,
+                                avatar: avatar.url
+                            } as User);
+                            this.selectedUser(auth() as User);
+                            this.snackbar.open(res.msg);
+                        })
+                    );
+            }),
+            catchError(error => {
+                return throwError(() => new Error("Couldn't update user", error));
             }),
             finalize(() => this._loading.set(false))
         );

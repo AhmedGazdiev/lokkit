@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MatButton } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
@@ -37,6 +37,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     private readonly dialog = inject(MatDialog);
     public id!: string;
     public userData = toSignal(this.userService.user$, { initialValue: null });
+    public readonly newUserData = computed(() => this.userData());
     public usersData = toSignal(this.userService.users$, { initialValue: [] });
     public _postsLength = signal<number | null>(null);
     private destroy$ = new Subject<void>();

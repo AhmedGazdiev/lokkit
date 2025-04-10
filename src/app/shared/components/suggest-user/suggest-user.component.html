@@ -1,12 +1,12 @@
-<div class="border rounded border-gray-300 p-[10px] flex items-center gap-10 justify-between">
-    <div class="flex items-center gap-5">
+<div class="border rounded border-gray-300 p-[10px] flex items-center gap-15 justify-between">
+    <div class="flex items-center gap-10">
         <img class="w-[48px] h-[48px] rounded-[50%]" [src]="suggest().avatar" alt="avatar" />
-        <a [routerLink]="['/profile', suggest()._id]">
-            <div>
-                <p class="font-medium text-lg">{{ suggest().username | username }}</p>
-                <p class="text-gray-500">{{ suggest().fullname }}</p>
-            </div>
-        </a>
+        <div>
+            <p class="font-medium text-lg">{{ suggest().username | username }}</p>
+            <p class="text-gray-500">{{ suggest().fullname }}</p>
+        </div>
     </div>
-    <button mat-flat-button>follow</button>
+    <a [routerLink]="['/profile', suggest()._id]">
+        <button mat-flat-button>go to profile</button>
+    </a>
 </div>

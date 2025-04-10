@@ -10,10 +10,20 @@ import { IconComponent } from '@shared/components';
 import { MenuItem } from '@shared/menu-item.type';
 import { UsernamePipe } from '@shared/pipes';
 import { Subject, takeUntil } from 'rxjs';
+import { FollowBtnComponent } from './components/follow-btn/follow-btn.component';
 
 @Component({
     selector: 'profile',
-    imports: [RouterOutlet, UsernamePipe, MatButton, IconComponent, MatTabsModule, RouterLink, RouterLinkActive],
+    imports: [
+        RouterOutlet,
+        UsernamePipe,
+        MatButton,
+        IconComponent,
+        MatTabsModule,
+        RouterLink,
+        RouterLinkActive,
+        FollowBtnComponent
+    ],
     templateUrl: './profile.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })

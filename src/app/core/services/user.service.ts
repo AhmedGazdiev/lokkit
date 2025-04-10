@@ -52,6 +52,52 @@ export class UserService {
         );
     }
 
+    public follow(user: User): Observable<{ newUser: User }> {
+        const auth = this.authService.authData;
+        this._loading.set(true);
+        // @ts-ignore
+        return this.http.patch<{ newUser: User }>(`/user/${user?._id}/follow`).pipe(
+            tap(() => {
+                const newUser = {
+                    ...user,
+                    followers: [...user.followers, auth()]
+                } as User;
+                this.selectedUser(newUser);
+                auth.set({
+                    ...auth(),
+                    following: [...(auth() as User)?.following, user]
+                } as User);
+            }),
+            catchError(error => {
+                return throwError(() => new Error("Couldn't follow user", error));
+            }),
+            finalize(() => this._loading.set(false))
+        );
+    }
+
+    public unFollow(user: User): Observable<{ newUser: User }> {
+        const auth = this.authService.authData;
+        this._loading.set(true);
+        // @ts-ignore
+        return this.http.patch<{ newUser: User }>(`/user/${user?._id}/unfollow`).pipe(
+            tap(() => {
+                const newUser = {
+                    ...user,
+                    followers: user.followers.filter(u => u._id !== auth()?._id)
+                } as User;
+                this.selectedUser(newUser);
+                auth.set({
+                    ...auth(),
+                    following: auth()?.following.filter(u => u._id !== user._id)
+                } as User);
+            }),
+            catchError(error => {
+                return throwError(() => new Error("Couldn't unFollow user", error));
+            }),
+            finalize(() => this._loading.set(false))
+        );
+    }
+
     public selectedUser(data: User) {
         this.userSubject$.next(data);
     }

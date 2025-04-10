@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MatButton } from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ActivatedRoute, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { AuthService } from '@core/services';
@@ -10,6 +11,7 @@ import { IconComponent } from '@shared/components';
 import { MenuItem } from '@shared/menu-item.type';
 import { UsernamePipe } from '@shared/pipes';
 import { Subject, takeUntil } from 'rxjs';
+import { EditUserFormComponent } from './components/edit-user-form/edit-user-form.component';
 import { FollowBtnComponent } from './components/follow-btn/follow-btn.component';
 
 @Component({
@@ -32,6 +34,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     public readonly userService = inject(UserService);
     public readonly postService = inject(PostService);
     private readonly route = inject(ActivatedRoute);
+    private readonly dialog = inject(MatDialog);
     public id!: string;
     public userData = toSignal(this.userService.user$, { initialValue: null });
     public usersData = toSignal(this.userService.users$, { initialValue: [] });
@@ -80,6 +83,10 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
     get data() {
         return this.authService.authData();
+    }
+
+    openModal() {
+        this.dialog.open(EditUserFormComponent);
     }
 
     ngOnDestroy() {

@@ -1,0 +1,26 @@
+<div class="w-[500px] p-5 flex flex-col justify-between gap-5">
+    <h3 class="text-2xl font-medium">Edit User</h3>
+    <form class="w-full" [formGroup]="editUserForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="w-full">
+            <mat-label>Full Name</mat-label>
+            <input matInput formControlName="fullname" />
+        </mat-form-field>
+        <mat-form-field class="w-full">
+            <mat-label>Mobile</mat-label>
+            <input matInput formControlName="mobile" />
+        </mat-form-field>
+        <mat-form-field class="w-full">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="address" />
+        </mat-form-field>
+        <mat-form-field class="w-full">
+            <mat-label>Website</mat-label>
+            <input matInput formControlName="website" />
+        </mat-form-field>
+        <mat-form-field class="w-full">
+            <mat-label>Story</mat-label>
+            <input matInput formControlName="story" />
+        </mat-form-field>
+        <button class="w-full" type="submit" mat-flat-button>Edit</button>
+    </form>
+</div>

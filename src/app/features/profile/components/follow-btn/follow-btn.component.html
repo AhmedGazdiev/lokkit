@@ -1,0 +1,5 @@
+@if (_isFollow()) {
+    <button mat-stroked-button class="w-[120px]" (click)="unFollow()">unFollow</button>
+} @else {
+    <button mat-flat-button class="w-[120px]" (click)="follow()">Follow</button>
+}
